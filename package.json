@@ -1,0 +1,25 @@
+{
+  "name": "octicons-modular",
+  "version": "0.1.0",
+  "description": "Octicons with the icon-per-file style",
+  "main": "lib/main.common.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiendv/octicons-modular.git"
+  },
+  "keywords": [
+    "octicons",
+    "modular",
+    "svg",
+    "icons"
+  ],
+  "author": "Hien Dao <hien.dv.neo@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hiendv/octicons-modular/issues"
+  },
+  "homepage": "https://github.com/hiendv/octicons-modular#readme"
+}
