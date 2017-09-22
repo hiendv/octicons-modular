@@ -20,6 +20,10 @@ octicons.zap.svg({ scale: 2 })
 // '<svg version="1.1" width="20" height="32" viewBox="0 0 10 16" class="octicon octicon-zap" aria-hidden="true" ><path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7z"/></svg>'
 ```
 
+## Supported octicons
+- [Octicons v6.0.1](https://github.com/primer/octicons/tree/v6.0.1/lib/svg)
+- Preview at [GitHub Octicons](https://octicons.github.com/)
+
 ## Development
 ```bash
 git clone https://github.com/hiendv/octicons-modular.git && cd octicons-modular
