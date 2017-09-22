@@ -21,8 +21,8 @@ octicons.zap.svg({ scale: 2 })
 ```
 
 ## Supported octicons
+[Octicons v6.0.1](https://github.com/primer/octicons/tree/v6.0.1/lib/svg). Below are some of them. More with previews at [GitHub Octicons](https://octicons.github.com/)
 ![Octicons](https://github.com/hiendv/octicons-modular/blob/master/octicons.png)
-[Octicons v6.0.1](https://github.com/primer/octicons/tree/v6.0.1/lib/svg). More with the preview at [GitHub Octicons](https://octicons.github.com/)
 
 ## Development
 ```bash
