@@ -2,9 +2,13 @@
   "name": "octicons-modular",
   "version": "0.1.0",
   "description": "Octicons with the icon-per-file style",
-  "main": "lib/main.common.js",
+  "main": "main.common.js",
+  "module": "main.esm.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .js ./ icons",
+    "clean": "rimraf lib && rimraf src/icons/* && rimraf src/octicons.js",
+    "build": "npm run clean && babel-node build/modulize.js && npm run lint && babel-node build/build.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +27,26 @@
   },
   "homepage": "https://github.com/hiendv/octicons-modular#readme",
   "dependencies": {
-    "octicons": "^6.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "chalk": "^2.1.0",
+    "eslint": "^4.7.2",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "handlebars": "^4.0.10",
+    "lodash.camelcase": "^4.3.0",
+    "octicons": "^6.0.1",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-commonjs": "^8.2.1",
+    "rollup-plugin-node-resolve": "^3.0.0"
   }
 }
