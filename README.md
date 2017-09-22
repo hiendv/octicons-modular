@@ -1,5 +1,5 @@
 # Modular Octicons
-It's technically [GitHub Octicons](https://github.com/primer/octicons) but with the icon-per-file style
+It's technically [GitHub Octicons](https://github.com/primer/octicons) but with the icon-per-file style.
 
 ## Installation
 ```bash
