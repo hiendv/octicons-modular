@@ -18,7 +18,6 @@ markGithub.svg()
 const octicons = require('octicons-modular')
 octicons.zap.svg({ scale: 2 })
 // '<svg version="1.1" width="20" height="32" viewBox="0 0 10 16" class="octicon octicon-zap" aria-hidden="true" ><path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7z"/></svg>'
-*/
 ```
 
 ## Development
