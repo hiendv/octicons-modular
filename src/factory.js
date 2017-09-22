@@ -37,8 +37,8 @@ export default (name, data) => {
     },
 
     attrsFormat (attributes) {
-      return Object.entries(attributes).map(([name, attr]) => {
-        return `${name}="${attr}"`
+      return Object.keys(attributes).map(name => {
+        return `${name}="${attributes[name]}"`
       }).join(' ').trim()
     },
 
