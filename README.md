@@ -32,6 +32,9 @@ npm run dev
 
 # Build?
 npm run build
+
+# Patch and release?
+npm run version-patch && npm run publish
 ```
 
 ## Testing
