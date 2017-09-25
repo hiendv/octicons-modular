@@ -1,6 +1,6 @@
 {
   "name": "octicons-modular",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Octicons with the icon-per-file style",
   "main": "main.common.js",
   "module": "main.esm.js",
@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .js ./ icons",
     "clean": "rimraf lib && rimraf src/icons/* && rimraf src/octicons.js",
-    "build": "npm run clean && babel-node build/modulize.js && npm run lint && babel-node build/build.js"
+    "build": "npm run clean && babel-node build/modulize.js && npm run lint && babel-node build/build.js",
+    "publish": "cp package.json lib/. && cd lib && npm publish"
   },
   "repository": {
     "type": "git",
