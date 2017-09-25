@@ -10,7 +10,7 @@
     "clean": "rimraf lib && rimraf src/icons/* && rimraf src/octicons.js",
     "build": "npm run clean && babel-node build/modulize.js && npm run lint && babel-node build/build.js",
     "publish": "cp package.json lib && cd lib && npm publish",
-    "version-patch": "rm package-lock.json && npm version patch"
+    "version-patch": "rimraf package-lock.json && npm version patch"
   },
   "repository": {
     "type": "git",
