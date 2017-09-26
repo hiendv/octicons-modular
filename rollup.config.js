@@ -4,6 +4,7 @@ const cjs = require('rollup-plugin-commonjs')
 const resolve = require('rollup-plugin-node-resolve')
 const babel = require('rollup-plugin-babel')
 const path = require('path')
+const css = require('rollup-plugin-css-only')
 
 module.exports = {
   input: config.entryPath,
@@ -12,6 +13,7 @@ module.exports = {
     { file: path.resolve(config.distPath, pkg.module), format: 'es' }
   ],
   plugins: [
+    css({ output: path.resolve(config.distPath, pkg.style) }),
     cjs(),
     resolve(),
     babel({

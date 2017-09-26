@@ -8,5 +8,6 @@ let baseConfig = {
 module.exports = {
   srcPath: baseConfig.srcPath,
   distPath: baseConfig.distPath,
-  entryPath: path.resolve(baseConfig.srcPath, 'octicons.js')
+  entryPath: path.resolve(baseConfig.srcPath, 'main.js'),
+  octiconPath: path.resolve(baseConfig.srcPath, 'octicons.js')
 }

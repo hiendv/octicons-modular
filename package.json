@@ -4,6 +4,7 @@
   "description": "Octicons with the icon-per-file style",
   "main": "main.common.js",
   "module": "main.esm.js",
+  "style": "main.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .js ./ icons",
@@ -50,6 +51,7 @@
     "rollup": "^0.50.0",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-commonjs": "^8.2.1",
+    "rollup-plugin-css-only": "^0.2.0",
     "rollup-plugin-node-resolve": "^3.0.0"
   }
 }

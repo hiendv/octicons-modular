@@ -27,7 +27,7 @@ const modulize = () => {
       }
 
       count--
-      return count > 0 ? null : fs.writeFile(config.entryPath, mainExports, err => {
+      return count > 0 ? null : fs.writeFile(config.octiconPath, mainExports, err => {
         if (err) {
           throw err
         }
