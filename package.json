@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint --ext .js ./ icons",
     "clean": "rimraf lib/* && rimraf src/icons/* && rimraf src/octicons.js",
-    "build": "npm run clean && babel-node build/modulize.js && npm run lint && babel-node build/build.js",
+    "build": "npm run clean && babel-node build/modulize.js && npm run lint && babel-node build/build.js && npm test",
     "publish-meta": "cp -rf package.json lib/package.json && cp -rf README.md lib/README.md && cp -rf LICENSE lib/LICENSE",
     "publish": "npm test && npm run publish-meta && cd lib && npm publish",
     "version-patch": "rimraf package-lock.json && npm version patch"
