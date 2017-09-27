@@ -16,11 +16,7 @@ module.exports = {
     css({ output: path.resolve(config.distPath, pkg.style) }),
     cjs(),
     resolve(),
-    babel({
-      babelrc: false,
-      plugins: ['external-helpers'],
-      externalHelpers: true
-    })
+    babel()
   ],
   external: id => /icons\/[\w-]+\.js/.test(id)
 }

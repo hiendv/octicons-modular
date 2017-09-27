@@ -6,12 +6,12 @@
   "module": "main.esm.js",
   "style": "main.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "lint": "eslint --ext .js ./ icons",
     "clean": "rimraf lib/* && rimraf src/icons/* && rimraf src/octicons.js",
     "build": "npm run clean && babel-node build/modulize.js && npm run lint && babel-node build/build.js",
     "publish-meta": "cp -rf package.json lib/package.json && cp -rf README.md lib/README.md && cp -rf LICENSE lib/LICENSE",
-    "publish": "npm run publish-meta && cd lib && npm publish",
+    "publish": "npm test && npm run publish-meta && cd lib && npm publish",
     "version-patch": "rimraf package-lock.json && npm version patch"
   },
   "repository": {
@@ -41,10 +41,12 @@
     "eslint": "^4.7.2",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jest": "^21.2.0",
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "handlebars": "^4.0.10",
+    "jest": "^21.2.0",
     "lodash.camelcase": "^4.3.0",
     "octicons": "^6.0.1",
     "rimraf": "^2.6.2",
