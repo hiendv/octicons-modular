@@ -7,6 +7,7 @@ describe('commonjs bundle', () => {
       svg: expect.any(Function)
     }))
   })
+
   test('has zap', () => {
     expect(octicons.zap).toEqual(expect.objectContaining({
       name: 'zap',
@@ -14,4 +15,3 @@ describe('commonjs bundle', () => {
     }))
   })
 })
-

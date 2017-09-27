@@ -26,7 +26,8 @@ export default (name, data) => {
       if (!className) {
         return
       }
-      attrs['class'] += ` ${className}`
+
+      attrs['class'] = `octicon octicon-${name} ${className}`
     },
 
     attrScale (attrs, scale) {
