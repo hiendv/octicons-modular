@@ -20,6 +20,10 @@ describe('zap octicon', () => {
     test(`returns a svg with an addional class`, () => {
       expect(zap.svg({ class: 'an-additional-class' })).toBe('<svg version="1.1" width="10" height="16" viewBox="0 0 10 16" class="octicon octicon-zap an-additional-class" aria-hidden="true" ><path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7z"/></svg>')
     })
+
+    test(`returns a svg with the aria-label attribute`, () => {
+      expect(zap.svg({ 'aria-label': 'very fast' })).toBe('<svg version="1.1" width="10" height="16" viewBox="0 0 10 16" class="octicon octicon-zap" aria-label="very fast" role="img" ><path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7z"/></svg>')
+    })
   })
 })
 
