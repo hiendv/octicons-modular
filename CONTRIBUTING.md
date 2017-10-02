@@ -30,7 +30,7 @@ git checkout -b fix-something -t upstream/master
 #### Step 3: Code & Build
 The vast majority of Pull Requests opened against the `hiendv/octicons-modular` repository includes changes to either the Javascript code contained in the `src` directory, the scripts contained in the `build` directory, the documentation in `README.md` or tests within the `test` directory.
 
-If you are modifying code, please be sure to run `npm run lint` from time to time to ensure that the changes follow the code style guide. For an easier flow, you could run `npm run dev` for the development process which also contains file watches.
+If you are modifying code, please be sure to run `npm run lint` from time to time to ensure that the changes follow the code style guide. For an easier flow, you could run `npm run dev` for the development process which also contains the file watch.
 
 When you are happy with your changes, run `npm run build` for the build.
 
@@ -52,7 +52,7 @@ This ensures that your working branch has the latest changes from `hiendv/octico
 #### Step 6: Test
 Bug fixes and features should always come with tests. Looking at other tests to see how they should be structured can also help. The `test` directory within the `hiendv/octicons-modular` repository is kinda simple and straightforward. Before submitting your changes in a Pull Request, always run the full test suite with `npm test`.
 
-#### To simplify these steps, the test, linting scripts are already included in the build script.
+**Important:** To simplify these steps, the test, linting scripts are already included in the build script.
 
 #### Step 7: Push
 Once you are sure your commits are ready to go, with passing tests and linting, begin the process of opening a Pull Request by pushing your working branch to your fork on GitHub.
