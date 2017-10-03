@@ -8,6 +8,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint --ext .js *.js ./src ./build ./test",
+    "dev": "nodemon ./src ./build ./test --exec 'npm run lint'",
     "clean": "rimraf lib/* && rimraf src/icons/* && rimraf src/octicons.js",
     "build": "npm run clean && babel-node build/modulize.js && npm run lint && babel-node build/build.js && npm test",
     "publish-meta": "cp -rf package.json lib/package.json && cp -rf README.md lib/README.md && cp -rf LICENSE lib/LICENSE",
@@ -48,6 +49,7 @@
     "handlebars": "^4.0.10",
     "jest": "^21.2.0",
     "lodash.camelcase": "^4.3.0",
+    "nodemon": "^1.12.1",
     "octicons": "^6.0.1",
     "rimraf": "^2.6.2",
     "rollup": "^0.50.0",
