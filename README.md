@@ -1,5 +1,5 @@
 # Modular Octicons
-[![Build Status](https://travis-ci.org/hiendv/octicons-modular.svg?branch=master)](https://travis-ci.org/hiendv/octicons-modular) [![dependencies Status](https://david-dm.org/hiendv/octicons-modular/status.svg)](https://david-dm.org/hiendv/octicons-modular) [![devDependencies Status](https://david-dm.org/hiendv/octicons-modular/dev-status.svg)](https://david-dm.org/hiendv/octicons-modular?type=dev)
+[![Build Status](https://travis-ci.org/hiendv/octicons-modular.svg?branch=master)](https://travis-ci.org/hiendv/octicons-modular) [![Coverage Status](https://coveralls.io/repos/github/hiendv/octicons-modular/badge.svg?branch=master)](https://coveralls.io/github/hiendv/octicons-modular?branch=master) [![dependencies Status](https://david-dm.org/hiendv/octicons-modular/status.svg)](https://david-dm.org/hiendv/octicons-modular) [![devDependencies Status](https://david-dm.org/hiendv/octicons-modular/dev-status.svg)](https://david-dm.org/hiendv/octicons-modular?type=dev)
 
 It's technically [GitHub Octicons](https://github.com/primer/octicons) but with the icon-per-file style.
 
