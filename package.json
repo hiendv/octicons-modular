@@ -6,7 +6,7 @@
   "module": "main.esm.js",
   "style": "main.css",
   "scripts": {
-    "test": "jest",
+    "test": "jest && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "lint": "eslint --ext .js *.js ./src ./build ./test",
     "dev": "nodemon ./src ./build ./test --exec 'npm run lint'",
     "clean": "rimraf lib/* && rimraf src/icons/* && rimraf src/octicons.js",
@@ -39,6 +39,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-2": "^6.24.1",
     "chalk": "^2.1.0",
+    "coveralls": "^3.0.0",
     "eslint": "^4.7.2",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.7.0",

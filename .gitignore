@@ -3,3 +3,6 @@ package-lock.json
 lib/package.json
 lib/README.md
 lib/LICENSE
+
+.coveralls.yml
+coverage
