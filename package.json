@@ -1,6 +1,6 @@
 {
   "name": "octicons-modular",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "Octicons with the icon-per-file style",
   "main": "main.common.js",
   "module": "main.esm.js",
