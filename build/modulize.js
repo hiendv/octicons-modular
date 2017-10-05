@@ -18,6 +18,11 @@ const mainTemplate = handleBars.compile(`{{#each mainImports}}import {{@key}} fr
 
 {{#each mainExports}}export { {{@key}} as {{this}} }
 {{/each}}
+
+export default {
+{{#each mainExports}}  {{this}}: {{@key}}{{#unless @last}},{{/unless}}
+{{/each}}
+}
 `)
 
 const modulize = () => {
