@@ -6,7 +6,7 @@
   "module": "main.esm.js",
   "style": "main.css",
   "scripts": {
-    "test": "npm run lint && jest",
+    "test": "jest",
     "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "lint": "eslint --ext .js *.js ./src ./build ./test",
     "dev": "nodemon ./src ./build ./test --exec 'npm run lint'",
