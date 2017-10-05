@@ -1,7 +1,10 @@
-const chalk = require('chalk')
+import chalk from 'chalk'
 
-const info = text => {
-  console.log(chalk.white.bgBlue(text))
+export default {
+  info (text) {
+    console.log(chalk.white.bgBlue(text))
+  },
+  success (text) {
+    console.log(chalk.white.bgGreen(text))
+  }
 }
-
-exports.info = info
