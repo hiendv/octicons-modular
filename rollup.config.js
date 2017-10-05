@@ -9,7 +9,19 @@ import css from 'rollup-plugin-css-only'
 const plugins = [
   cjs(),
   resolve(),
-  babel()
+  babel({
+    babelrc: false,
+    presets: [
+      [
+        'env',
+        {
+          'modules': false
+        }
+      ],
+      'stage-2'
+    ],
+    comments: false
+  })
 ]
 
 // it has to be this way T.T
