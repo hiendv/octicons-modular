@@ -28,6 +28,10 @@
   ],
   "author": "Hien Dao <hien.dv.neo@gmail.com>",
   "license": "MIT",
+  "engineStrict": true,
+  "engines": {
+    "node": ">=5"
+  },
   "bugs": {
     "url": "https://github.com/hiendv/octicons-modular/issues"
   },
