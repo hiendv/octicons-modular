@@ -1,5 +1,5 @@
+import helpers from '../helpers.js'
 const config = require('../config.js')
-const helpers = require('../helpers.js')
 const rollup = require('rollup')
 const path = require('path')
 const glob = require('glob')
