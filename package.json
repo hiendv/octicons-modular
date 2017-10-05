@@ -6,11 +6,12 @@
   "module": "main.esm.js",
   "style": "main.css",
   "scripts": {
-    "test": "npm run lint && jest && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test": "npm run lint && jest",
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "lint": "eslint --ext .js *.js ./src ./build ./test",
     "dev": "nodemon ./src ./build ./test --exec 'npm run lint'",
     "clean": "rimraf lib/* && rimraf src/icons/* && rimraf src/octicons.js",
-    "build": "npm run clean && babel-node build/modulize.js && npm run lint && babel-node build/build.js && npm test",
+    "build": "npm run clean && babel-node --presets env build/modulize.js && npm run lint && babel-node --presets env build/build.js && npm test",
     "publish-meta": "cp -rf package.json lib/package.json && cp -rf README.md lib/README.md && cp -rf LICENSE lib/LICENSE",
     "publish": "npm test && npm run publish-meta && cd lib && npm publish",
     "version-patch": "rimraf package-lock.json && npm version patch"
