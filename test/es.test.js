@@ -11,7 +11,7 @@ describe('es bundle', () => {
     }))
   })
 
-  test('export named alert', () => {
+  test('exports named alert', () => {
     expect(alert).toEqual(expect.objectContaining({
       name: 'alert',
       svg: expect.any(Function)
