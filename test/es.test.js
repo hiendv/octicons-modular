@@ -1,4 +1,5 @@
-import octicons, * as named from '../lib/main.esm.js'
+import octicons, * as named from '../lib/main.es.js'
+
 import camelCase from 'lodash.camelcase'
 
 const ICONS = [
