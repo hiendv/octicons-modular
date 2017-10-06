@@ -55,23 +55,8 @@ octicons.zap.svg({
 })
 ```
 
-## Development
-```bash
-git clone https://github.com/hiendv/octicons-modular.git && cd octicons-modular
-npm install
-npm run dev
-
-# Build?
-npm run build
-
-# Patch and release?
-npm run version-patch && npm run publish
-```
-
-## Testing
-```bash
-npm test
-```
+## Development & Testing
+Please check the [Contributing Guidelines](https://github.com/hiendv/octicons-modular/blob/master/CONTRIBUTING.md).
 
 ## Contribution
 Issues and PRs are welcome !
