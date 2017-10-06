@@ -34,7 +34,7 @@ describe('an icon', () => {
   test('calls the attrs method and receive the value returned from attrsFormat method once when calling the svg method', () => {
     var zap = require('../lib/icons/zap.js')
     zap.attrsFormat = jest.fn()
-    .mockReturnValue('value')
+      .mockReturnValue('value')
 
     zap.svg()
 
