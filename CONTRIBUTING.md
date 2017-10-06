@@ -28,7 +28,9 @@ git checkout -b fix-something -t upstream/master
 
 ### The Process of Making Changes
 #### Step 3: Code & Build
-The vast majority of Pull Requests opened against the `hiendv/octicons-modular` repository includes changes to either the Javascript code contained in the `src` directory, the scripts contained in the `build` directory, the documentation in `README.md` or tests within the `test` directory.
+The vast majority of Pull Requests opened against the `hiendv/octicons-modular` repository includes changes to either the Javascript code contained in the `src` directory, the scripts contained in the `build` directory, the documentation in `README.md` or tests within the `test` directory. Please do not modify auto-generated files since your changes will be destroyed when we run build scripts. Below are files which are auto-generated:
+- `src/octicons.js` is generated from `build/modulize.js`
+- `src/icons/*.js` is generated from `build/modulize.js`
 
 If you are modifying code, please be sure to run `npm run lint` from time to time to ensure that the changes follow the code style guide. For an easier flow, you could run `npm run dev` for the development process which also contains the file watch.
 
