@@ -8,12 +8,16 @@ import config from '../config.js'
 import helpers from '../helpers.js'
 
 handleBars.registerHelper('jsonObject', context => JSON.stringify(context))
-const iconTemplate = handleBars.compile(`/* eslint-disable */
+const iconTemplate = handleBars.compile(`// This file is auto-generated from the modulize script. Please do not modify this file.
+
+/* eslint-disable */
 import factory from '../factory'
 export default factory('{{ name }}', {{{ jsonObject data }}})
 `)
 
-const mainTemplate = handleBars.compile(`{{#each mainImports}}import {{@key}} from '{{this}}'
+const mainTemplate = handleBars.compile(`// This file is auto-generated from the modulize script. Please do not modify this file.
+
+{{#each mainImports}}import {{@key}} from '{{this}}'
 {{/each}}
 
 {{#each mainExports}}export { {{@key}} as {{this}} }

@@ -1,3 +1,5 @@
+// This file is auto-generated from the modulize script. Please do not modify this file.
+
 import alertIcon from './icons/alert.js'
 import arrowDownIcon from './icons/arrow-down.js'
 import arrowLeftIcon from './icons/arrow-left.js'
