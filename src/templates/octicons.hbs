@@ -1,0 +1,12 @@
+// This file is auto-generated from the modulize script. Please do not modify this file.
+
+{{#each mainImports}}import {{@key}} from '{{this}}'
+{{/each}}
+
+{{#each mainExports}}export { {{@key}} as {{this}} }
+{{/each}}
+
+export default {
+{{#each mainExports}}  {{this}}: {{@key}}{{#unless @last}},{{/unless}}
+{{/each}}
+}

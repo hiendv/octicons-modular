@@ -8,26 +8,8 @@ import config from '../config.js'
 import helpers from '../helpers.js'
 
 handleBars.registerHelper('jsonObject', context => JSON.stringify(context))
-const iconTemplate = handleBars.compile(`// This file is auto-generated from the modulize script. Please do not modify this file.
-
-/* eslint-disable */
-import factory from '../factory'
-export default factory('{{ name }}', {{{ jsonObject data }}})
-`)
-
-const mainTemplate = handleBars.compile(`// This file is auto-generated from the modulize script. Please do not modify this file.
-
-{{#each mainImports}}import {{@key}} from '{{this}}'
-{{/each}}
-
-{{#each mainExports}}export { {{@key}} as {{this}} }
-{{/each}}
-
-export default {
-{{#each mainExports}}  {{this}}: {{@key}}{{#unless @last}},{{/unless}}
-{{/each}}
-}
-`)
+const iconTemplate = handleBars.compile(fs.readFileSync(path.resolve(config.srcPath, 'templates/icon.hbs'), 'utf8'))
+const octiconTemplate = handleBars.compile(fs.readFileSync(path.resolve(config.srcPath, 'templates/octicons.hbs'), 'utf8'))
 
 const modulize = () => {
   helpers.info(`Modulizing icons from octicons data`)
@@ -56,7 +38,7 @@ const modulize = () => {
   })
 
   Promise.all(iconPromises).then(icons => {
-    fs.writeFile(config.octiconPath, mainTemplate({mainImports, mainExports}), err => {
+    fs.writeFile(config.octiconPath, octiconTemplate({mainImports, mainExports}), err => {
       if (err) {
         throw err
       }
