@@ -44,7 +44,103 @@ octicons.zap.svg()
 ```
 
 ### Tree-shaking
-Coming soon!
+The package supports tree-shaking when importing octicons with Webpack 2 or Rollup.
+```js
+// rollup.config.js
+import resolve from 'rollup-plugin-node-resolve'
+import commonjs from 'rollup-plugin-commonjs' // because the icons are in commonjs format
+
+export default {
+  input: 'main.js',
+  output: {
+    file: 'bundle.js',
+    format: 'es' // any format
+  },
+  plugins: [ resolve(), commonjs() ]
+}
+```
+
+```js
+// main.js
+import { alert } from 'octicons-modular'
+console.log(alert.svg())
+```
+
+```bash
+rollup -v
+// rollup version 0.50.0
+
+rollup -c rollup.config.js && node bundle.js
+// <svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-alert" aria-hidden="true" ><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+```
+
+```js
+// bundle.js
+'use strict';
+
+var factory = (function (name, data) {
+  var options = {
+    'version': '1.1',
+    'width': data.width,
+    'height': data.height,
+    'viewBox': '0 0 ' + data.width + ' ' + data.height,
+    'class': 'octicon octicon-' + name,
+    'aria-hidden': 'true'
+  };
+
+  return {
+    name: name,
+    data: data,
+    options: options,
+    attrLabel: function attrLabel(attrs, label) {
+      if (!label) {
+        return;
+      }
+
+      attrs['aria-label'] = label;
+      attrs['role'] = 'img';
+      delete attrs['aria-hidden'];
+    },
+    attrClass: function attrClass(attrs, className) {
+      if (!className) {
+        return;
+      }
+
+      attrs['class'] = 'octicon octicon-' + name + ' ' + className;
+    },
+    attrScale: function attrScale(attrs, scale) {
+      var actualScale = scale === 0 ? 0 : parseInt(scale) || 1;
+      attrs['width'] = actualScale * parseInt(attrs['width']);
+      attrs['height'] = actualScale * parseInt(attrs['height']);
+      delete attrs['scale'];
+    },
+    attrsFormat: function attrsFormat(attributes) {
+      return Object.keys(attributes).map(function (name) {
+        return name + '="' + attributes[name] + '"';
+      }).join(' ').trim();
+    },
+    attrs: function attrs(options) {
+      var attrs = Object.assign({}, this.options, options);
+      if (!options) {
+        return this.attrsFormat(attrs);
+      }
+
+      this.attrLabel(attrs, options['aria-label']);
+      this.attrClass(attrs, options['class']);
+      this.attrScale(attrs, options['scale']);
+      return this.attrsFormat(attrs);
+    },
+    svg: function svg(options) {
+      return '<svg ' + this.attrs(options) + ' >' + this.data.path + '</svg>';
+    }
+  };
+});
+
+var alert = factory('alert', { "keywords": ["warning", "triangle", "exclamation", "point"], "path": "<path fill-rule=\"evenodd\" d=\"M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z\"/>", "height": "16", "width": "16" });
+
+var alert_1 = alert;
+console.log(alert_1.svg());
+```
 
 ## Options
 ```js
