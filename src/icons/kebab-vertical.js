@@ -32,9 +32,12 @@ export default {
   },
 
   attrScale (attrs, scale) {
-    let actualScale = scale === 0 ? 0 : parseInt(scale) || 1
-    attrs['width'] = actualScale * parseInt(attrs['width'])
-    attrs['height'] = actualScale * parseInt(attrs['height'])
+    let actualScale = scale === 0 ? 0 : parseFloat(scale) || 1
+    let actualWidth = actualScale * parseInt(attrs['width'])
+    let actualHeight = actualScale * parseInt(attrs['height'])
+
+    attrs['width'] = Number(actualWidth.toFixed(2))
+    attrs['height'] = Number(actualHeight.toFixed(2))
     delete attrs['scale']
   },
 
