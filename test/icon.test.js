@@ -1,6 +1,6 @@
-import octicons from './fixtures/icons'
+import { icons } from './fixtures/icons.js'
 
-octicons.forEach(name => {
+icons.forEach(name => {
   describe(`${name} icon`, () => {
     beforeEach(() => {
       jest.resetModules()
