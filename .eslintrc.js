@@ -2,7 +2,7 @@ module.exports = {
   root: true,
   parser: 'babel-eslint',
   plugins: [
-    'jest'
+    'jest', 'react'
   ],
   parserOptions: {
     sourceType: 'module'
@@ -11,7 +11,7 @@ module.exports = {
     browser: true,
     'jest/globals': true
   },
-  extends: 'standard',
+  extends: ['standard', 'plugin:react/recommended'],
   rules: {
     'arrow-parens': 0,
     'generator-star-spacing': 0,
