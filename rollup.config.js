@@ -5,7 +5,10 @@ import cjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import css from 'rollup-plugin-css-only'
+import vue from 'rollup-plugin-vue'
 import uglify from 'rollup-plugin-uglify'
+
+const transformRequire = require('vue-loader/lib/template-compiler/modules/transform-require')
 
 const plugins = [
   cjs(),
@@ -45,6 +48,23 @@ exports.rollupReact = {
         'stage-2'
       ],
       comments: false
+    })
+  ]
+}
+
+exports.rollupVue = {
+  input: config.vuePath,
+  output: { file: path.resolve(config.distPath, 'vue/index.vue'), format: 'es' },
+  plugins: [
+    css({
+      output: path.resolve(config.distPath, pkg.style)
+    }),
+    cjs(),
+    resolve(),
+    vue({
+      compileOptions: {
+        modules: [transformRequire({})]
+      }
     })
   ]
 }
