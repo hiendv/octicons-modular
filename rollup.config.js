@@ -5,6 +5,7 @@ import cjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import css from 'rollup-plugin-css-only'
+import uglify from 'rollup-plugin-uglify'
 
 const plugins = [
   cjs(),
@@ -45,5 +46,13 @@ export default [
     output: { file: path.resolve(config.distPath, pkg.module), format: 'es' },
     plugins,
     external: id => /icons\/[\w-]+\.js/.test(id)
+  },
+  {
+    input: config.iifePath,
+    output: { file: path.resolve(config.distPath, pkg.browser), format: 'iife', name: 'Octicons' },
+    plugins: [
+      uglify(),
+      ...plugins
+    ]
   }
 ]
