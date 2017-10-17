@@ -41,9 +41,6 @@ icons.forEach(name => {
         expect(icon.svg({ scale })).toBe(`<svg version="1.1" width="${actualWidth}" height="${actualHeight}" viewBox="0 0 ${octicon.width} ${octicon.height}" class="octicon octicon-${name}" aria-hidden="true" >${octicon.path}</svg>`)
       })
 
-        expect(icon.svg({ scale })).toBe(`<svg version="1.1" width="${actualWidth}" height="${actualHeight}" viewBox="0 0 ${octicon.width} ${octicon.height}" class="octicon octicon-${name}" aria-hidden="true" >${octicon.path}</svg>`)
-      })
-
       test(`returns a svg with an addional class`, () => {
         const additionalClass = 'an-additional-class'
 
