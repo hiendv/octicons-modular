@@ -29,26 +29,6 @@ const plugins = [
 // try rollup -c and see the difference between this and export { plugins }
 exports.plugins = plugins
 
-exports.rollupReact = {
-  input: config.reactPath,
-  output: { file: path.resolve(config.distPath, 'react/index.js'), format: 'es' },
-  plugins: [
-    css({
-      output: path.resolve(config.distPath, pkg.style)
-    }),
-    cjs(),
-    resolve(),
-    babel({
-      babelrc: false,
-      presets: [
-        'react',
-        'stage-2'
-      ],
-      comments: false
-    })
-  ]
-}
-
 export default [
   {
     input: config.entryPath,

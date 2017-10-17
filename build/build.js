@@ -3,7 +3,8 @@ import glob from 'glob'
 
 import config from '../config.js'
 import helpers from '../helpers.js'
-import { default as baseConfigs, plugins, rollupReact } from '../rollup.config.js'
+import { default as baseConfigs, plugins } from '../rollup.config.js'
+import reactConfig from '../rollup.react.config.js'
 
 const rollup = require('rollup')
 
@@ -34,8 +35,8 @@ const rollIcon = (name, input) => {
 
 const buildReact = async () => {
   helpers.info(`Building React`)
-  const bundle = await rollup.rollup(rollupReact)
-  await bundle.write(rollupReact.output)
+  const bundle = await rollup.rollup(reactConfig)
+  await bundle.write(reactConfig.output)
   helpers.success(`Building React: DONE`)
 }
 
