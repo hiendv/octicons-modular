@@ -5,6 +5,7 @@ import config from '../config.js'
 import helpers from '../helpers.js'
 import { default as baseConfigs, plugins } from '../rollup.config.js'
 import reactConfig from '../rollup.react.config.js'
+import vueConfig from '../rollup.vue.config.js'
 
 const rollup = require('rollup')
 
@@ -40,6 +41,13 @@ const buildReact = async () => {
   helpers.success(`Building React: DONE`)
 }
 
+const buildVue = async () => {
+  helpers.info(`Building Vue`)
+  const bundle = await rollup.rollup(vueConfig)
+  await bundle.write(vueConfig.output)
+  helpers.success(`Building Vue: DONE`)
+}
+
 const buildIcons = () => {
   helpers.info(`Building icons`)
 
@@ -56,6 +64,7 @@ const buildIcons = () => {
         helpers.success(`Building icons: ${bundles.length} icons`)
       })
       .then(buildReact)
+      .then(buildVue)
       .then(buildBundles)
   })
 }
