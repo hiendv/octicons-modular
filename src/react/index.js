@@ -3,7 +3,7 @@ import React from 'react'
 import 'octicons/build/octicons.min.css'
 
 const Octicon = ({ icon, scale }) => {
-  return <span dangerouslySetInnerHTML={ icon.svg({ scale: scale }) } />
+  return <span dangerouslySetInnerHTML={ { __html: icon.svg({ scale }) } } />
 }
 
 Octicon.propTypes = {
@@ -15,8 +15,7 @@ Octicon.propTypes = {
 
 Octicon.defaultProps = {
   icon: {
-    svg () {
-    }
+    svg () {}
   },
   scale: 1
 }
