@@ -1,3 +1,4 @@
 module.exports = {
-  collectCoverage: true
+  collectCoverage: true,
+  setupFiles: ['./test/fixtures/shim.js']
 }
