@@ -10,5 +10,6 @@ module.exports = {
   distPath: baseConfig.distPath,
   entryPath: path.resolve(baseConfig.srcPath, 'main.js'),
   octiconPath: path.resolve(baseConfig.srcPath, 'octicons.js'),
+  reactPath: path.resolve(baseConfig.srcPath, 'react/index.js'),
   iifePath: path.resolve(baseConfig.srcPath, 'iife.js')
 }
