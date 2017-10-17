@@ -3,7 +3,7 @@ import glob from 'glob'
 
 import config from '../config.js'
 import helpers from '../helpers.js'
-import { default as baseConfigs, plugins, rollupReact } from '../rollup.config.js'
+import { default as baseConfigs, plugins, rollupReact, rollupVue } from '../rollup.config.js'
 
 const rollup = require('rollup')
 
@@ -39,6 +39,13 @@ const buildReact = async () => {
   helpers.success(`Building React: DONE`)
 }
 
+const buildVue = async () => {
+  helpers.info(`Building Vue`)
+  const bundle = await rollup.rollup(rollupVue)
+  await bundle.write(rollupVue.output)
+  helpers.success(`Building Vue: DONE`)
+}
+
 const buildIcons = () => {
   helpers.info(`Building icons`)
 
@@ -55,6 +62,7 @@ const buildIcons = () => {
         helpers.success(`Building icons: ${bundles.length} icons`)
       })
       .then(buildReact)
+      .then(buildVue)
       .then(buildBundles)
   })
 }
