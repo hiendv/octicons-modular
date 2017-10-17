@@ -1,6 +1,6 @@
 import camelCase from 'lodash.camelcase'
+import { icons } from './fixtures/icons.js'
 import octicons, * as named from '../lib/main.es.js'
-import icons from './fixtures/icons'
 
 describe('es bundle', () => {
   icons.forEach(icon => {

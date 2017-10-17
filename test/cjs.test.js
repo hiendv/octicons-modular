@@ -1,5 +1,5 @@
 import camelCase from 'lodash.camelcase'
-import icons from './fixtures/icons'
+import { icons } from './fixtures/icons.js'
 
 describe('commonjs bundle with a mocked icon', () => {
   const mockedIcon = 'alert'
