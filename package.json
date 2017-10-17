@@ -4,6 +4,7 @@
   "description": "Octicons with the icon-per-file style",
   "main": "main.common.js",
   "module": "main.es.js",
+  "browser": "main.iife.js",
   "style": "main.css",
   "scripts": {
     "test": "jest",
@@ -20,10 +21,15 @@
     "url": "git+https://github.com/hiendv/octicons-modular.git"
   },
   "keywords": [
+    "icon",
+    "icons",
     "octicons",
     "modular",
-    "svg",
-    "icons"
+    "vuejs",
+    "react",
+    "component",
+    "tree-shaking",
+    "svg"
   ],
   "author": "Hien Dao <hien.dv.neo@gmail.com>",
   "license": "MIT",
@@ -62,6 +68,7 @@
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-commonjs": "^8.2.1",
     "rollup-plugin-css-only": "^0.2.0",
-    "rollup-plugin-node-resolve": "^3.0.0"
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^2.0.1"
   }
 }

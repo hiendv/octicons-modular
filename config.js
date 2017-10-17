@@ -9,5 +9,6 @@ module.exports = {
   srcPath: baseConfig.srcPath,
   distPath: baseConfig.distPath,
   entryPath: path.resolve(baseConfig.srcPath, 'main.js'),
-  octiconPath: path.resolve(baseConfig.srcPath, 'octicons.js')
+  octiconPath: path.resolve(baseConfig.srcPath, 'octicons.js'),
+  iifePath: path.resolve(baseConfig.srcPath, 'iife.js')
 }
