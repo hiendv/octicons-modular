@@ -1,4 +1,4 @@
-const path = require('path')
+import path from 'path'
 
 let baseConfig = {
   srcPath: path.resolve(__dirname, './src'),

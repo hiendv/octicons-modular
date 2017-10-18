@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+
 import '../style.scss'
 
 const Octicon = ({ icon, scale }) => {
