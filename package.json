@@ -81,6 +81,7 @@
     "rollup-plugin-uglify": "^2.0.1",
     "rollup-plugin-vue": "^2.5.2",
     "vue-loader": "^13.3.0",
-    "vue-template-compiler": "^2.5.2"
+    "vue-template-compiler": "^2.5.2",
+    "vue-test-utils": "^1.0.0-beta.2"
   }
 }
