@@ -3,13 +3,21 @@ import path from 'path'
 import cjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
-import css from 'rollup-plugin-css-only'
+import sass from 'rollup-plugin-sass'
+import postcss from 'postcss'
+import cssnano from 'cssnano'
 
 export default {
   input: config.reactPath,
   output: { file: path.resolve(config.distPath, 'react/index.js'), format: 'cjs' },
   plugins: [
-    css({
+    sass({
+      options: {
+        includePaths: [
+          path.join(__dirname, 'node_modules')
+        ]
+      },
+      processor: css => postcss([cssnano()]).process(css).then(result => result.css),
       output: path.resolve(config.distPath, 'react/style.css')
     }),
     cjs(),

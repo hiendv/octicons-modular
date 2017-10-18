@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import 'octicons/build/octicons.min.css'
+import '../style.scss'
 
 const Octicon = ({ icon, scale }) => {
   return <span dangerouslySetInnerHTML={ { __html: icon.svg({ scale }) } } />

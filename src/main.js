@@ -1,2 +1,2 @@
-import 'octicons/build/octicons.min.css'
+import './style.scss'
 export * from './octicons.js'
