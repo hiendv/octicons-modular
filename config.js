@@ -5,7 +5,7 @@ let baseConfig = {
   distPath: path.resolve(__dirname, './lib')
 }
 
-module.exports = {
+export default {
   srcPath: baseConfig.srcPath,
   distPath: baseConfig.distPath,
   entryPath: path.resolve(baseConfig.srcPath, 'main.js'),
