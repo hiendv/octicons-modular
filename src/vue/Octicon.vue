@@ -2,6 +2,7 @@
   <span v-html="icon.svg({ scale: scale })"></span>
 </template>
 <script>
+import 'octicons/build/octicons.min.css'
 export default {
   name: 'Octicon',
   props: {

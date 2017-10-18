@@ -11,7 +11,7 @@
     "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "lint": "eslint --ext .js *.js ./src ./build ./test",
     "dev": "nodemon ./src ./build ./test --exec 'npm run lint'",
-    "clean": "rimraf lib/* && rimraf src/icons/* && rimraf src/octicons.js",
+    "clean": "rimraf lib/* && rimraf src/icons/* && rimraf src/octicons.js && rimraf src/iife.js && mkdir -p lib/react && mkdir -p lib/vue",
     "build": "npm run clean && babel-node --presets env build/modulize.js && npm run lint && babel-node --presets env build/build.js && npm test",
     "publish-meta": "mkdir -p lib && cp -rf package.json lib/package.json && cp -rf README.md lib/README.md && cp -rf LICENSE lib/LICENSE",
     "publish": "npm test && npm run publish-meta && cd lib && npm publish"
