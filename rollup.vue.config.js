@@ -1,5 +1,4 @@
 import config from './config.js'
-import pkg from './package.json'
 import path from 'path'
 import cjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
@@ -10,10 +9,10 @@ const transformRequire = require('vue-loader/lib/template-compiler/modules/trans
 
 export default {
   input: config.vuePath,
-  output: { file: path.resolve(config.distPath, 'vue/index.vue'), format: 'cjs' },
+  output: { file: path.resolve(config.distPath, 'vue/index.js'), format: 'cjs' },
   plugins: [
     css({
-      output: path.resolve(config.distPath, pkg.style)
+      output: path.resolve(config.distPath, 'vue/style.css')
     }),
     cjs(),
     resolve(),

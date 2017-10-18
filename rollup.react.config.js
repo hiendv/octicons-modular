@@ -1,5 +1,4 @@
 import config from './config.js'
-import pkg from './package.json'
 import path from 'path'
 import cjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
@@ -11,7 +10,7 @@ export default {
   output: { file: path.resolve(config.distPath, 'react/index.js'), format: 'cjs' },
   plugins: [
     css({
-      output: path.resolve(config.distPath, pkg.style)
+      output: path.resolve(config.distPath, 'react/style.css')
     }),
     cjs(),
     resolve(),
