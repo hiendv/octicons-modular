@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 describe('Octicon component', () => {
   test('renders the svg inside it', () => {
     const Octicon = require('../lib/react')
-    const zap = require('../lib/icons/alert')
+    const zap = require('../lib/icons/zap')
     const span = document.createElement('span')
     ReactDOM.render(<Octicon icon={zap} />, span)
     expect(span.innerHTML).toBe(`<span>${ zap.svg() }</span>`)
@@ -31,7 +31,7 @@ describe('Octicon component', () => {
 
     test('is rendered with React', () => {
       const Octicon = require('../lib/react')
-      const zap = require('../lib/icons/alert')
+      const zap = require('../lib/icons/zap')
       const span = document.createElement('span')
       ReactDOM.render(<Octicon icon={zap} />, span)
       expect(span.innerHTML).toBe('rendered')
