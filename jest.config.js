@@ -1,3 +1,5 @@
 module.exports = {
-  collectCoverage: true
+  collectCoverage: true,
+  coveragePathIgnorePatterns: ['/node_modules/', '<rootDir>/test/fixtures'],
+  setupFiles: ['./test/fixtures/shim.js']
 }
