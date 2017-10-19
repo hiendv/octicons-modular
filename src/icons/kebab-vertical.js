@@ -3,7 +3,7 @@
 /* eslint-disable */
 export default {
   name: 'kebab-vertical',
-  data: {"keywords":["kebab","dot","menu","more"],"path":"<path fill-rule=\"evenodd\" d=\"M0 2.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm0 5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm0 5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0z\"/>","height":"16","width":"3"},
+  data: {"keywords":["kebab","dot","menu","more"],"path":"<path fill-rule=\"evenodd\" d=\"M0 2.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm0 5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zm0 5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0z\"></path>","height":"16","width":"3"},
   options: {
     'version': '1.1',
     'width': 3,

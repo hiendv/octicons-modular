@@ -2,8 +2,8 @@ import fs from 'fs'
 import path from 'path'
 import handleBars from 'handlebars'
 import camelCase from 'lodash.camelcase'
-import octicons from 'octicons/build/data'
 
+import octicons from '../src/data'
 import config from '../config.js'
 import helpers from '../helpers.js'
 

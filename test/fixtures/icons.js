@@ -1,3 +1,4 @@
-const octicons = require('octicons/build/data')
+import octicons from '../../src/data'
+
 export const icons = Object.keys(octicons)
 export default octicons

@@ -3,7 +3,7 @@
 /* eslint-disable */
 export default {
   name: 'arrow-up',
-  data: {"keywords":["point","direction"],"path":"<path fill-rule=\"evenodd\" d=\"M5 3L0 9h3v4h4V9h3z\"/>","height":"16","width":"10"},
+  data: {"keywords":["point","direction"],"path":"<path fill-rule=\"evenodd\" d=\"M5 3L0 9h3v4h4V9h3z\"></path>","height":"16","width":"10"},
   options: {
     'version': '1.1',
     'width': 10,

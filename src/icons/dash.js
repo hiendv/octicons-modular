@@ -3,7 +3,7 @@
 /* eslint-disable */
 export default {
   name: 'dash',
-  data: {"keywords":["hyphen","range"],"path":"<path fill-rule=\"evenodd\" d=\"M0 7v2h8V7z\"/>","height":"16","width":"8"},
+  data: {"keywords":["hyphen","range"],"path":"<path fill-rule=\"evenodd\" d=\"M0 7v2h8V7z\"></path>","height":"16","width":"8"},
   options: {
     'version': '1.1',
     'width': 8,

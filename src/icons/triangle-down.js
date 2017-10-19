@@ -3,7 +3,7 @@
 /* eslint-disable */
 export default {
   name: 'triangle-down',
-  data: {"keywords":["arrow","point","direction"],"path":"<path fill-rule=\"evenodd\" d=\"M0 5l6 6 6-6z\"/>","height":"16","width":"12"},
+  data: {"keywords":["arrow","point","direction"],"path":"<path fill-rule=\"evenodd\" d=\"M0 5l6 6 6-6z\"></path>","height":"16","width":"12"},
   options: {
     'version': '1.1',
     'width': 12,

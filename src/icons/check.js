@@ -3,7 +3,7 @@
 /* eslint-disable */
 export default {
   name: 'check',
-  data: {"keywords":["mark","yes","confirm","accept","ok","success"],"path":"<path fill-rule=\"evenodd\" d=\"M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z\"/>","height":"16","width":"12"},
+  data: {"keywords":["mark","yes","confirm","accept","ok","success"],"path":"<path fill-rule=\"evenodd\" d=\"M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z\"></path>","height":"16","width":"12"},
   options: {
     'version': '1.1',
     'width': 12,

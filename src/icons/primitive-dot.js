@@ -3,7 +3,7 @@
 /* eslint-disable */
 export default {
   name: 'primitive-dot',
-  data: {"keywords":["circle"],"path":"<path fill-rule=\"evenodd\" d=\"M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z\"/>","height":"16","width":"8"},
+  data: {"keywords":["circle"],"path":"<path fill-rule=\"evenodd\" d=\"M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z\"></path>","height":"16","width":"8"},
   options: {
     'version': '1.1',
     'width': 8,

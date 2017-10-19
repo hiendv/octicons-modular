@@ -3,7 +3,7 @@
 /* eslint-disable */
 export default {
   name: 'arrow-small-up',
-  data: {"keywords":["point","direction","little","tiny"],"path":"<path fill-rule=\"evenodd\" d=\"M3 5L0 9h2v2h2V9h2z\"/>","height":"16","width":"6"},
+  data: {"keywords":["point","direction","little","tiny"],"path":"<path fill-rule=\"evenodd\" d=\"M3 5L0 9h2v2h2V9h2z\"></path>","height":"16","width":"6"},
   options: {
     'version': '1.1',
     'width': 6,
