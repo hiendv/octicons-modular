@@ -60,7 +60,7 @@ const icon = (name, data) => ({
   },
 
   svg (options) {
-    return `<svg ${this.attrs(options)} >${this.data.path}</svg>`
+    return `<svg ${this.attrs(options)}>${this.data.path}</svg>`
   }
 })
 
