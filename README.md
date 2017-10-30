@@ -52,25 +52,19 @@ export default {
 ```
 
 ### ReactJS
-```vue
-<template>
-  <octicon :icon="zap"></octicon>
-</template>
-<script>
-import Octicon from 'octicons-modular/vue'
-import 'octicons-modular/vue/style.css'
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import Octicon from 'octicons-modular/react'
+import 'octicons-modular/react/style.css'
 
 import zap from 'octicons-modular/icons/zap'
 
-export default {
-  components: { Octicon },
-  data () {
-    return {
-      zap
-    }
-  }
-}
-</script>
+ReactDOM.render(
+  <Octicon icon={zap} />,
+  document.getElementById('container')
+)
 ```
 
 ### Normal
