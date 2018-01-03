@@ -10,6 +10,7 @@ import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import uglify from 'rollup-plugin-uglify'
 import vue from 'rollup-plugin-vue'
+import buble from 'rollup-plugin-buble'
 
 const postcssPlugins = [cssnano()]
 
@@ -86,6 +87,7 @@ class Plugins {
           plugins: postcssPlugins
         }
       }),
+      buble(),
       ...this.items
     ])
   }
