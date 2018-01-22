@@ -3,6 +3,7 @@ package-lock.json
 lib/package.json
 lib/README.md
 lib/LICENSE
+lib/npm-debug.log
 
 .coveralls.yml
 coverage

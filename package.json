@@ -15,8 +15,7 @@
     "build-vue": "rollup -c ./rollup.vue.config.js",
     "build-react": "rollup -c ./rollup.react.config.js",
     "build": "npm run clean && babel-node --presets env build/modulize.js && npm run lint && babel-node --presets env build/build.js && npm run build-vue && npm run build-react && npm test",
-    "publish-meta": "mkdir -p lib && cp -rf package.json lib/package.json && cp -rf README.md lib/README.md && cp -rf LICENSE lib/LICENSE",
-    "publish": "cd lib && npm publish"
+    "publish-meta": "mkdir -p lib && cp -rf package.json lib/package.json && cp -rf README.md lib/README.md && cp -rf LICENSE lib/LICENSE"
   },
   "repository": {
     "type": "git",
