@@ -5,8 +5,6 @@ import config from '../config.js'
 import helpers from '../helpers.js'
 import { default as baseConfigs } from '../rollup.config.js'
 import plugins from '../rollup.plugins.js'
-import reactConfig from '../rollup.react.config.js'
-import vueConfig from '../rollup.vue.config.js'
 
 const rollup = require('rollup')
 
@@ -33,22 +31,6 @@ const buildBundles = async () => {
   })
 }
 
-const buildReactComponent = async () => {
-  helpers.info(`Building React component`)
-
-  const bundle = await rollup.rollup(reactConfig)
-  await bundle.write(reactConfig.output)
-  helpers.success(`Built React component: ${reactConfig.output.file}`)
-}
-
-const buildVueComponent = async () => {
-  helpers.info(`Building Vue component`)
-
-  const bundle = await rollup.rollup(vueConfig)
-  await bundle.write(vueConfig.output)
-  helpers.success(`Built Vue component: ${vueConfig.output.file}`)
-}
-
 const buildIcons = () => new Promise((resolve, reject) => {
   helpers.info(`Building icons`)
 
@@ -68,9 +50,4 @@ const buildIcons = () => new Promise((resolve, reject) => {
   })
 })
 
-buildIcons()
-  .then(() => {
-    buildBundles()
-    buildReactComponent()
-    buildVueComponent()
-  })
+buildIcons().then(buildBundles)

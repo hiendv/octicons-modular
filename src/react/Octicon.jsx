@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import '../style.scss'
-
 const Octicon = ({ icon, scale }) => {
   let div = document.createElement('div')
   div.innerHTML = icon.svg({ scale: scale })
@@ -18,7 +16,9 @@ const Octicon = ({ icon, scale }) => {
     attrs[attr.name] = attr.value
   }
 
-  return <svg {...attrs} dangerouslySetInnerHTML={ { __html: svg.innerHTML } }></svg>
+  attrs.dangerouslySetInnerHTML = { __html: svg.innerHTML }
+
+  return React.createElement('svg', attrs)
 }
 
 Octicon.propTypes = {

@@ -2,9 +2,9 @@ import path from 'path'
 import fs from 'fs'
 import postcss from 'postcss'
 import cssnano from 'cssnano'
-import sass from 'rollup-plugin-sass'
 import transformRequire from 'vue-loader/lib/template-compiler/modules/transform-require'
 
+import sass from 'rollup-plugin-sass'
 import cjs from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
@@ -47,6 +47,17 @@ class Plugins {
     ])
   }
 
+  withBuble () {
+    return new Plugins([
+      buble({
+        transforms: {
+          dangerousForOf: true
+        }
+      }),
+      ...this.items
+    ])
+  }
+
   withSass (output) {
     return new Plugins([
       sass({
@@ -55,7 +66,7 @@ class Plugins {
             path.join(__dirname, 'node_modules')
           ]
         },
-        processor: css => postcss(postcssPlugins).process(css).then(result => result.css),
+        processor: css => postcss(postcssPlugins).process(css, { from: void 0 }).then(result => result.css),
         output
       }),
       ...this.items
