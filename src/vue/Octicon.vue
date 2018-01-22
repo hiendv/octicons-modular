@@ -1,8 +1,5 @@
-<template>
-  <span v-html="icon.svg({ scale: scale })"></span>
-</template>
 <style lang="scss">
-  @import 'octicons/build/octicons.min';
+  @import '../style.scss';
 </style>
 <script>
 export default {
@@ -13,7 +10,7 @@ export default {
       default () {
         return {
           svg () {
-            return
+            return '<svg/>'
           }
         }
       },
@@ -27,6 +24,23 @@ export default {
         return 1
       }
     }
+  },
+  render (createElement) {
+    let div = document.createElement('div')
+    div.innerHTML = this.icon.svg({ scale: this.scale })
+    let svg = div.firstChild
+    let attrs = {}
+
+    for (let attr of svg.attributes) {
+      attrs[attr.name] = attr.value
+    }
+
+    return createElement('svg', {
+      attrs,
+      domProps: {
+        innerHTML: svg.innerHTML
+      }
+    })
   }
 }
 </script>

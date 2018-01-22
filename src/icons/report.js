@@ -2,14 +2,14 @@
 
 /* eslint-disable */
 export default {
-  name: 'file-text',
-  data: {"keywords":["document"],"path":"<path d=\"M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z\"></path>","height":"16","width":"12"},
+  name: 'report',
+  data: {"keywords":["report","abuse","flag"],"path":"<path fill-rule=\"nonzero\" d=\"M1 1h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H7l-4 4v-4H1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm14 1H1v9h3v2.5L6.5 11H15V2zM7 8h2v2H7V8zm2-5H7v4h2V3z\"></path>","height":"16","width":"16"},
   options: {
     'version': '1.1',
-    'width': 12,
+    'width': 16,
     'height': 16,
-    'viewBox': '0 0 12 16',
-    'class': 'octicon octicon-file-text',
+    'viewBox': '0 0 16 16',
+    'class': 'octicon octicon-report',
     'aria-hidden': 'true'
   },
 

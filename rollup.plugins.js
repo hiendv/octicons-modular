@@ -87,7 +87,11 @@ class Plugins {
           plugins: postcssPlugins
         }
       }),
-      buble(),
+      buble({
+        transforms: {
+          dangerousForOf: true
+        }
+      }),
       ...this.items
     ])
   }

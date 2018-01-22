@@ -5,9 +5,9 @@ describe('Octicon component', () => {
   test('renders the svg inside it', () => {
     const Octicon = require('../lib/react')
     const zap = require('../lib/icons/zap')
-    const span = document.createElement('span')
-    ReactDOM.render(<Octicon icon={zap} />, span)
-    expect(span.innerHTML).toBe(`<span>${ zap.svg() }</span>`)
+    const svg = document.createElement('svg')
+    ReactDOM.render(<Octicon icon={zap} />, svg)
+    expect(svg.innerHTML).toBe(`${ zap.svg() }`)
   })
 
   describe('element', () => {
@@ -32,9 +32,9 @@ describe('Octicon component', () => {
     test('is rendered with React', () => {
       const Octicon = require('../lib/react')
       const zap = require('../lib/icons/zap')
-      const span = document.createElement('span')
-      ReactDOM.render(<Octicon icon={zap} />, span)
-      expect(span.innerHTML).toBe('rendered')
+      const svg = document.createElement('svg')
+      ReactDOM.render(<Octicon icon={zap} />, svg)
+      expect(svg.innerHTML).toBe('rendered')
     })
   })
 })

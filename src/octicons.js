@@ -60,7 +60,6 @@ import filePdfIcon from './icons/file-pdf.js'
 import fileSubmoduleIcon from './icons/file-submodule.js'
 import fileSymlinkDirectoryIcon from './icons/file-symlink-directory.js'
 import fileSymlinkFileIcon from './icons/file-symlink-file.js'
-import fileTextIcon from './icons/file-text.js'
 import fileZipIcon from './icons/file-zip.js'
 import flameIcon from './icons/flame.js'
 import foldIcon from './icons/fold.js'
@@ -104,7 +103,6 @@ import logoGistIcon from './icons/logo-gist.js'
 import logoGithubIcon from './icons/logo-github.js'
 import mailIcon from './icons/mail.js'
 import mailReadIcon from './icons/mail-read.js'
-import mailReplyIcon from './icons/mail-reply.js'
 import markGithubIcon from './icons/mark-github.js'
 import markdownIcon from './icons/markdown.js'
 import megaphoneIcon from './icons/megaphone.js'
@@ -139,6 +137,7 @@ import repoForcePushIcon from './icons/repo-force-push.js'
 import repoForkedIcon from './icons/repo-forked.js'
 import repoPullIcon from './icons/repo-pull.js'
 import repoPushIcon from './icons/repo-push.js'
+import reportIcon from './icons/report.js'
 import rocketIcon from './icons/rocket.js'
 import rssIcon from './icons/rss.js'
 import rubyIcon from './icons/ruby.js'
@@ -238,7 +237,6 @@ export { filePdfIcon as filePdf }
 export { fileSubmoduleIcon as fileSubmodule }
 export { fileSymlinkDirectoryIcon as fileSymlinkDirectory }
 export { fileSymlinkFileIcon as fileSymlinkFile }
-export { fileTextIcon as fileText }
 export { fileZipIcon as fileZip }
 export { flameIcon as flame }
 export { foldIcon as fold }
@@ -282,7 +280,6 @@ export { logoGistIcon as logoGist }
 export { logoGithubIcon as logoGithub }
 export { mailIcon as mail }
 export { mailReadIcon as mailRead }
-export { mailReplyIcon as mailReply }
 export { markGithubIcon as markGithub }
 export { markdownIcon as markdown }
 export { megaphoneIcon as megaphone }
@@ -317,6 +314,7 @@ export { repoForcePushIcon as repoForcePush }
 export { repoForkedIcon as repoForked }
 export { repoPullIcon as repoPull }
 export { repoPushIcon as repoPush }
+export { reportIcon as report }
 export { rocketIcon as rocket }
 export { rssIcon as rss }
 export { rubyIcon as ruby }
@@ -417,7 +415,6 @@ export default {
   fileSubmodule: fileSubmoduleIcon,
   fileSymlinkDirectory: fileSymlinkDirectoryIcon,
   fileSymlinkFile: fileSymlinkFileIcon,
-  fileText: fileTextIcon,
   fileZip: fileZipIcon,
   flame: flameIcon,
   fold: foldIcon,
@@ -461,7 +458,6 @@ export default {
   logoGithub: logoGithubIcon,
   mail: mailIcon,
   mailRead: mailReadIcon,
-  mailReply: mailReplyIcon,
   markGithub: markGithubIcon,
   markdown: markdownIcon,
   megaphone: megaphoneIcon,
@@ -496,6 +492,7 @@ export default {
   repoForked: repoForkedIcon,
   repoPull: repoPullIcon,
   repoPush: repoPushIcon,
+  report: reportIcon,
   rocket: rocketIcon,
   rss: rssIcon,
   ruby: rubyIcon,

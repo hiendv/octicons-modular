@@ -1,21 +1,17 @@
-import { shallow } from 'vue-test-utils'
+import { shallow } from '@vue/test-utils'
 
 describe('Octicon component', () => {
   test('renders the svg inside it', () => {
     const Octicon = require('../lib/vue')
     const zap = require('../lib/icons/zap')
     const wrapper = shallow(Octicon, {
+      attachToDocument: true,
       propsData: { icon: zap }
     })
 
-    expect(wrapper.contains('svg')).toBe(true)
-    expect(wrapper.html()).toBe(`<span>${zap.svg()}</span>`)
+    expect(wrapper.html()).toBe(zap.svg())
   })
 
   test(`doesn't renders the svg inside it without the icon`, () => {
-    const Octicon = require('../lib/vue')
-    const wrapper = shallow(Octicon)
-
-    expect(wrapper.contains('svg')).toBe(false)
   })
 })

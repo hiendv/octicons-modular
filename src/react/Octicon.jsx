@@ -4,7 +4,21 @@ import React from 'react'
 import '../style.scss'
 
 const Octicon = ({ icon, scale }) => {
-  return <span dangerouslySetInnerHTML={ { __html: icon.svg({ scale }) } } />
+  let div = document.createElement('div')
+  div.innerHTML = icon.svg({ scale: scale })
+  let svg = div.firstChild
+  let attrs = {}
+
+  for (let attr of svg.attributes) {
+    if (attr.name === 'class') {
+      attrs.className = attr.value
+      continue
+    }
+
+    attrs[attr.name] = attr.value
+  }
+
+  return <svg {...attrs} dangerouslySetInnerHTML={ { __html: svg.innerHTML } }></svg>
 }
 
 Octicon.propTypes = {
