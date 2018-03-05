@@ -44,7 +44,7 @@ import octicons from 'octicons-modular'
 // const octicons = require('octicons-modular')
 
 octicons.zap.svg()
-// '<svg version="1.1" width="10" height="16" viewBox="0 0 10 16" class="octicon octicon-zap" aria-hidden="true" ><path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7z"></path></svg>'
+// '<svg version="1.1" width="10" height="16" viewBox="0 0 10 16" class="octicon octicon-zap" aria-hidden="true"><path fill-rule="evenodd" d="M10 7H6l3-7-9 9h4l-3 7z"></path></svg>'
 ```
 
 ### Tree-shaking
