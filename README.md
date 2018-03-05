@@ -17,12 +17,6 @@ yarn add octicons-modular
 ### Styling
 You may want to import or load the stylesheet at `octicons-modular/main.css`
 
-### VueJS
-Coming soon
-
-### ReactJS
-Coming soon
-
 ### Modular
 ```js
 import markGithub from 'octicons-modular/icons/mark-github'
