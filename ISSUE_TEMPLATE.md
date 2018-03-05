@@ -26,10 +26,10 @@
 
 ## Your Environment
 <!--- Include as many relevant details about the environment you experienced the bug in -->
-* Version used:
-* Environment name and version (e.g. Node.js v6.9.1, Babel 6.26.0):
-* Operating System and version (e.g. Ubuntu 16.04.3 LTS Xenial Xerus):
-* Link to your project (Optional):
+* Version:
+* Environment (e.g. Node.js v6.9.1, Babel 6.26.0):
+* OS (e.g. Ubuntu 16.04.3 LTS Xenial Xerus):
+* Link to the reproduction (recommended):
 
 ## Stack trace
 <!--- Include stack trace -->

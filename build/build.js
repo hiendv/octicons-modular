@@ -1,53 +1,75 @@
-import path from 'path'
-import glob from 'glob'
+import ejs from 'ejs'
+import fs from 'fs'
+import { rollup } from 'rollup'
 
-import config from '../config.js'
-import helpers from '../helpers.js'
-import { default as baseConfigs } from '../rollup.config.js'
-import plugins from '../rollup.plugins.js'
+import config from '../config'
+import utils, { rollupIconConfig, rollupMainConfig } from '../utils'
+import modularizer from './modularizer'
 
-const rollup = require('rollup')
+const roll = async config => {
+  if (config instanceof Array) {
+    return Promise.all(config.map(roll))
+  }
 
-const rollIcon = (name, input) => new Promise(async (resolve, reject) => {
-  const bundle = await rollup.rollup({
-    input,
-    plugins: plugins.withBabel().all(),
-    external: false
-  })
+  const bundle = await rollup(config)
+  if (config.output instanceof Array) {
+    // Multiple outputs
+    return Promise.all(config.output.map(async c => {
+      await bundle.write(c)
+      return c.output
+    }))
+  }
 
-  resolve({
-    name,
-    bundle
-  })
-})
-
-const buildBundles = async () => {
-  helpers.info(`Building bundles`)
-
-  baseConfigs.forEach(async baseConfig => {
-    const bundle = await rollup.rollup(baseConfig)
-    await bundle.write(baseConfig.output)
-    helpers.success(`Built bundle: ${baseConfig.output.format} format`)
-  })
+  await bundle.write(config.output)
+  return config.output
 }
 
-const buildIcons = () => new Promise((resolve, reject) => {
-  helpers.info(`Building icons`)
-
-  glob(path.resolve(config.srcPath, 'icons/*.js'), (err, files) => {
+const buildIcons = icons => Promise.all(icons.map(icon => roll(rollupIconConfig(icon))))
+const bundleMain = icons => new Promise((resolve, reject) => {
+  ejs.renderFile(config.templates.icons, { icons }, {}, (err, str) => {
     if (err) {
       reject(err)
+      return
     }
 
-    Promise.all(files.map(file => rollIcon(path.basename(file), file)))
-      .then(icons => Promise.all(
-        icons.map(icon => icon.bundle.write({ format: 'cjs', file: path.resolve(config.distPath, 'icons', icon.name) }))
-      ))
-      .then(bundles => {
-        helpers.success(`Built icons: ${bundles.length} icons`)
+    fs.writeFile(config.paths.srcIconsMain, str, err => {
+      if (err) {
+        reject(err)
+        return
+      }
+
+      resolve({
+        icons,
+        path: config.paths.srcIconsMain
       })
-      .then(resolve)
+    })
   })
 })
 
-buildIcons().then(buildBundles)
+modularizer()
+  .then(icons => {
+    utils.success(`Modularized: ${icons.length} icons`)
+    return icons
+  })
+  .then(icons => {
+    buildIcons(icons)
+      .then(icons => {
+        utils.success(`Modularly Built: ${icons.length} icons`)
+        return icons
+      })
+
+    bundleMain(icons)
+      .then(({ path }) => {
+        utils.success(`Main bundled: ${path}`)
+        return path
+      })
+      .then(path => roll(rollupMainConfig()))
+      .then(output => {
+        if (output instanceof Array) {
+          output.forEach(o => utils.success(`Main built: ${o.file} (${o.format})`))
+          return
+        }
+
+        utils.success(`Main built: ${output.file} (${output.format})`)
+      })
+  })
