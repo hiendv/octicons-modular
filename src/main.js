@@ -1,2 +1,3 @@
 import './style.scss'
-export * from './octicons.js'
+export * from './icons.js'
+export { default } from './icons.js'

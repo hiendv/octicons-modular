@@ -1,26 +1,7 @@
 {
   "name": "octicons-modular",
-  "version": "0.5.0",
+  "version": "0.6.8",
   "description": "Octicons with the icon-per-file style",
-  "main": "main.common.js",
-  "module": "main.es.js",
-  "browser": "main.iife.js",
-  "style": "main.css",
-  "scripts": {
-    "test": "jest",
-    "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "lint": "eslint --ext .js *.js ./src ./build ./test",
-    "dev": "nodemon ./src ./build ./test --exec 'npm run lint'",
-    "clean": "rimraf lib/* && rimraf src/icons/* && rimraf src/octicons.js && rimraf src/iife.js && mkdir -p lib/react && mkdir -p lib/vue",
-    "build-vue": "rollup -c ./rollup.vue.config.js",
-    "build-react": "rollup -c ./rollup.react.config.js",
-    "build": "npm run clean && babel-node --presets env build/modulize.js && npm run lint && babel-node --presets env build/build.js && npm run build-vue && npm run build-react && npm test",
-    "publish-meta": "mkdir -p lib && cp -rf package.json lib/package.json && cp -rf README.md lib/README.md && cp -rf LICENSE lib/LICENSE"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hiendv/octicons-modular.git"
-  },
   "keywords": [
     "icon",
     "icons",
@@ -32,59 +13,109 @@
     "tree-shaking",
     "svg"
   ],
-  "author": "Hien Dao <hien.dv.neo@gmail.com>",
   "license": "MIT",
-  "engineStrict": true,
-  "engines": {
-    "node": ">=6"
-  },
+  "homepage": "https://github.com/hiendv/octicons-modular",
   "bugs": {
     "url": "https://github.com/hiendv/octicons-modular/issues"
   },
-  "homepage": "https://github.com/hiendv/octicons-modular#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiendv/octicons-modular.git"
+  },
+  "author": "Hien Dao <hien.dv.neo@gmail.com>",
+  "main": "main.js",
+  "module": "es/main.js",
+  "browser": "main.umd.js",
+  "style": "main.css",
+  "scripts": {
+    "build": "rm -rf lib && npx babel-node ./build/build.js",
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "dev": "npx nodemon",
+    "lint": "npx eslint *.js ./src ./build ./test",
+    "modularize": "npx babel-node ./build/modularize.js",
+    "publish:meta": "cpx package.json lib && cpx README.md lib && cpx LICENSE lib",
+    "test": "npm run lint && npm run build && jest"
+  },
   "dependencies": {},
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.10",
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "chalk": "^2.3.0",
     "coveralls": "^3.0.0",
+    "cpx": "^1.5.0",
     "cssnano": "^3.10.0",
-    "eslint": "^4.16.0",
-    "eslint-config-standard": "^11.0.0-beta.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jest": "^21.7.0",
-    "eslint-plugin-node": "^5.2.1",
+    "ejs": "^2.5.7",
+    "eslint": "^4.18.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jest": "^21.12.2",
+    "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-react": "^7.5.1",
     "eslint-plugin-standard": "^3.0.1",
-    "handlebars": "^4.0.11",
-    "jest": "^22",
+    "jest": "^22.4.2",
     "lodash.camelcase": "^4.3.0",
     "lodash.mapvalues": "^4.6.0",
-    "nodemon": "^1.14.11",
+    "nodemon": "^1.15.1",
+    "npx": "^9.7.1",
     "octicons": "^7.1.0",
     "parse5": "^4.0.0",
-    "postcss": "^6.0.16",
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "rimraf": "^2.6.2",
-    "rollup": "^0.54.1",
-    "rollup-plugin-babel": "^3.0.3",
-    "rollup-plugin-buble": "^0.18.0",
-    "rollup-plugin-commonjs": "^8.2.6",
-    "rollup-plugin-node-resolve": "^3.0.2",
-    "rollup-plugin-sass": "^0.5.3",
-    "rollup-plugin-uglify": "^3.0.0",
-    "rollup-plugin-vue": "^3.0.0",
-    "vue": "^2.5.13",
-    "vue-loader": "^13.7.0",
-    "vue-template-compiler": "^2.5.13"
+    "postcss": "^6.0.19",
+    "rollup": "^0.56.3",
+    "rollup-plugin-sass": "^0.6.0",
+    "rollup-plugin-uglify": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "engineStrict": true,
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "jest": {
+    "verbose": false,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "lib/**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true,
+      "jest/globals": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:jest/recommended",
+      "standard"
+    ],
+    "plugins": [
+      "jest"
+    ],
+    "rules": {
+      "array-bracket-spacing": [
+        "error",
+        "always"
+      ],
+      "jest/no-disabled-tests": "warn",
+      "jest/no-focused-tests": "error",
+      "jest/no-identical-title": "error",
+      "jest/prefer-to-have-length": "warn",
+      "jest/valid-expect": "error"
+    }
+  },
+  "nodemonConfig": {
+    "exec": "npm test",
+    "restartable": "rs",
+    "ignore": [
+      ".*/*",
+      "node_modules/*",
+      "lib/*",
+      "src/icons*"
+    ]
   }
 }
