@@ -1,6 +1,6 @@
 {
   "name": "octicons-modular",
-  "version": "0.6.0",
+  "version": "0.6.8",
   "description": "Octicons with the icon-per-file style",
   "keywords": [
     "icon",
@@ -23,16 +23,17 @@
     "url": "git+https://github.com/hiendv/octicons-modular.git"
   },
   "author": "Hien Dao <hien.dv.neo@gmail.com>",
-  "main": "lib/main.js",
-  "module": "lib/es/main.js",
-  "browser": "lib/main.umd.js",
-  "style": "lib/main.css",
+  "main": "main.js",
+  "module": "es/main.js",
+  "browser": "main.umd.js",
+  "style": "main.css",
   "scripts": {
     "build": "npx babel-node ./build/build.js",
     "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "dev": "npx nodemon",
     "lint": "npx eslint *.js ./src ./build ./test",
     "modularize": "npx babel-node ./build/modularize.js",
+    "publish:meta": "cpx package.json lib && cpx README.md lib && cpx LICENSE lib",
     "test": "npm run lint && npm run build && jest"
   },
   "dependencies": {},
@@ -40,6 +41,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "coveralls": "^3.0.0",
+    "cpx": "^1.5.0",
     "cssnano": "^3.10.0",
     "ejs": "^2.5.7",
     "eslint": "^4.18.1",
