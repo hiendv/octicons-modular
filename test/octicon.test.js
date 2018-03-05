@@ -9,7 +9,7 @@ describe('mock', () => {
         default: 'something else'
       }
     })
-    const Octicons = require('../')
+    const Octicons = require('../lib/main.js')
     jest.unmock(`../lib/icons/alert.js`)
 
     expect(Octicons.alert).toBe('something else')
@@ -21,7 +21,7 @@ describe('mock', () => {
         return name
       }
     })
-    const Octicons = require('../')
+    const Octicons = require('../lib/main.js')
     jest.unmock(`../lib/octicon.js`)
 
     expect(Octicons.alert).toBe('alert')

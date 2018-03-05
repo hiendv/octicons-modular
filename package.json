@@ -28,7 +28,7 @@
   "browser": "main.umd.js",
   "style": "main.css",
   "scripts": {
-    "build": "npx babel-node ./build/build.js",
+    "build": "rm -rf lib && npx babel-node ./build/build.js",
     "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "dev": "npx nodemon",
     "lint": "npx eslint *.js ./src ./build ./test",
@@ -76,7 +76,7 @@
     "verbose": false,
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "lib/**"
+      "lib/**/*.js"
     ],
     "coveragePathIgnorePatterns": [
       "/node_modules/"
