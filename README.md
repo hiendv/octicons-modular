@@ -14,6 +14,9 @@ yarn add octicons-modular
 ```
 
 ## Usage
+### Styling
+You may want to import or load the stylesheet at `octicons-modular/main.css`
+
 ### VueJS
 Coming soon
 
@@ -22,11 +25,6 @@ Coming soon
 
 ### Modular
 ```js
-// CSS
-import 'octicons-modular/main.css'
-// require('octicons-modular/main.css')
-
-// Icon
 import markGithub from 'octicons-modular/icons/mark-github'
 // const markGithub = require('octicons-modular/icons/mark-github')
 
@@ -36,10 +34,6 @@ markGithub.svg()
 
 ### Bundle
 ```js
-// CSS
-import 'octicons-modular/main.css'
-// require('octicons-modular/main.css')
-
 import octicons from 'octicons-modular'
 // const octicons = require('octicons-modular')
 
