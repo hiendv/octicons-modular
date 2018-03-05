@@ -4,8 +4,7 @@
 It's technically [GitHub Octicons](https://github.com/primer/octicons) but with the icon-per-file style.
 
 ## Supported octicons
-[Octicons v6.0.1](https://github.com/primer/octicons/tree/v6.0.1/lib/svg). Below are some of them. More with previews at [GitHub Octicons](https://octicons.github.com/)
-![Octicons](https://raw.githubusercontent.com/hiendv/octicons-modular/master/octicons.png)
+[Octicons v7.1.0](https://github.com/primer/octicons/tree/v7.1.0/lib/svg)
 
 ## Installation
 ```bash
