@@ -11,6 +11,7 @@
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "diff": "lerna diff",
     "lint": "eslint .",
+    "pretest": "npm run lint",
     "test": "jest"
   },
   "devDependencies": {
