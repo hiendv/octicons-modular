@@ -1,11 +1,4 @@
 # Modular Octicons
-[![dependencies Status](https://david-dm.org/hiendv/octicons-modular/status.svg)](https://david-dm.org/hiendv/octicons-modular) [![devDependencies Status](https://david-dm.org/hiendv/octicons-modular/dev-status.svg)](https://david-dm.org/hiendv/octicons-modular?type=dev) [![Known Vulnerabilities](https://snyk.io/test/github/hiendv/octicons-modular/badge.svg)](https://snyk.io/test/github/hiendv/octicons-modular)
-
-It's technically [GitHub Octicons](https://github.com/primer/octicons) but with the icon-per-file style.
-
-## Supported octicons
-[Octicons v7.1.0](https://github.com/primer/octicons/tree/v7.1.0/lib/svg)
-
 ## Installation
 ```bash
 npm install --save octicons-modular
@@ -38,6 +31,12 @@ octicons.zap.svg()
 ### Tree-shaking
 The package supports tree-shaking when importing octicons with Webpack 2 or Rollup.
 ```js
+// main.js
+import { alert, zap } from 'octicons-modular'
+console.log(alert.svg()) // the zap icon is left untouched intentionally
+```
+
+```js
 // rollup.config.js
 export default {
   input: 'main.js',
@@ -46,12 +45,6 @@ export default {
     format: 'es'
   }
 }
-```
-
-```js
-// main.js
-import { alert, zap } from 'octicons-modular'
-console.log(alert.svg()) // the zap icon is left untouched intentionally
 ```
 
 ```bash
