@@ -20,7 +20,7 @@
   "browser": "lib/main.umd.js",
   "style": "lib/main.css",
   "scripts": {
-    "build": "babel-node ./build/build.js",
+    "build": "babel-node ./build/build.js"
   },
   "devDependencies": {
     "cssnano": "^3.10.0",
