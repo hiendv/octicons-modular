@@ -6,11 +6,10 @@
   "scripts": {
     "bootstrap": "lerna bootstrap --hoist",
     "build": "lerna run build --stream",
-    "clean": "lerna clean",
     "coverage": "jest --coverage",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "diff": "lerna diff",
     "lint": "eslint .",
+    "postinstall": "lerna bootstrap",
     "pretest": "npm run lint",
     "test": "jest"
   },
