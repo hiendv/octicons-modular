@@ -6,17 +6,15 @@
   "scripts": {
     "bootstrap": "lerna bootstrap --hoist",
     "build": "lerna run build --stream",
-    "coverage": "jest --coverage",
-    "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "lint": "eslint .",
-    "postinstall": "lerna bootstrap",
     "pretest": "npm run lint",
-    "test": "jest"
+    "test": "jest",
+    "test-ci": "npm run bootstrap && npm test -- --coverage && codecov"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "coveralls": "^3.0.0",
+    "codecov": "^3.0.0",
     "eslint": "^4.18.2",
     "eslint-config-import": "^0.13.0",
     "eslint-config-standard": "^11.0.0",
