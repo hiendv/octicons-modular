@@ -1,19 +1,31 @@
 {
-  "name": "octicons-modular",
-  "version": "0.6.9",
-  "description": "Octicons with the icon-per-file style",
-  "keywords": [
-    "icon",
-    "icons",
-    "octicons",
-    "modular",
-    "vuejs",
-    "react",
-    "component",
-    "tree-shaking",
-    "svg"
-  ],
+  "name": "octicons-modular-monorepo",
+  "private": true,
+  "author": "Hien Dao <hien.dv.neo@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "bootstrap": "lerna bootstrap --hoist",
+    "build": "lerna run build --stream",
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "test-ci": "npm run bootstrap && npm test -- --coverage && codecov"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "codecov": "^3.0.0",
+    "eslint": "^4.18.2",
+    "eslint-config-import": "^0.13.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jest": "^21.13.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^22.4.2",
+    "lerna": "^2.9.0"
+  },
   "homepage": "https://github.com/hiendv/octicons-modular",
   "bugs": {
     "url": "https://github.com/hiendv/octicons-modular/issues"
@@ -22,64 +34,10 @@
     "type": "git",
     "url": "git+https://github.com/hiendv/octicons-modular.git"
   },
-  "author": "Hien Dao <hien.dv.neo@gmail.com>",
-  "main": "main.js",
-  "module": "es/main.js",
-  "browser": "main.umd.js",
-  "style": "main.css",
-  "scripts": {
-    "build": "rm -rf lib && npx babel-node ./build/build.js",
-    "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "dev": "npx nodemon",
-    "lint": "npx eslint *.js ./src ./build ./test",
-    "modularize": "npx babel-node ./build/modularize.js",
-    "publish:meta": "cpx package.json lib && cpx README.md lib && cpx LICENSE lib",
-    "test": "npm run lint && npm run build && jest"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "coveralls": "^3.0.0",
-    "cpx": "^1.5.0",
-    "cssnano": "^3.10.0",
-    "ejs": "^2.5.7",
-    "eslint": "^4.18.2",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-jest": "^21.12.3",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "jest": "^22.4.2",
-    "lodash.camelcase": "^4.3.0",
-    "lodash.mapvalues": "^4.6.0",
-    "nodemon": "^1.17.1",
-    "npx": "^9.7.1",
-    "octicons": "^7.1.0",
-    "parse5": "^4.0.0",
-    "postcss": "^6.0.19",
-    "rollup": "^0.56.4",
-    "rollup-plugin-sass": "^0.6.0",
-    "rollup-plugin-uglify": "^3.0.0"
-  },
-  "engines": {
-    "node": ">=6"
-  },
-  "engineStrict": true,
-  "babel": {
-    "presets": [
-      "env"
-    ]
-  },
   "jest": {
     "verbose": false,
-    "collectCoverage": true,
     "collectCoverageFrom": [
-      "lib/**/*.js"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/"
+      "packages/**/lib/**/*.js"
     ]
   },
   "eslintConfig": {
@@ -108,14 +66,14 @@
       "jest/valid-expect": "error"
     }
   },
-  "nodemonConfig": {
-    "exec": "npm test",
-    "restartable": "rs",
-    "ignore": [
-      ".*/*",
-      "node_modules/*",
-      "lib/*",
-      "src/icons*"
+  "eslintIgnore": [
+    "node_modules",
+    "lib",
+    "coverage"
+  ],
+  "babel": {
+    "presets": [
+      "env"
     ]
   }
 }

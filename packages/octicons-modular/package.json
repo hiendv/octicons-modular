@@ -1,0 +1,35 @@
+{
+  "name": "octicons-modular",
+  "version": "0.6.9",
+  "description": "Octicons with the icon-per-file style",
+  "keywords": [
+    "icon",
+    "icons",
+    "octicons",
+    "modular",
+    "vuejs",
+    "react",
+    "component",
+    "tree-shaking",
+    "svg"
+  ],
+  "license": "MIT",
+  "author": "Hien Dao <hien.dv.neo@gmail.com>",
+  "main": "lib/main.js",
+  "module": "lib/es/main.js",
+  "browser": "lib/main.umd.js",
+  "style": "lib/main.css",
+  "scripts": {
+    "build": "babel-node ./build/build.js"
+  },
+  "devDependencies": {
+    "cssnano": "^3.10.0",
+    "ejs": "^2.5.7",
+    "lodash.camelcase": "^4.3.0",
+    "lodash.mapvalues": "^4.6.0",
+    "octicons": "^7.1.0",
+    "rollup": "^0.56.4",
+    "rollup-plugin-sass": "^0.6.0",
+    "rollup-plugin-uglify": "^3.0.0"
+  }
+}
