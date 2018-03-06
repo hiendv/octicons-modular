@@ -1,0 +1,6 @@
+src/icons.js
+src/icons/*
+
+lib/*.md
+lib/package.json
+lib/LICENSE

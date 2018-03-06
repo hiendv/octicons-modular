@@ -1,12 +1,5 @@
-node_modules
+node_modules/
 *.log
 package-lock.json
 .coveralls.yml
 coverage
-
-src/icons.js
-src/icons/*
-
-lib/*.md
-lib/package.json
-lib/LICENSE
