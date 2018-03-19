@@ -19,6 +19,11 @@
   "module": "lib/es/main.js",
   "browser": "lib/main.umd.js",
   "style": "lib/main.css",
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "babel-node ./build/build.js"
   },
