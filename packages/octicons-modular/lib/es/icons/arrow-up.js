@@ -1,1 +1,0 @@
-import factory from"../octicon.js";var arrowUp=factory("arrow-up",{keywords:["point","direction"],path:'<path fill-rule="evenodd" d="M5 3L0 9h3v4h4V9h3z"></path>',height:"16",width:"10"});export default arrowUp;

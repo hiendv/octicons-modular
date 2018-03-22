@@ -1,1 +1,0 @@
-import factory from"../octicon.js";var plusSmall=factory("plus-small",{keywords:["add","new","more","small"],path:'<path fill-rule="evenodd" d="M4 7V4H3v3H0v1h3v3h1V8h3V7H4z"></path>',height:"16",width:"7"});export default plusSmall;

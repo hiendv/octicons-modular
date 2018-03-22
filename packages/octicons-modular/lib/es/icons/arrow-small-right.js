@@ -1,1 +1,0 @@
-import factory from"../octicon.js";var arrowSmallRight=factory("arrow-small-right",{keywords:["point","direction","little","tiny"],path:'<path fill-rule="evenodd" d="M6 8L2 5v2H0v2h2v2z"></path>',height:"16",width:"6"});export default arrowSmallRight;

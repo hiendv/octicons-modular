@@ -1,1 +1,0 @@
-import factory from"../octicon.js";var triangleUp=factory("triangle-up",{keywords:["arrow","point","direction"],path:'<path fill-rule="evenodd" d="M12 11L6 5l-6 6z"></path>',height:"16",width:"12"});export default triangleUp;

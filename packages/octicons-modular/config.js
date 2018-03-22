@@ -15,14 +15,11 @@ export const paths = (base => {
   _.srcIconBase = path.resolve(_.src, 'octicon.js')
   _.srcIconsMain = path.resolve(_.src, 'icons.js')
   _.srcIcons = path.resolve(_.src, _.iconsDir)
-  _.srcIconsES = path.resolve(_.src, 'es', _.iconsDir)
   _.destIcons = path.resolve(_.dest, _.iconsDir)
-  _.destIconsES = path.resolve(_.dest, 'es', _.iconsDir)
   _.destMain = path.resolve(_.dest, 'main.js')
   _.destIconBase = path.resolve(_.dest, 'octicon.js')
   _.destMainUMD = path.resolve(_.dest, 'main.umd.js')
-  _.destMainES = path.resolve(_.dest, 'es', 'main.js')
-  _.destIconBaseES = path.resolve(_.dest, 'es', 'octicon.js')
+  _.destMainES = path.resolve(_.dest, 'main.es.js')
   _.destMainStyle = path.resolve(_.dest, 'main.css')
   _.sassIncludePaths = [ _.nodeModules ]
 
