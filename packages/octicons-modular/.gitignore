@@ -1,5 +1,5 @@
 src/icons.js
-src/icons/*
+src/icons/*.js
 
 lib/*.md
 lib/package.json
