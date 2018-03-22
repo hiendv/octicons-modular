@@ -24,7 +24,8 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^22.4.2",
-    "lerna": "^2.9.0"
+    "lerna": "^2.9.0",
+    "rimraf": "^2.6.2"
   },
   "homepage": "https://github.com/hiendv/octicons-modular",
   "bugs": {

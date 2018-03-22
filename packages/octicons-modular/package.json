@@ -25,6 +25,7 @@
     "LICENSE"
   ],
   "scripts": {
+    "prebuild": "rimraf lib",
     "build": "babel-node ./build/build.js"
   },
   "devDependencies": {
