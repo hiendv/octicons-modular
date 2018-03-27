@@ -16,7 +16,7 @@
   "license": "MIT",
   "author": "Hien Dao <hien.dv.neo@gmail.com>",
   "main": "lib/main.js",
-  "module": "lib/es/main.js",
+  "module": "lib/main.es.js",
   "browser": "lib/main.umd.js",
   "style": "lib/main.css",
   "files": [
