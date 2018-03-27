@@ -1,7 +1,13 @@
 // This is auto-generated ES2015 icons from the modularize script. Please do not modify this file.
 <% icons.forEach(icon => { -%>
-export { default as <%= icon.camelName %> } from './icons/<%= icon.file %>'
+import { default as <%= icon.camelName %>$ } from './icons/<%= icon.file %>'
 <% }) -%>
 
-const icons = exports
+let icons = {}
+
+<% icons.forEach(icon => { -%>
+export { <%= icon.camelName %>$ as <%= icon.camelName %> }
+icons.<%= icon.camelName %> = <%= icon.camelName %>$
+<% }) -%>
+
 export default icons

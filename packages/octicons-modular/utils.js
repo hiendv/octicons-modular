@@ -53,17 +53,9 @@ export function rollupMainConfig () {
     output: {
       file: config.paths.destIconBase,
       format: 'cjs',
-      exports: 'named'
+      exports: 'default'
     },
     plugins
-  }, {
-    input,
-    output: {
-      file: config.paths.destMainES,
-      format: 'es'
-    },
-    plugins,
-    external: id => new RegExp(`${config.paths.iconsDir}/`).test(id)
   }, {
     input,
     output: {
@@ -80,6 +72,13 @@ export function rollupMainConfig () {
       format: 'umd',
       exports: 'named',
       name: config.name
+    },
+    plugins
+  }, {
+    input,
+    output: {
+      file: config.paths.destMainES,
+      format: 'es'
     },
     plugins
   } ]
