@@ -8,7 +8,7 @@ yarn add octicons-modular
 
 ## Usage
 ### Styling
-You may want to import or load the stylesheet at `octicons-modular/main.css`
+You may want to import or load the stylesheet at `octicons-modular/lib/main.css`
 
 ### Modular
 ```js
