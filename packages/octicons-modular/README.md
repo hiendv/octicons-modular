@@ -67,9 +67,9 @@ console.log(alert$.svg());
 ## Options
 ```js
 octicons.zap.svg({
-  'scale': 1 // Scale the SVG. Default: 1.
-  'aria-label': 'very fast' // Set the aria-label attribute. Default: undefined.
-  'class': 'an-additional-class' // Add a custom class. Default: null.
+  scale: 1 // Scale the SVG. Default: 1.
+  label: 'very fast' // Set the aria-label attribute. Default: undefined.
+  class: 'an-additional-class' // Add a custom class. Default: null.
 })
 ```
 

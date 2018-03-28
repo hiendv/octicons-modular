@@ -20,7 +20,7 @@ export default function (name, data) {
         return this.attrsFormat(attrs)
       }
 
-      this.attrLabel(attrs, options['aria-label'])
+      this.attrLabel(attrs, options['label'])
       this.attrClass(attrs, options['class'])
       this.attrScale(attrs, options['scale'])
       return this.attrsFormat(attrs)
@@ -32,6 +32,8 @@ export default function (name, data) {
 
       attrs['aria-label'] = label
       attrs['role'] = 'img'
+
+      delete attrs['label']
       delete attrs['aria-hidden']
     },
     attrClass (attrs, className) {

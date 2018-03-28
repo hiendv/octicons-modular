@@ -43,7 +43,7 @@ const t = octicon => {
 
       test(`returns an SVG with the aria-label attribute`, () => {
         const ariaLabel = 'a label'
-        expect(octicon.svg({ 'aria-label': ariaLabel })).toBe(`<svg version="1.1" width="${data.width}" height="${data.height}" viewBox="0 0 ${data.width} ${data.height}" class="octicon octicon-${octicon.name}" aria-label="${ariaLabel}" role="img">${data.path}</svg>`)
+        expect(octicon.svg({ label: ariaLabel })).toBe(`<svg version="1.1" width="${data.width}" height="${data.height}" viewBox="0 0 ${data.width} ${data.height}" class="octicon octicon-${octicon.name}" aria-label="${ariaLabel}" role="img">${data.path}</svg>`)
       })
     })
   })
