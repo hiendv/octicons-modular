@@ -1,61 +1,63 @@
 export default function (name, data) {
-  const { width, height } = data
+  const { width, height, path } = data
+
+  const attributes = opts => {
+    let options = Object.assign({}, {
+      scale: 1,
+      label: null,
+      class: null
+    }, opts)
+
+    let attrs = elementAttributes({
+      version: '1.1',
+      width,
+      height,
+      viewBox: `0 0 ${width} ${height}`
+    }, options)
+
+    return elementAttributesString(attrs)
+  }
+
+  const elementAttributes = (attrs, options) => {
+    if (options.label) {
+      attrs['aria-label'] = options.label
+    } else {
+      attrs['aria-hidden'] = true
+    }
+
+    if (options.class) {
+      attrs['class'] = `octicon octicon-${name} ${options.class}`
+    } else {
+      attrs['class'] = `octicon octicon-${name}`
+    }
+
+    let actualScale = options.scale === 0 ? 0 : parseFloat(options.scale) || 1
+    let actualWidth = actualScale * parseInt(attrs['width'])
+    let actualHeight = actualScale * parseInt(attrs['height'])
+
+    attrs['width'] = Number(actualWidth.toFixed(2))
+    attrs['height'] = Number(actualHeight.toFixed(2))
+
+    return attrs
+  }
+
+  const elementAttributesString = attrs => {
+    return Object.keys(attrs).map(name => {
+      if (!attrs[name] === null || attrs[name] === undefined) {
+        return
+      }
+
+      return `${name}="${attrs[name]}"`
+    }).join(' ').trim()
+  }
+
   return {
     name,
     data,
-    options: {
-      'version': '1.1',
-      'width': width,
-      'height': height,
-      'viewBox': `0 0 ${width} ${height}`,
-      'class': `octicon octicon-${name}`,
-      'aria-hidden': 'true'
-    },
     svg (options) {
-      return `<svg ${this.attrs(options)}>${this.data.path}</svg>`
-    },
-    attrs (options) {
-      let attrs = Object.assign({}, this.options, options)
-      if (!options) {
-        return this.attrsFormat(attrs)
-      }
-
-      this.attrLabel(attrs, options['label'])
-      this.attrClass(attrs, options['class'])
-      this.attrScale(attrs, options['scale'])
-      return this.attrsFormat(attrs)
-    },
-    attrLabel (attrs, label) {
-      if (!label) {
-        return
-      }
-
-      attrs['aria-label'] = label
-      attrs['role'] = 'img'
-
-      delete attrs['label']
-      delete attrs['aria-hidden']
-    },
-    attrClass (attrs, className) {
-      if (!className) {
-        return
-      }
-
-      attrs['class'] = `octicon octicon-${this.name} ${className}`
-    },
-    attrScale (attrs, scale) {
-      let actualScale = scale === 0 ? 0 : parseFloat(scale) || 1
-      let actualWidth = actualScale * parseInt(attrs['width'])
-      let actualHeight = actualScale * parseInt(attrs['height'])
-
-      attrs['width'] = Number(actualWidth.toFixed(2))
-      attrs['height'] = Number(actualHeight.toFixed(2))
-      delete attrs['scale']
-    },
-    attrsFormat (attributes) {
-      return Object.keys(attributes).map(name => {
-        return `${name}="${attributes[name]}"`
-      }).join(' ').trim()
+      let wrapper = document.createElement('div')
+      wrapper.innerHTML = `<svg ${attributes(options)}>${path}</svg>`
+      return wrapper.firstChild
     }
   }
 }
