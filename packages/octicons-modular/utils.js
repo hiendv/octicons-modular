@@ -2,6 +2,7 @@ import chalk from 'chalk'
 import cssnano from 'cssnano'
 import path from 'path'
 import postcss from 'postcss'
+import buble from 'rollup-plugin-buble'
 import sass from 'rollup-plugin-sass'
 import uglify from 'rollup-plugin-uglify'
 
@@ -39,49 +40,67 @@ export function rollupIconConfig (icon) {
 
 export function rollupMainConfig () {
   let input = config.paths.srcMain
-  let plugins = [
-    sass({
-      options: { includePaths: [ path.join(__dirname, 'node_modules') ] },
-      processor: css => postcss([ cssnano() ]).process(css, { from: void 0 }).then(result => result.css),
-      output: config.paths.destMainStyle
-    }),
-    uglify()
+  return [
+    {
+      input: config.paths.srcIconBase,
+      output: {
+        file: config.paths.destIconBase,
+        format: 'cjs',
+        exports: 'default'
+      },
+      plugins: [ buble(), uglify() ]
+    },
+    {
+      input,
+      output: {
+        file: config.paths.destMainUMD,
+        format: 'umd',
+        exports: 'named',
+        name: config.name
+      },
+      plugins: [
+        sass({
+          options: { includePaths: [ path.join(__dirname, 'node_modules') ] },
+          processor: css => postcss([ cssnano() ]).process(css, { from: void 0 }).then(result => result.css),
+          output: config.paths.destMainStyle
+        }),
+        buble(),
+        uglify()
+      ]
+    },
+    {
+      input,
+      output: {
+        file: config.paths.destMain,
+        format: 'cjs',
+        exports: 'named'
+      },
+      plugins: [
+        sass({
+          options: { includePaths: [ path.join(__dirname, 'node_modules') ] },
+          processor: css => postcss([ cssnano() ]).process(css, { from: void 0 }).then(result => result.css),
+          output: config.paths.destMainStyle
+        }),
+        uglify()
+      ],
+      external: id => new RegExp(`${config.paths.iconsDir}/`).test(id)
+    },
+    {
+      input,
+      output: {
+        file: config.paths.destMainES,
+        format: 'es'
+      },
+      plugins: [
+        sass({
+          options: { includePaths: [ path.join(__dirname, 'node_modules') ] },
+          processor: css => postcss([ cssnano() ]).process(css, { from: void 0 }).then(result => result.css),
+          output: config.paths.destMainStyle
+        }),
+        uglify()
+      ]
+    }
   ]
-
-  return [ {
-    input: config.paths.srcIconBase,
-    output: {
-      file: config.paths.destIconBase,
-      format: 'cjs',
-      exports: 'default'
-    },
-    plugins
-  }, {
-    input,
-    output: {
-      file: config.paths.destMain,
-      format: 'cjs',
-      exports: 'named'
-    },
-    plugins,
-    external: id => new RegExp(`${config.paths.iconsDir}/`).test(id)
-  }, {
-    input,
-    output: {
-      file: config.paths.destMainUMD,
-      format: 'umd',
-      exports: 'named',
-      name: config.name
-    },
-    plugins
-  }, {
-    input,
-    output: {
-      file: config.paths.destMainES,
-      format: 'es'
-    },
-    plugins
-  } ]
 }
 
 export default { info, infoStd, success, successStd, rollupIconConfig, rollupMainConfig }
