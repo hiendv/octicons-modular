@@ -54,8 +54,8 @@ export default function (name, data) {
   return {
     name,
     data,
-    svg (options) {
-      let wrapper = document.createElement('div')
+    svg (options, doc = document) {
+      let wrapper = doc.createElement('div')
       wrapper.innerHTML = `<svg ${attributes(options)}>${path}</svg>`
       return wrapper.firstChild
     }
