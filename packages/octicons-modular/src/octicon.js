@@ -43,10 +43,6 @@ export default function (name, data) {
 
   const elementAttributesString = attrs => {
     return Object.keys(attrs).map(name => {
-      if (!attrs[name] === null || attrs[name] === undefined) {
-        return
-      }
-
       return `${name}="${attrs[name]}"`
     }).join(' ').trim()
   }
