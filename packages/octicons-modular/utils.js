@@ -81,6 +81,7 @@ export function rollupMainConfig () {
           processor: css => postcss([ cssnano() ]).process(css, { from: void 0 }).then(result => result.css),
           output: config.paths.destMainStyle
         }),
+        buble(),
         uglify()
       ],
       external: id => new RegExp(`${config.paths.iconsDir}/`).test(id)
