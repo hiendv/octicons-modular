@@ -1,1 +1,1 @@
-"use strict";function _interopDefault(e){return e&&"object"==typeof e&&"default"in e?e.default:e}var factory=_interopDefault(require("../octicon.js")),primitiveSquare=factory("primitive-square",{keywords:["box"],path:'<path fill-rule="evenodd" d="M8 12H0V4h8z"></path>',height:"16",width:"8"});module.exports=primitiveSquare;
+"use strict";var factory=require("../octicon.js"),primitiveSquare=factory("primitive-square",{keywords:["box"],path:'<path fill-rule="evenodd" d="M8 12H0V4h8z"></path>',height:"16",width:"8"});module.exports=primitiveSquare;

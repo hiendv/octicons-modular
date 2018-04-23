@@ -14,26 +14,6 @@ describe('octicons', () => {
     jest.resetModules()
   })
 
-  test(`works with a fake icon`, () => {
-    jest.doMock(`../lib/icons/alert.js`, () => {
-      return {
-        default: 'alert'
-      }
-    })
-
-    jest.doMock(`../lib/icons/zap.js`, () => {
-      return {
-        default: 'zap'
-      }
-    })
-
-    const Octicons = require('../lib/main.js')
-    jest.unmock(`../lib/icons/alert.js`)
-
-    expect(Octicons.alert).toBe('alert')
-    expect(Octicons.zap).toBe('zap')
-  })
-
   test('works with a fake factory', () => {
     jest.doMock(`../lib/octicon.js`, () => {
       return (name, data) => {

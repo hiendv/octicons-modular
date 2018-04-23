@@ -1,1 +1,1 @@
-"use strict";function _interopDefault(e){return e&&"object"==typeof e&&"default"in e?e.default:e}var factory=_interopDefault(require("../octicon.js")),dash=factory("dash",{keywords:["hyphen","range"],path:'<path fill-rule="evenodd" d="M0 7v2h8V7z"></path>',height:"16",width:"8"});module.exports=dash;
+"use strict";var factory=require("../octicon.js"),dash=factory("dash",{keywords:["hyphen","range"],path:'<path fill-rule="evenodd" d="M0 7v2h8V7z"></path>',height:"16",width:"8"});module.exports=dash;

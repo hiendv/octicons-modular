@@ -1,1 +1,1 @@
-"use strict";function _interopDefault(e){return e&&"object"==typeof e&&"default"in e?e.default:e}var factory=_interopDefault(require("../octicon.js")),plus=factory("plus",{keywords:["add","new","more"],path:'<path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5z"></path>',height:"16",width:"12"});module.exports=plus;
+"use strict";var factory=require("../octicon.js"),plus=factory("plus",{keywords:["add","new","more"],path:'<path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5z"></path>',height:"16",width:"12"});module.exports=plus;

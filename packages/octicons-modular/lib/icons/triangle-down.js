@@ -1,1 +1,1 @@
-"use strict";function _interopDefault(t){return t&&"object"==typeof t&&"default"in t?t.default:t}var factory=_interopDefault(require("../octicon.js")),triangleDown=factory("triangle-down",{keywords:["arrow","point","direction"],path:'<path fill-rule="evenodd" d="M0 5l6 6 6-6z"></path>',height:"16",width:"12"});module.exports=triangleDown;
+"use strict";var factory=require("../octicon.js"),triangleDown=factory("triangle-down",{keywords:["arrow","point","direction"],path:'<path fill-rule="evenodd" d="M0 5l6 6 6-6z"></path>',height:"16",width:"12"});module.exports=triangleDown;

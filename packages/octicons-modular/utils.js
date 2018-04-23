@@ -31,7 +31,8 @@ export function rollupIconConfig (icon) {
     input: icon.path,
     output: [ {
       format: 'cjs',
-      file: path.resolve(config.paths.destIcons, icon.file)
+      file: path.resolve(config.paths.destIcons, icon.file),
+      interop: false
     } ],
     plugins: [ uglify() ],
     external: id => /\/octicon\.js/.test(id)
@@ -73,7 +74,8 @@ export function rollupMainConfig () {
       output: {
         file: config.paths.destMain,
         format: 'cjs',
-        exports: 'named'
+        exports: 'named',
+        interop: false
       },
       plugins: [
         sass({
