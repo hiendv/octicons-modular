@@ -30,13 +30,13 @@
   },
   "devDependencies": {
     "cssnano": "^3.10.0",
-    "ejs": "^2.5.7",
+    "ejs": "^2.5.9",
     "lodash.camelcase": "^4.3.0",
     "lodash.mapvalues": "^4.6.0",
     "octicons": "^7.1.0",
-    "rollup": "^0.56.4",
+    "rollup": "^0.58.2",
     "rollup-plugin-buble": "^0.19.2",
-    "rollup-plugin-sass": "^0.6.0",
+    "rollup-plugin-sass": "^0.6.1",
     "rollup-plugin-uglify": "^3.0.0"
   }
 }
