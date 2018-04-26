@@ -1,1 +1,1 @@
-"use strict";var factory=require("../octicon.js"),chevronDown=factory("chevron-down",{keywords:["triangle","arrow"],path:'<path fill-rule="evenodd" d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z"></path>',height:"16",width:"10"});module.exports=chevronDown;
+"use strict";var factory=require("../octicon.js"),chevronDown=factory("chevron-down",{keywords:["triangle","arrow"],path:'<path fill-rule="evenodd" d="M5 11.5l-5-5L1.5 5 5 8.75 8.5 5 10 6.5l-5 5z"></path>',width:10,height:16});module.exports=chevronDown;

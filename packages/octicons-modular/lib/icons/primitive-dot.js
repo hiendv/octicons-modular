@@ -1,1 +1,1 @@
-"use strict";var factory=require("../octicon.js"),primitiveDot=factory("primitive-dot",{keywords:["circle"],path:'<path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path>',height:"16",width:"8"});module.exports=primitiveDot;
+"use strict";var factory=require("../octicon.js"),primitiveDot=factory("primitive-dot",{keywords:["circle"],path:'<path fill-rule="evenodd" d="M0 8c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4-4-1.8-4-4z"></path>',width:8,height:16});module.exports=primitiveDot;

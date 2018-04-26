@@ -1,1 +1,1 @@
-"use strict";var factory=require("../octicon.js"),arrowUp=factory("arrow-up",{keywords:["point","direction"],path:'<path fill-rule="evenodd" d="M5 3L0 9h3v4h4V9h3z"></path>',height:"16",width:"10"});module.exports=arrowUp;
+"use strict";var factory=require("../octicon.js"),arrowUp=factory("arrow-up",{keywords:["point","direction"],path:'<path fill-rule="evenodd" d="M5 3L0 9h3v4h4V9h3L5 3z"></path>',width:10,height:16});module.exports=arrowUp;
