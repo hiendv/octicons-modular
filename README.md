@@ -4,8 +4,7 @@
 It's technically [GitHub Octicons](https://github.com/primer/octicons) with tree-shaking support and icon-per-file style.
 
 ## Supported octicons
-<iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/FP7lqd1V00LUaT5zvdklkkZr/Octicons" allowfullscreen></iframe>
-[Octicons v7.2.0](https://github.com/primer/octicons/blob/v7.2.0/package.json#L9)
+[Octicons v7.2.0](https://github.com/primer/octicons/blob/v7.2.0/package.json#L9). Check out [the Figma project](https://www.figma.com/file/FP7lqd1V00LUaT5zvdklkkZr/Octicons)
 
 ## Packages
 | Package | Version | Dependencies |
