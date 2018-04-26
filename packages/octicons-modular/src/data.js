@@ -4,8 +4,10 @@ import octicons from 'octicons/build/data'
 import { parseFragment, serialize } from 'parse5'
 
 const icons = mapValues(octicons, o => {
-  o.path = serialize(parseFragment(o.path))
-  return o
+  let { keywords, path, width, height } = o
+  path = serialize(parseFragment(path))
+
+  return { keywords, path, width, height }
 })
 
 if (!Object.entries) {
