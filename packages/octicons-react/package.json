@@ -1,0 +1,41 @@
+{
+  "name": "octicons-react",
+  "version": "0.1.0",
+  "description": "React component for octicons-modular",
+  "keywords": [
+    "icon",
+    "icons",
+    "octicons",
+    "modular",
+    "vuejs",
+    "react",
+    "component",
+    "tree-shaking",
+    "svg"
+  ],
+  "main": "lib/main.js",
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "rollup -c rollup.config.js"
+  },
+  "author": "Hien Dao <hien.dv.neo@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "octicons-modular": "^0.8.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.2",
+    "babel-jest": "^22.4.3",
+    "babel-preset-react": "^6.24.1",
+    "react-test-renderer": "^16.3.2",
+    "rollup": "^0.58.2"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  }
+}
