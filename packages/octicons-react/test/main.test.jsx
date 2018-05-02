@@ -1,6 +1,6 @@
 import React from 'react'
 import Renderer from 'react-test-renderer'
-import Octicon from '../src/Octicon.jsx'
+import Octicon from '../lib/main.js'
 
 describe('Octicon component', () => {
   const zap = require('octicons-modular/lib/icons/zap')
