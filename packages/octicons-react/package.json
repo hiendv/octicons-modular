@@ -20,6 +20,11 @@
   },
   "author": "Hien Dao <hien.dv.neo@gmail.com>",
   "license": "MIT",
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
   "dependencies": {
     "octicons-modular": "^0.8.0",
     "prop-types": "^15.6.1",
