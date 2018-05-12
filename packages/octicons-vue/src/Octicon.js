@@ -1,8 +1,4 @@
 const getAttrs = element => {
-  if (!element) {
-    return []
-  }
-
   return Array.from(element.attributes).reduce((o, item) => {
     o[item.name] = item.value
     return o
@@ -15,10 +11,8 @@ export default {
     icon: {
       type: Object,
       required: true,
-      default () {
-        return {
-          svg () {}
-        }
+      validator (value) {
+        return value.svg instanceof Function
       }
     },
     scale: {
@@ -36,10 +30,6 @@ export default {
   },
   render (createElement, { props }) {
     let octicon = props.icon.svg({ scale: props.scale, class: props.class, label: props.label })
-    if (!octicon) {
-      return
-    }
-
     let attrs = getAttrs(octicon)
     let innerHTML = octicon.innerHTML
 
