@@ -1,0 +1,39 @@
+{
+  "name": "octicons-vue",
+  "version": "0.1.0",
+  "description": "Vue component for octicons-modular",
+  "keywords": [
+    "icon",
+    "icons",
+    "octicons",
+    "modular",
+    "vuejs",
+    "react",
+    "component",
+    "tree-shaking",
+    "svg"
+  ],
+  "main": "lib/main.js",
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "rollup -c rollup.config.js"
+  },
+  "author": "Hien Dao <hien.dv.neo@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "octicons-modular": "^0.8.0",
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "@vue/server-test-utils": "^1.0.0-beta.15",
+    "@vue/test-utils": "^1.0.0-beta.15",
+    "cheerio": "^1.0.0-rc.2",
+    "vue-server-renderer": "^2.5.16",
+    "vue-template-compiler": "^2.5.16"
+  }
+}

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Octicon component accepts an additional class 1`] = `"<svg version=\\"1.1\\" width=\\"10\\" height=\\"16\\" viewBox=\\"0 0 10 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-zap an-additional-class\\"><path fill-rule=\\"evenodd\\" d=\\"M10 7H6l3-7-9 9h4l-3 7 9-9z\\"></path></svg>"`;
+
+exports[`Octicon component accepts an label 1`] = `"<svg version=\\"1.1\\" width=\\"10\\" height=\\"16\\" viewBox=\\"0 0 10 16\\" aria-label=\\"label\\" class=\\"octicon octicon-zap\\"><path fill-rule=\\"evenodd\\" d=\\"M10 7H6l3-7-9 9h4l-3 7 9-9z\\"></path></svg>"`;
+
+exports[`Octicon component ignores invalid additional classes 1`] = `"<svg version=\\"1.1\\" width=\\"10\\" height=\\"16\\" viewBox=\\"0 0 10 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-zap\\"><path fill-rule=\\"evenodd\\" d=\\"M10 7H6l3-7-9 9h4l-3 7 9-9z\\"></path></svg>"`;
+
+exports[`Octicon component scalable 1`] = `"<svg version=\\"1.1\\" width=\\"20\\" height=\\"32\\" viewBox=\\"0 0 10 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-zap\\"><path fill-rule=\\"evenodd\\" d=\\"M10 7H6l3-7-9 9h4l-3 7 9-9z\\"></path></svg>"`;
+
+exports[`Octicon component scalable with 0 1`] = `"<svg version=\\"1.1\\" width=\\"0\\" height=\\"0\\" viewBox=\\"0 0 10 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-zap\\"><path fill-rule=\\"evenodd\\" d=\\"M10 7H6l3-7-9 9h4l-3 7 9-9z\\"></path></svg>"`;
+
+exports[`Octicon component scalable with fractional values 1`] = `"<svg version=\\"1.1\\" width=\\"12.34\\" height=\\"19.75\\" viewBox=\\"0 0 10 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-zap\\"><path fill-rule=\\"evenodd\\" d=\\"M10 7H6l3-7-9 9h4l-3 7 9-9z\\"></path></svg>"`;
+
+exports[`Octicon component valid 1`] = `"<svg version=\\"1.1\\" width=\\"10\\" height=\\"16\\" viewBox=\\"0 0 10 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-zap\\"><path fill-rule=\\"evenodd\\" d=\\"M10 7H6l3-7-9 9h4l-3 7 9-9z\\"></path></svg>"`;

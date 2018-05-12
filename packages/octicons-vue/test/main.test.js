@@ -1,0 +1,76 @@
+import { mount } from '@vue/test-utils'
+import Octicon from '../lib/main.js'
+
+describe('Octicon component', () => {
+  const icon = require('octicons-modular/lib/icons/zap')
+
+  test('valid', () => {
+    const wrapper = mount(Octicon, {
+      context: {
+        props: { icon }
+      }
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  test('scalable', () => {
+    const wrapper = mount(Octicon, {
+      context: {
+        props: { icon, scale: 2 }
+      }
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  test('scalable with 0', () => {
+    const wrapper = mount(Octicon, {
+      context: {
+        props: { icon, scale: 0 }
+      }
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  test('scalable with fractional values', () => {
+    const wrapper = mount(Octicon, {
+      context: {
+        props: { icon, scale: 1.2345 }
+      }
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  test('accepts an additional class', () => {
+    const wrapper = mount(Octicon, {
+      context: {
+        props: { icon, class: 'an-additional-class' }
+      }
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  test('ignores invalid additional classes', () => {
+    const wrapper = mount(Octicon, {
+      context: {
+        props: { icon, class: null }
+      }
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  test('accepts an label', () => {
+    const wrapper = mount(Octicon, {
+      context: {
+        props: { icon, label: 'label' }
+      }
+    })
+
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+})
