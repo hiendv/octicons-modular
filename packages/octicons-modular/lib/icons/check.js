@@ -1,1 +1,1 @@
-"use strict";var factory=require("../octicon.js"),check=factory("check",{keywords:["mark","yes","confirm","accept","ok","success"],path:'<path fill-rule="evenodd" d="M12 5.5l-8 8-4-4L1.5 8 4 10.5 10.5 4 12 5.5z"></path>',width:12,height:16});module.exports=check;
+"use strict";var factory=require("../octicon.js"),check=factory("check",{keywords:["mark","yes","confirm","accept","ok","success"],path:'<path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>',width:12,height:16});module.exports=check;
