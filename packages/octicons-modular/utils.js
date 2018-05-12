@@ -1,10 +1,9 @@
 import chalk from 'chalk'
-import cssnano from 'cssnano'
 import path from 'path'
-import postcss from 'postcss'
 import buble from 'rollup-plugin-buble'
-import sass from 'rollup-plugin-sass'
 import uglify from 'rollup-plugin-uglify'
+import postcss from 'rollup-plugin-postcss'
+import postcssImport from 'postcss-import'
 
 import config from './config'
 
@@ -60,10 +59,9 @@ export function rollupMainConfig () {
         name: config.name
       },
       plugins: [
-        sass({
-          options: { includePaths: [ path.join(__dirname, 'node_modules') ] },
-          processor: css => postcss([ cssnano() ]).process(css, { from: void 0 }).then(result => result.css),
-          output: config.paths.destMainStyle
+        postcss({
+          plugins: [ postcssImport() ],
+          minimize: true
         }),
         buble(),
         uglify()
@@ -78,10 +76,10 @@ export function rollupMainConfig () {
         interop: false
       },
       plugins: [
-        sass({
-          options: { includePaths: [ path.join(__dirname, 'node_modules') ] },
-          processor: css => postcss([ cssnano() ]).process(css, { from: void 0 }).then(result => result.css),
-          output: config.paths.destMainStyle
+        postcss({
+          plugins: [ postcssImport() ],
+          minimize: true,
+          extract: true
         }),
         buble(),
         uglify()
@@ -95,10 +93,11 @@ export function rollupMainConfig () {
         format: 'es'
       },
       plugins: [
-        sass({
-          options: { includePaths: [ path.join(__dirname, 'node_modules') ] },
-          processor: css => postcss([ cssnano() ]).process(css, { from: void 0 }).then(result => result.css),
-          output: config.paths.destMainStyle
+        postcss({
+          plugins: [ postcssImport() ],
+          minimize: true,
+          extract: false,
+          inject: false
         }),
         uglify()
       ]

@@ -52,24 +52,28 @@ modularizer()
     return icons
   })
   .then(icons => {
-    buildIcons(icons)
-      .then(icons => {
-        utils.success(`Modularly Built: ${icons.length} icons`)
-        return icons
-      })
+    return Promise.all([
+      buildIcons(icons)
+        .then(icons => {
+          utils.success(`Modularly Built: ${icons.length} icons`)
+        }),
+      bundleMain(icons)
+        .then(({ path }) => {
+          utils.success(`Main bundled: ${path}`)
+          return path
+        })
+        .then(path => roll(rollupMainConfig()))
+        .then(output => {
+          if (output instanceof Array) {
+            output.forEach(o => utils.success(`Main built: ${o.file} (${o.format})`))
+            return
+          }
 
-    bundleMain(icons)
-      .then(({ path }) => {
-        utils.success(`Main bundled: ${path}`)
-        return path
-      })
-      .then(path => roll(rollupMainConfig()))
-      .then(output => {
-        if (output instanceof Array) {
-          output.forEach(o => utils.success(`Main built: ${o.file} (${o.format})`))
-          return
-        }
-
-        utils.success(`Main built: ${output.file} (${output.format})`)
-      })
+          utils.success(`Main built: ${output.file} (${output.format})`)
+        })
+    ])
+  })
+  .catch(err => {
+    // eslint-disable-next-line no-console
+    console.error(err)
   })
