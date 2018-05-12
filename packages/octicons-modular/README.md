@@ -1,7 +1,7 @@
 # Modular Octicons
 ## Installation & Usage
 ### Direct `<script/>` include
-Load the UMD module `octicons-modular/lib/main.umd.js` and the style sheet `octicons-modular/lib/main.css`, `Octicons` will be registered as a global variable
+Load the UMD module `octicons-modular/lib/main.umd.js`, `Octicons` will be registered as a global variable and the CSS is automatically injected.
 ```js
 Octicons.alert.svg() instanceof SVGSVGElement
 // true
@@ -18,7 +18,10 @@ yarn add octicons-modular
 ```
 
 ```js
-// you can import a single icon
+// import the stylesheet
+require('octicons-modular/lib/main.css')
+
+// import a single icon
 const markGithub = require('octicons-modular/lib/icons/mark-github')
 markGithub.svg() instanceof SVGSVGElement
 // true
