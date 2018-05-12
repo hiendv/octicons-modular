@@ -30,8 +30,8 @@ new Vue({
 
 <!-- 3rd: You're good to go -->
 <template>
-<Octicon :icon="markGithub" />
-<Octicon :icon="Octicons.alert" />
+  <Octicon :icon="markGithub" />
+  <Octicon :icon="Octicons.alert" />
 </template>
 ```
 
