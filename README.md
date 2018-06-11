@@ -10,8 +10,8 @@ It's technically [GitHub Octicons](https://github.com/primer/octicons) with tree
 | Package | Version | Dependencies |
 |--------|-------|------------|
 | **[octicons-modular](/packages/octicons-modular)** | [![npm](https://img.shields.io/npm/v/octicons-modular.svg)](https://www.npmjs.com/package/octicons-modular) | [![Dependency Status](https://david-dm.org/hiendv/octicons-modular.svg?path=packages/octicons-modular)](https://david-dm.org/hiendv/octicons-modular?path=packages/octicons-modular) |
-| **[octicons-react](/packages/octicons-modular)** | [![npm](https://img.shields.io/npm/v/octicons-react.svg)](https://www.npmjs.com/package/octicons-react) | [![Dependency Status](https://david-dm.org/hiendv/octicons-modular.svg?path=packages/octicons-react)](https://david-dm.org/hiendv/octicons-modular?path=packages/octicons-react) |
-| **[octicons-vue](/packages/octicons-modular)** | [![npm](https://img.shields.io/npm/v/octicons-vue.svg)](https://www.npmjs.com/package/octicons-vue) | [![Dependency Status](https://david-dm.org/hiendv/octicons-modular.svg?path=packages/octicons-vue)](https://david-dm.org/hiendv/octicons-modular?path=packages/octicons-vue) |
+| **[octicons-react](/packages/octicons-react)** | [![npm](https://img.shields.io/npm/v/octicons-react.svg)](https://www.npmjs.com/package/octicons-react) | [![Dependency Status](https://david-dm.org/hiendv/octicons-modular.svg?path=packages/octicons-react)](https://david-dm.org/hiendv/octicons-modular?path=packages/octicons-react) |
+| **[octicons-vue](/packages/octicons-vue)** | [![npm](https://img.shields.io/npm/v/octicons-vue.svg)](https://www.npmjs.com/package/octicons-vue) | [![Dependency Status](https://david-dm.org/hiendv/octicons-modular.svg?path=packages/octicons-vue)](https://david-dm.org/hiendv/octicons-modular?path=packages/octicons-vue) |
 
 ## Development & Testing
 Please check the [Contributing Guidelines](https://github.com/hiendv/octicons-modular/blob/master/CONTRIBUTING.md).
