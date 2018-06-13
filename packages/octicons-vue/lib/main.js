@@ -46,6 +46,6 @@ var Octicon = {
       }
     )
   }
-}
+};
 
 module.exports = Octicon;
