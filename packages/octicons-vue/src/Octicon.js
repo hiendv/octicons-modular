@@ -19,7 +19,7 @@ export default {
       type: Number,
       default: 1
     },
-    class: {
+    className: {
       type: String,
       default: null
     },
@@ -29,7 +29,8 @@ export default {
     }
   },
   render (createElement, { props }) {
-    let octicon = props.icon.svg({ scale: props.scale, class: props.class, label: props.label })
+    let { icon, scale, className, label } = props
+    let octicon = icon.svg({ scale, class: className, label })
     let attrs = getAttrs(octicon)
     let innerHTML = octicon.innerHTML
 

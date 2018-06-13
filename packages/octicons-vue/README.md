@@ -41,13 +41,13 @@ new Vue({
 + icon (object) - Octicon from `octicons-modular` library
 + scale (number) - Scale
     + Default: 1
-+ class (string) - Additional classes
++ className (string) - Additional classes
     + Default: null
 + label (string) - Label
     + Default: null
 
 ```vue
-<Octicon :icon="icon" :scale="1" class="additional-class" label="another label" />
+<Octicon :icon="icon" :scale="1" className="additional-class" label="another label" />
 ```
 
 ## Development & Testing

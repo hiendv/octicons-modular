@@ -47,7 +47,7 @@ describe('Octicon component', () => {
   test('accepts an additional class', () => {
     const wrapper = mount(Octicon, {
       context: {
-        props: { icon, class: 'an-additional-class' }
+        props: { icon, className: 'an-additional-class' }
       }
     })
 
@@ -57,7 +57,7 @@ describe('Octicon component', () => {
   test('ignores invalid additional classes', () => {
     const wrapper = mount(Octicon, {
       context: {
-        props: { icon, class: null }
+        props: { icon, className: null }
       }
     })
 
