@@ -10,6 +10,10 @@ const getAttrs = element => {
 
 let Octicon = ({ icon, scale, className, label }) => {
   let octicon = icon.svg({ scale, class: className, label })
+  if (!octicon) {
+    return
+  }
+
   let attrs = getAttrs(octicon)
   attrs.dangerouslySetInnerHTML = {__html: octicon.innerHTML}
   attrs.className = attrs.class
