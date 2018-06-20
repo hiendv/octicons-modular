@@ -33,6 +33,10 @@ var Octicon = {
   render (createElement, { props }) {
     let { icon, scale, className, label } = props;
     let octicon = icon.svg({ scale, class: className, label });
+    if (!octicon) {
+      return
+    }
+
     let attrs = getAttrs(octicon);
     let innerHTML = octicon.innerHTML;
 

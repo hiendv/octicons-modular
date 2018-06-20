@@ -4,6 +4,18 @@ import Octicon from '../lib/main.js'
 describe('Octicon component', () => {
   const icon = require('octicons-modular/lib/icons/zap')
 
+  test('invalid', () => {
+    const wrapper = mount(Octicon, {
+      context: {
+        props: { icon: {
+          svg () {}
+        } }
+      }
+    })
+
+    expect(wrapper.html()).toBeFalsy()
+  })
+
   test('valid', () => {
     const wrapper = mount(Octicon, {
       context: {
