@@ -11,7 +11,7 @@ const getAttrs = element => {
 let Octicon = ({ icon, scale, className, label }) => {
   let octicon = icon.svg({ scale, class: className, label })
   if (!octicon) {
-    return
+    return (null)
   }
 
   let attrs = getAttrs(octicon)

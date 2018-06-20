@@ -5,6 +5,15 @@ import Octicon from '../lib/main.js'
 describe('Octicon component', () => {
   const zap = require('octicons-modular/lib/icons/zap')
 
+  test('invalid', () => {
+    const component = Renderer.create(
+      <Octicon icon={{ svg () {} }} />
+    )
+
+    let tree = component.toJSON()
+    expect(tree).toBeFalsy()
+  })
+
   test('valid', () => {
     const component = Renderer.create(
       <Octicon icon={zap} />
