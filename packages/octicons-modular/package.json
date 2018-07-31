@@ -32,8 +32,8 @@
     "ejs": "^2.6.1",
     "lodash.camelcase": "^4.3.0",
     "lodash.mapvalues": "^4.6.0",
-    "octicons": "^7.3.0",
+    "octicons": "^8.0.0",
     "postcss-import": "^11.1.0",
-    "rollup-plugin-postcss": "^1.6.1"
+    "rollup-plugin-postcss": "^1.6.2"
   }
 }
