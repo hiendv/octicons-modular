@@ -27,12 +27,12 @@
   ],
   "dependencies": {
     "octicons-modular": "^0.8.6",
-    "prop-types": "^15.6.1",
-    "react": "^16.2.0"
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1"
   },
   "devDependencies": {
     "babel-preset-react": "^6.24.1",
-    "react-test-renderer": "^16.3.2"
+    "react-test-renderer": "^16.4.1"
   },
   "babel": {
     "presets": [
