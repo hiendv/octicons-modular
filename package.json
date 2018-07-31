@@ -4,7 +4,7 @@
   "author": "Hien Dao <hien.dv.neo@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "bootstrap": "lerna bootstrap --hoist",
+    "bootstrap": "lerna clean --yes && lerna bootstrap --hoist",
     "build": "lerna run build --stream",
     "lint": "eslint .",
     "pretest": "npm run lint",
