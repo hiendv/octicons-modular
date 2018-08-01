@@ -1,4 +1,4 @@
-import icons from '../src/data.js'
+import icons from '../build/data.js'
 import { t } from './utils.js'
 
 describe('UMD library', () => {

@@ -2,8 +2,8 @@ import ejs from 'ejs'
 import fs from 'fs'
 import path from 'path'
 
-import config from '../config'
-import data from '../src/data'
+import data from './data.js'
+import config from '../config.js'
 
 const single = icon => new Promise((resolve, reject) => {
   ejs.renderFile(config.templates.icon, icon, {}, (err, str) => {
