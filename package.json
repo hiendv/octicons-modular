@@ -32,7 +32,8 @@
     "rollup": "^0.63.4",
     "rollup-plugin-buble": "^0.19.2",
     "rollup-plugin-terser": "^1.0.1",
-    "rollup-plugin-uglify": "^4.0.0"
+    "rollup-plugin-uglify": "^4.0.0",
+    "webpack": "^4.16.3"
   },
   "homepage": "https://github.com/hiendv/octicons-modular",
   "bugs": {
