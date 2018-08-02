@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import Octicons from 'octicons-modular'
+import 'octicons-modular/lib/main.css'
 
 const getAttrs = element => {
   return Array.from(element.attributes).reduce((o, item) => {
@@ -43,4 +45,6 @@ Octicon.defaultProps = {
   label: null
 }
 
+export * from 'octicons-modular'
+export { Octicons, Octicon }
 export default Octicon

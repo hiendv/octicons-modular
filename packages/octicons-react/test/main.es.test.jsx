@@ -1,10 +1,8 @@
 import React from 'react'
 import Renderer from 'react-test-renderer'
-import Octicon from '../lib/main.es.js'
+import Octicon, { zap } from '../lib/main.es.js'
 
 describe('Octicon component', () => {
-  const zap = require('octicons-modular/lib/icons/zap')
-
   test('invalid', () => {
     const component = Renderer.create(
       <Octicon icon={{ svg () {} }} />

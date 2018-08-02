@@ -7,27 +7,25 @@ npm install --save octicons-react
 yarn add octicons-react
 ```
 
+#### A single octicon
 ```jsx
-// 1st: Import needed icons
-// a single icon
-const markGithub = require('octicons-modular/lib/icons/mark-github')
-// or the whole set
-const Octicons = require('octicons-modular')
+const { Octicon, markGithub } = require('octicons-react')
+// import Octicon, { markGithub } from 'octicons-react'
 
-// 2nd: Import the react component
-const Octicon = require('octicons-react')
-
-// 3rd: You're good to go
 ReactDOM.render(
   <Octicon icon={markGithub} />,
   document.querySelector('#root')
 )
+```
+#### All octicons
+```jsx
+const { Octicon, Octicons } = require('octicons-react')
+// import Octicon, { Octicons } from 'octicons-react'
 
 ReactDOM.render(
   <Octicon icon={Octicons.alert} />,
   document.querySelector('#root')
 )
-
 ```
 
 ### API

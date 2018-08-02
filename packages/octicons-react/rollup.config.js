@@ -1,4 +1,6 @@
 import path from 'path'
+import resolve from 'rollup-plugin-node-resolve'
+import postcss from 'rollup-plugin-postcss'
 
 export default [
   {
@@ -6,12 +8,15 @@ export default [
     output: {
       file: path.resolve(__dirname, 'lib/main.js'),
       format: 'cjs',
-      interop: false
+      interop: false,
+      exports: 'named'
     },
     external: [
       'react',
-      'prop-types'
-    ]
+      'prop-types',
+      'octicons-modular'
+    ],
+    plugins: [ resolve(), postcss() ]
   },
   {
     input: path.resolve(__dirname, 'src/Octicon.jsx'),
@@ -22,7 +27,9 @@ export default [
     },
     external: [
       'react',
-      'prop-types'
-    ]
+      'prop-types',
+      'octicons-modular'
+    ],
+    plugins: [ resolve(), postcss() ]
   }
 ]
