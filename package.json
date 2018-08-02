@@ -35,6 +35,7 @@
     "memory-fs": "^0.4.1",
     "octicons": "^8.0.0",
     "postcss-import": "^11.1.0",
+    "react": "^16.4.2",
     "react-test-renderer": "^16.4.2",
     "rimraf": "^2.6.2",
     "rollup": "^0.63.4",
@@ -43,6 +44,7 @@
     "rollup-plugin-postcss": "^1.6.2",
     "rollup-plugin-terser": "^1.0.1",
     "rollup-plugin-uglify": "^4.0.0",
+    "vue": "^2.5.17",
     "vue-template-compiler": "^2.5.17",
     "webpack": "^4.16.3"
   },
