@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Octicon component accepts an additional class 1`] = `
+<svg
+  aria-hidden="true"
+  className="octicon octicon-zap an-additional-class"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "<path fill-rule=\\"evenodd\\" d=\\"M10 7H6l3-7-9 9h4l-3 7 9-9z\\"></path>",
+    }
+  }
+  height="16"
+  version="1.1"
+  viewBox="0 0 10 16"
+  width="10"
+/>
+`;
+
+exports[`Octicon component accepts an label 1`] = `
+<svg
+  aria-label="a label"
+  className="octicon octicon-zap"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "<path fill-rule=\\"evenodd\\" d=\\"M10 7H6l3-7-9 9h4l-3 7 9-9z\\"></path>",
+    }
+  }
+  height="16"
+  version="1.1"
+  viewBox="0 0 10 16"
+  width="10"
+/>
+`;
+
+exports[`Octicon component ignores invalid additional classes 1`] = `
+<svg
+  aria-hidden="true"
+  className="octicon octicon-zap"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "<path fill-rule=\\"evenodd\\" d=\\"M10 7H6l3-7-9 9h4l-3 7 9-9z\\"></path>",
+    }
+  }
+  height="16"
+  version="1.1"
+  viewBox="0 0 10 16"
+  width="10"
+/>
+`;
+
+exports[`Octicon component scalable 1`] = `
+<svg
+  aria-hidden="true"
+  className="octicon octicon-zap"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "<path fill-rule=\\"evenodd\\" d=\\"M10 7H6l3-7-9 9h4l-3 7 9-9z\\"></path>",
+    }
+  }
+  height="32"
+  version="1.1"
+  viewBox="0 0 10 16"
+  width="20"
+/>
+`;
+
+exports[`Octicon component scalable with 0 1`] = `
+<svg
+  aria-hidden="true"
+  className="octicon octicon-zap"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "<path fill-rule=\\"evenodd\\" d=\\"M10 7H6l3-7-9 9h4l-3 7 9-9z\\"></path>",
+    }
+  }
+  height="0"
+  version="1.1"
+  viewBox="0 0 10 16"
+  width="0"
+/>
+`;
+
+exports[`Octicon component scalable with fractional values 1`] = `
+<svg
+  aria-hidden="true"
+  className="octicon octicon-zap"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "<path fill-rule=\\"evenodd\\" d=\\"M10 7H6l3-7-9 9h4l-3 7 9-9z\\"></path>",
+    }
+  }
+  height="19.75"
+  version="1.1"
+  viewBox="0 0 10 16"
+  width="12.34"
+/>
+`;
+
+exports[`Octicon component valid 1`] = `
+<svg
+  aria-hidden="true"
+  className="octicon octicon-zap"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "<path fill-rule=\\"evenodd\\" d=\\"M10 7H6l3-7-9 9h4l-3 7 9-9z\\"></path>",
+    }
+  }
+  height="16"
+  version="1.1"
+  viewBox="0 0 10 16"
+  width="10"
+/>
+`;
