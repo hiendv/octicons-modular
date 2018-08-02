@@ -29,9 +29,5 @@
   "dependencies": {
     "octicons-modular": "^0.10.0",
     "vue": "^2.5.17"
-  },
-  "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.23",
-    "vue-template-compiler": "^2.5.17"
   }
 }
