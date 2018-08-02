@@ -27,7 +27,9 @@
     "LICENSE"
   ],
   "dependencies": {
-    "octicons-modular": "^0.10.0",
+    "octicons-modular": "^0.10.0"
+  },
+  "peerDependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.4.2"
   },
