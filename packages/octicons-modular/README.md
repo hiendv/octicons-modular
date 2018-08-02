@@ -33,13 +33,18 @@ yarn add octicons-modular
 // import the stylesheet
 require('octicons-modular/lib/main.css')
 
-// import a single icon
+// 1. import a single icon
 const markGithub = require('octicons-modular/lib/icons/mark-github')
+// import markGithub from 'octicons-modular/lib/icons/mark-github'
+// import { markGithub } from 'octicons-modular'
+
 markGithub.svg() instanceof SVGSVGElement
 // true
 
-// or the whole library
+// 2. or the whole library
 const Octicons = require('octicons-modular')
+// import Octicons from 'octicons-modular'
+
 Octicons.alert.svg() instanceof SVGSVGElement
 // true
 ```
