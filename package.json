@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "jest --runInBand",
-    "test-ci": "npm run bootstrap -- --ci && npm test -- --coverage && codecov"
+    "test-ci": "npm test -- --coverage && codecov"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -87,5 +87,8 @@
     "presets": [
       "env"
     ]
+  },
+  "dependencies": {
+    "v6": "0.0.0"
   }
 }

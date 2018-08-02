@@ -1,6 +1,12 @@
 language: node_js
 node_js:
-  - 6
+  - lts/boron
+  - lts/carbon
   - 7
+  - 9
   - node
+install:
+  - npm i -g npm
+  - npm ci
+  - npm run bootstrap -- --ci
 script: npm run test-ci
