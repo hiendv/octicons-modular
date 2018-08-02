@@ -18,6 +18,7 @@
   "main": "lib/main.js",
   "module": "es/main.js",
   "files": [
+    "es",
     "lib",
     "README.md",
     "LICENSE"
