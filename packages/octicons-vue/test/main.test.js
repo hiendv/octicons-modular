@@ -1,9 +1,7 @@
 import { mount } from '@vue/test-utils'
-import Octicon from '../lib/main.js'
+const { Octicon, zap } = require('../lib/main.js')
 
 describe('Octicon component', () => {
-  const icon = require('octicons-modular/lib/icons/zap')
-
   test('invalid', () => {
     const wrapper = mount(Octicon, {
       context: {
@@ -19,7 +17,7 @@ describe('Octicon component', () => {
   test('valid', () => {
     const wrapper = mount(Octicon, {
       context: {
-        props: { icon }
+        props: { icon: zap }
       }
     })
 
@@ -29,7 +27,7 @@ describe('Octicon component', () => {
   test('scalable', () => {
     const wrapper = mount(Octicon, {
       context: {
-        props: { icon, scale: 2 }
+        props: { icon: zap, scale: 2 }
       }
     })
 
@@ -39,7 +37,7 @@ describe('Octicon component', () => {
   test('scalable with 0', () => {
     const wrapper = mount(Octicon, {
       context: {
-        props: { icon, scale: 0 }
+        props: { icon: zap, scale: 0 }
       }
     })
 
@@ -49,7 +47,7 @@ describe('Octicon component', () => {
   test('scalable with fractional values', () => {
     const wrapper = mount(Octicon, {
       context: {
-        props: { icon, scale: 1.2345 }
+        props: { icon: zap, scale: 1.2345 }
       }
     })
 
@@ -59,7 +57,7 @@ describe('Octicon component', () => {
   test('accepts an additional class', () => {
     const wrapper = mount(Octicon, {
       context: {
-        props: { icon, className: 'an-additional-class' }
+        props: { icon: zap, className: 'an-additional-class' }
       }
     })
 
@@ -69,7 +67,7 @@ describe('Octicon component', () => {
   test('ignores invalid additional classes', () => {
     const wrapper = mount(Octicon, {
       context: {
-        props: { icon, className: null }
+        props: { icon: zap, className: null }
       }
     })
 
@@ -79,7 +77,7 @@ describe('Octicon component', () => {
   test('accepts an label', () => {
     const wrapper = mount(Octicon, {
       context: {
-        props: { icon, label: 'label' }
+        props: { icon: zap, label: 'label' }
       }
     })
 

@@ -1,3 +1,6 @@
+import Octicons from 'octicons-modular'
+import 'octicons-modular/lib/main.css'
+
 const getAttrs = element => {
   return Array.from(element.attributes).reduce((o, item) => {
     o[item.name] = item.value
@@ -5,7 +8,7 @@ const getAttrs = element => {
   }, {})
 }
 
-export default {
+let Octicon = {
   functional: true,
   props: {
     icon: {
@@ -49,3 +52,7 @@ export default {
     )
   }
 }
+
+export * from 'octicons-modular'
+export { Octicons, Octicon }
+export default Octicon

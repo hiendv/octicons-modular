@@ -7,30 +7,39 @@ npm install --save octicons-vue
 yarn add octicons-vue
 ```
 
+#### A single octicon
 ```vue
 <script>
-// 1st: Import needed icons
-// a single icon
-const markGithub = require('octicons-modular/lib/icons/mark-github')
-// or the whole set
-const Octicons = require('octicons-modular')
-
-// 2nd: Import the vue component
-const Octicon = require('octicons-vue')
+const { Octicon, markGithub } = require('octicons-vue')
+// import Octicon, { markGithub } from 'octicons-vue'
 
 new Vue({
   el: '#app',
   components: { Octicon },
   data: {
-    markGithub,
+    markGithub
+  }
+})
+</script>
+<template>
+  <Octicon :icon="markGithub" />
+</template>
+```
+#### All octicons
+```vue
+<script>
+const { Octicon, Octicons } = require('octicons-vue')
+// import Octicon, { Octicons } from 'octicons-vue'
+
+new Vue({
+  el: '#app',
+  components: { Octicon },
+  data: {
     Octicons
   }
 })
 </script>
-
-<!-- 3rd: You're good to go -->
 <template>
-  <Octicon :icon="markGithub" />
   <Octicon :icon="Octicons.alert" />
 </template>
 ```
