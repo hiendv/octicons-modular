@@ -29,11 +29,11 @@
   "dependencies": {
     "octicons-modular": "^0.9.0",
     "prop-types": "^15.6.2",
-    "react": "^16.4.1"
+    "react": "^16.4.2"
   },
   "devDependencies": {
     "babel-preset-react": "^6.24.1",
-    "react-test-renderer": "^16.4.1"
+    "react-test-renderer": "^16.4.2"
   },
   "babel": {
     "presets": [
