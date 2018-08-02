@@ -1,4 +1,7 @@
-/* eslint-disable */
+/**
+ * @jest-environment node
+ */
+
 import path from 'path'
 import webpack from 'webpack'
 import MemoryFS from 'memory-fs'
@@ -20,7 +23,9 @@ describe('Webpack tree-shaking', () => {
 
     compiler.outputFileSystem = fs
 
-    compiler.run(function(err, stats) {
+    compiler.run((err, stats) => {
+      expect(err).toBeFalsy()
+
       let code = fs.readFileSync('/main.js').toString('utf8')
       expect(code).toMatchSnapshot()
       done()
