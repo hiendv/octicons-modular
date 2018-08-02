@@ -1,0 +1,1 @@
+import factory from"../octicon.js";var arrowRight=factory("arrow-right",{keywords:["point","direction"],path:'<path fill-rule="evenodd" d="M10 8L4 3v3H0v4h4v3l6-5z"></path>',width:10,height:16});export default arrowRight;
