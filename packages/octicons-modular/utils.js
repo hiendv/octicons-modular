@@ -27,16 +27,28 @@ export function successStd (text) {
 }
 
 export function rollupIconConfig (icon) {
-  return {
-    input: icon.path,
-    output: [ {
-      format: 'cjs',
-      file: path.resolve(config.paths.destIcons, icon.file),
-      interop: false
-    } ],
-    plugins: [ uglify() ],
-    external: id => /\/octicon\.js/.test(id)
-  }
+  return [
+    {
+      input: icon.path,
+      output: [ {
+        format: 'cjs',
+        file: path.resolve(config.paths.destIcons, icon.file),
+        interop: false
+      } ],
+      plugins: [ uglify() ],
+      external: id => /\/octicon\.js/.test(id)
+    },
+    {
+      input: icon.path,
+      output: [ {
+        format: 'es',
+        file: path.resolve(config.paths.destIconsES, icon.file),
+        interop: false
+      } ],
+      plugins: [ terser() ],
+      external: id => /\/octicon\.js/.test(id)
+    }
+  ]
 }
 
 export function rollupMainConfig () {
@@ -50,6 +62,15 @@ export function rollupMainConfig () {
         exports: 'default'
       },
       plugins: [ buble(), uglify() ]
+    },
+    {
+      input: config.paths.srcIconBase,
+      output: {
+        file: config.paths.destIconBaseES,
+        format: 'es',
+        exports: 'default'
+      },
+      plugins: [ terser() ]
     },
     {
       input,
@@ -101,7 +122,8 @@ export function rollupMainConfig () {
           inject: false
         }),
         terser()
-      ]
+      ],
+      external: id => new RegExp(`${config.paths.iconsDir}/`).test(id)
     }
   ]
 }

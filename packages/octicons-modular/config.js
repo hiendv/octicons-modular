@@ -5,6 +5,7 @@ export const paths = (base => {
   let _ = {
     src: path.resolve(base, './src'),
     dest: path.resolve(base, './lib'),
+    es: path.resolve(base, './es'),
     build: path.resolve(base, './build'),
     templates: path.resolve(base, './build/templates'),
     nodeModules: path.resolve(base, 'node_modules'),
@@ -16,10 +17,12 @@ export const paths = (base => {
   _.srcIconsMain = path.resolve(_.src, 'icons.js')
   _.srcIcons = path.resolve(_.src, _.iconsDir)
   _.destIcons = path.resolve(_.dest, _.iconsDir)
+  _.destIconsES = path.resolve(_.es, _.iconsDir)
   _.destMain = path.resolve(_.dest, 'main.js')
+  _.destMainES = path.resolve(_.es, 'main.js')
   _.destIconBase = path.resolve(_.dest, 'octicon.js')
+  _.destIconBaseES = path.resolve(_.es, 'octicon.js')
   _.destMainUMD = path.resolve(_.dest, 'main.umd.js')
-  _.destMainES = path.resolve(_.dest, 'main.es.js')
   _.destMainStyle = path.resolve(_.dest, 'main.css')
   _.sassIncludePaths = [ _.nodeModules ]
 

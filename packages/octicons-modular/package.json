@@ -16,9 +16,7 @@
   "license": "MIT",
   "author": "Hien Dao <hien.dv.neo@gmail.com>",
   "main": "lib/main.js",
-  "module": "lib/main.es.js",
-  "browser": "lib/main.umd.js",
-  "style": "lib/main.css",
+  "module": "es/main.js",
   "files": [
     "lib",
     "README.md",
@@ -35,5 +33,6 @@
     "octicons": "^8.0.0",
     "postcss-import": "^11.1.0",
     "rollup-plugin-postcss": "^1.6.2"
-  }
+  },
+  "sideEffects": false
 }
