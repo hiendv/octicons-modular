@@ -2518,6 +2518,50 @@ if (process.env.NODE_ENV === 'production') {
 }
 });
 
+const getAttrs = element => {
+  return Array.from(element.attributes).reduce((o, item) => {
+    o[item.name] = item.value;
+    return o
+  }, {})
+};
+
+let Octicon = ({ icon, scale, className, label }) => {
+  let octicon = icon.svg({ scale, class: className, label });
+  if (!octicon) {
+    return (null)
+  }
+
+  let attrs = getAttrs(octicon);
+  attrs.dangerouslySetInnerHTML = {__html: octicon.innerHTML};
+  attrs.className = attrs.class;
+  delete attrs.class;
+
+  return react.createElement(
+    octicon.tagName,
+    attrs
+  )
+};
+
+Octicon.propTypes = {
+  icon: propTypes.shape({
+    svg: propTypes.func
+  }),
+  scale: propTypes.number,
+  className: propTypes.string,
+  label: propTypes.string
+};
+
+Octicon.defaultProps = {
+  icon: {
+    svg () {}
+  },
+  scale: 1,
+  className: null,
+  label: null
+};
+
+var Octicon_1 = Octicon;
+
 function octicon (name, data) {
   const { width, height, path } = data;
 
@@ -2611,50 +2655,8 @@ function styleInject(css, ref) {
 var css = \\".octicon{display:inline-block;vertical-align:text-top;fill:currentColor}\\";
 styleInject(css);
 
-const getAttrs = element => {
-  return Array.from(element.attributes).reduce((o, item) => {
-    o[item.name] = item.value;
-    return o
-  }, {})
-};
-
-let Octicon = ({ icon, scale, className, label }) => {
-  let octicon = icon.svg({ scale, class: className, label });
-  if (!octicon) {
-    return (null)
-  }
-
-  let attrs = getAttrs(octicon);
-  attrs.dangerouslySetInnerHTML = {__html: octicon.innerHTML};
-  attrs.className = attrs.class;
-  delete attrs.class;
-
-  return react.createElement(
-    octicon.tagName,
-    attrs
-  )
-};
-
-Octicon.propTypes = {
-  icon: propTypes.shape({
-    svg: propTypes.func
-  }),
-  scale: propTypes.number,
-  className: propTypes.string,
-  label: propTypes.string
-};
-
-Octicon.defaultProps = {
-  icon: {
-    svg () {}
-  },
-  scale: 1,
-  className: null,
-  label: null
-};
-
 /* eslint-disable */
-console.log(Octicon, alert.svg());
+console.log(Octicon_1, alert.svg());
 // the zap icon is removed since it's unused
 "
 `;

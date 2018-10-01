@@ -1,6 +1,6 @@
 import React from 'react'
 import Renderer from 'react-test-renderer'
-import Octicon, { zap } from '../lib/main.es.js'
+import Octicon, { zap } from '../es/main.js'
 
 describe('Octicon component', () => {
   test('invalid', () => {

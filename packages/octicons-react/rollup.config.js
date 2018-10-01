@@ -6,30 +6,52 @@ export default [
   {
     input: path.resolve(__dirname, 'src/Octicon.jsx'),
     output: {
+      file: path.resolve(__dirname, 'lib/Octicon.js'),
+      format: 'cjs',
+      interop: false
+    },
+    external: [
+      'react',
+      'prop-types'
+    ]
+  },
+  {
+    input: path.resolve(__dirname, 'src/Octicon.jsx'),
+    output: {
+      file: path.resolve(__dirname, 'es/Octicon.js'),
+      format: 'cjs',
+      interop: false
+    },
+    external: [
+      'react',
+      'prop-types'
+    ]
+  },
+  {
+    input: path.resolve(__dirname, 'src/main.js'),
+    output: {
       file: path.resolve(__dirname, 'lib/main.js'),
       format: 'cjs',
       interop: false,
       exports: 'named'
     },
     external: [
-      'react',
-      'prop-types',
-      'octicons-modular'
+      'octicons-modular',
+      './Octicon'
     ],
-    plugins: [ resolve(), postcss() ]
+    plugins: [ resolve({ extensions: [ '.js', '.json', '.jsx' ] }), postcss() ]
   },
   {
-    input: path.resolve(__dirname, 'src/Octicon.jsx'),
+    input: path.resolve(__dirname, 'src/main.js'),
     output: {
-      file: path.resolve(__dirname, 'lib/main.es.js'),
+      file: path.resolve(__dirname, 'es/main.js'),
       format: 'es',
       interop: false
     },
     external: [
-      'react',
-      'prop-types',
-      'octicons-modular'
+      'octicons-modular',
+      './Octicon'
     ],
-    plugins: [ resolve(), postcss() ]
+    plugins: [ resolve({ extensions: [ '.js', '.json', '.jsx' ] }), postcss() ]
   }
 ]
