@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Octicon from '../lib/main.es.js'
+import Octicon from '../es/main.js'
 
 describe('Octicon component', () => {
   const icon = require('octicons-modular/lib/icons/zap')

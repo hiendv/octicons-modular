@@ -14,9 +14,9 @@
     "svg"
   ],
   "main": "lib/main.js",
-  "module": "lib/main.es.js",
+  "module": "es/main.js",
   "scripts": {
-    "prebuild": "rimraf lib",
+    "prebuild": "rimraf lib && rimraf es",
     "build": "rollup -c rollup.config.js"
   },
   "author": "Hien Dao <hien.dv.neo@gmail.com>",

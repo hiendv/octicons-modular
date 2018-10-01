@@ -1,9 +1,7 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var Octicon = require('./Octicon');
-var octiconsModular = require('octicons-modular');
+import Octicon from './Octicon';
+export { default as Octicon } from './Octicon';
+export * from 'octicons-modular';
+export { default as Octicons } from 'octicons-modular';
 
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
@@ -35,7 +33,4 @@ function styleInject(css, ref) {
 var css = ".octicon{display:inline-block;vertical-align:text-top;fill:currentColor}";
 styleInject(css);
 
-Object.keys(octiconsModular).forEach(function (key) { exports[key] = octiconsModular[key]; });
-exports.Octicon = Octicon;
-exports.Octicons = octiconsModular;
-exports.default = Octicon;
+export default Octicon;
