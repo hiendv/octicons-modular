@@ -2,7 +2,6 @@ import chalk from 'chalk'
 import path from 'path'
 import buble from 'rollup-plugin-buble'
 import { uglify } from 'rollup-plugin-uglify'
-import { terser } from 'rollup-plugin-terser'
 import postcss from 'rollup-plugin-postcss'
 import postcssImport from 'postcss-import'
 
@@ -35,7 +34,6 @@ export function rollupIconConfig (icon) {
         file: path.resolve(config.paths.destIcons, icon.file),
         interop: false
       } ],
-      plugins: [ uglify() ],
       external: id => /\/octicon\.js/.test(id)
     },
     {
@@ -45,7 +43,6 @@ export function rollupIconConfig (icon) {
         file: path.resolve(config.paths.destIconsES, icon.file),
         interop: false
       } ],
-      plugins: [ terser() ],
       external: id => /\/octicon\.js/.test(id)
     }
   ]
@@ -70,7 +67,7 @@ export function rollupMainConfig () {
         format: 'es',
         exports: 'default'
       },
-      plugins: [ terser() ]
+      plugins: [ ]
     },
     {
       input,
@@ -120,8 +117,7 @@ export function rollupMainConfig () {
           minimize: true,
           extract: false,
           inject: false
-        }),
-        terser()
+        })
       ],
       external: id => new RegExp(`${config.paths.iconsDir}/`).test(id)
     }

@@ -1,1 +1,61 @@
-function octicon(e,t){const{width:i,height:a,path:l}=t,c=(t,i)=>{i.label?t["aria-label"]=i.label:t["aria-hidden"]=!0,i.class?t.class=`octicon octicon-${e} ${i.class}`:t.class=`octicon octicon-${e}`;let a=0===i.scale?0:parseFloat(i.scale)||1,l=a*parseInt(t.width),c=a*parseInt(t.height);return t.width=Number(l.toFixed(2)),t.height=Number(c.toFixed(2)),t},n=e=>Object.keys(e).map(t=>`${t}="${e[t]}"`).join(" ").trim();return{name:e,data:t,svg(e,t=document){let s=t.createElement("div");return s.innerHTML=`<svg ${(e=>{let t=Object.assign({},{scale:1,label:null,class:null},e),l=c({version:"1.1",width:i,height:a,viewBox:`0 0 ${i} ${a}`},t);return n(l)})(e)}>${l}</svg>`,s.firstChild}}}export default octicon;
+function octicon (name, data) {
+  const { width, height, path } = data;
+
+  const attributes = opts => {
+    let options = Object.assign({}, {
+      scale: 1,
+      label: null,
+      class: null
+    }, opts);
+
+    let attrs = elementAttributes({
+      version: '1.1',
+      width,
+      height,
+      viewBox: `0 0 ${width} ${height}`
+    }, options);
+
+    return elementAttributesString(attrs)
+  };
+
+  const elementAttributes = (attrs, options) => {
+    if (options.label) {
+      attrs['aria-label'] = options.label;
+    } else {
+      attrs['aria-hidden'] = true;
+    }
+
+    if (options.class) {
+      attrs['class'] = `octicon octicon-${name} ${options.class}`;
+    } else {
+      attrs['class'] = `octicon octicon-${name}`;
+    }
+
+    let actualScale = options.scale === 0 ? 0 : parseFloat(options.scale) || 1;
+    let actualWidth = actualScale * parseInt(attrs['width']);
+    let actualHeight = actualScale * parseInt(attrs['height']);
+
+    attrs['width'] = Number(actualWidth.toFixed(2));
+    attrs['height'] = Number(actualHeight.toFixed(2));
+
+    return attrs
+  };
+
+  const elementAttributesString = attrs => {
+    return Object.keys(attrs).map(name => {
+      return `${name}="${attrs[name]}"`
+    }).join(' ').trim()
+  };
+
+  return {
+    name,
+    data,
+    svg (options, doc = document) {
+      let wrapper = doc.createElement('div');
+      wrapper.innerHTML = `<svg ${attributes(options)}>${path}</svg>`;
+      return wrapper.firstChild
+    }
+  }
+}
+
+export default octicon;
