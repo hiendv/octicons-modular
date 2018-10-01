@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rollup tree-shaking works 1`] = `
+"function octicon(e,t){const{width:i,height:a,path:l}=t,c=(t,i)=>{i.label?t[\\"aria-label\\"]=i.label:t[\\"aria-hidden\\"]=!0,i.class?t.class=\`octicon octicon-\${e} \${i.class}\`:t.class=\`octicon octicon-\${e}\`;let a=0===i.scale?0:parseFloat(i.scale)||1,l=a*parseInt(t.width),c=a*parseInt(t.height);return t.width=Number(l.toFixed(2)),t.height=Number(c.toFixed(2)),t},n=e=>Object.keys(e).map(t=>\`\${t}=\\"\${e[t]}\\"\`).join(\\" \\").trim();return {name:e,data:t,svg(e,t=document){let s=t.createElement(\\"div\\");return s.innerHTML=\`<svg \${(e=>{let t=Object.assign({},{scale:1,label:null,class:null},e),l=c({version:\\"1.1\\",width:i,height:a,viewBox:\`0 0 \${i} \${a}\`},t);return n(l)})(e)}>\${l}</svg>\`,s.firstChild}}}
+
+var alert=octicon(\\"alert\\",{keywords:[\\"warning\\",\\"triangle\\",\\"exclamation\\",\\"point\\"],path:'<path fill-rule=\\"evenodd\\" d=\\"M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z\\"></path>',width:16,height:16});
+
+function styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var css = \\".octicon{display:inline-block;vertical-align:text-top;fill:currentColor}\\";
+styleInject(css);
+
+const getAttrs = element => {
+  return Array.from(element.attributes).reduce((o, item) => {
+    o[item.name] = item.value;
+    return o
+  }, {})
+};
+
+let Octicon = {
+  functional: true,
+  props: {
+    icon: {
+      type: Object,
+      required: true,
+      validator (value) {
+        return value.svg instanceof Function
+      }
+    },
+    scale: {
+      type: Number,
+      default: 1
+    },
+    className: {
+      type: String,
+      default: null
+    },
+    label: {
+      type: String,
+      default: null
+    }
+  },
+  render (createElement, { props }) {
+    let { icon, scale, className, label } = props;
+    let octicon = icon.svg({ scale, class: className, label });
+    if (!octicon) {
+      return
+    }
+
+    let attrs = getAttrs(octicon);
+    let innerHTML = octicon.innerHTML;
+
+    return createElement(
+      octicon.tagName,
+      {
+        attrs,
+        domProps: {
+          innerHTML
+        }
+      }
+    )
+  }
+};
+
+/* eslint-disable */
+console.log(Octicon, alert.svg());
+// the zap icon is removed since it's unused
+"
+`;

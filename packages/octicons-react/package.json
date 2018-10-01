@@ -38,5 +38,6 @@
       "env",
       "react"
     ]
-  }
+  },
+  "sideEffects": false
 }
