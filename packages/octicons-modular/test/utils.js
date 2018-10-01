@@ -16,26 +16,26 @@ const t = octicon => {
 
       test(`returns an SVG which scales`, () => {
         const scale = 2
-        let svg = octicon.svg({scale})
+        let svg = octicon.svg({ scale })
         expect(svg instanceof global.SVGSVGElement).toBeTruthy()
         expect(svg).toMatchSnapshot()
       })
 
       test(`returns an SVG which scales with 0`, () => {
-        let svg = octicon.svg({scale: 0})
+        let svg = octicon.svg({ scale: 0 })
         expect(svg instanceof global.SVGSVGElement).toBeTruthy()
         expect(svg).toMatchSnapshot()
       })
 
       test(`returns an SVG which scales with invalid parameters`, () => {
-        let svg = octicon.svg({scale: 'invalid integer'})
+        let svg = octicon.svg({ scale: 'invalid integer' })
         expect(svg instanceof global.SVGSVGElement).toBeTruthy()
         expect(svg).toMatchSnapshot()
       })
 
       test('returns an SVG which scales with a fractional value', () => {
         const scale = 1.2345
-        let svg = octicon.svg({scale})
+        let svg = octicon.svg({ scale })
         expect(svg instanceof global.SVGSVGElement).toBeTruthy()
         expect(svg).toMatchSnapshot()
       })
