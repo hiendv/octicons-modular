@@ -1,0 +1,1 @@
+import factory from"../octicon.js";var arrowBoth=factory("arrow-both",{keywords:["point","direction","left","right"],path:'<path d="M0 8l6-5v3h8V3l6 5-6 5v-3H6v3L0 8z"></path>',width:20,height:16});export default arrowBoth;
