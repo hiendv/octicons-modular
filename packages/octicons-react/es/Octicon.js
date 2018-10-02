@@ -1,7 +1,5 @@
-'use strict';
-
-var PropTypes = require('prop-types');
-var React = require('react');
+import PropTypes from 'prop-types';
+import React from 'react';
 
 const getAttrs = element => {
   return Array.from(element.attributes).reduce((o, item) => {
@@ -45,4 +43,4 @@ Octicon.defaultProps = {
   label: null
 };
 
-module.exports = Octicon;
+export default Octicon;

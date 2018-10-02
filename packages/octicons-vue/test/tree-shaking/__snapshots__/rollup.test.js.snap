@@ -53,8 +53,6 @@ var Octicon = {
   }
 };
 
-var Octicon_1 = Octicon;
-
 function octicon (name, data) {
   const { width, height, path } = data;
 
@@ -149,7 +147,7 @@ var css = \\".octicon{display:inline-block;vertical-align:text-top;fill:currentC
 styleInject(css);
 
 /* eslint-disable */
-console.log(Octicon_1, alert.svg());
+console.log(Octicon, alert.svg());
 // the zap icon is removed since it's unused
 "
 `;

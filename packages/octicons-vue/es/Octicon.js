@@ -1,5 +1,3 @@
-'use strict';
-
 const getAttrs = element => {
   return Array.from(element.attributes).reduce((o, item) => {
     o[item.name] = item.value;
@@ -52,4 +50,4 @@ var Octicon = {
   }
 };
 
-module.exports = Octicon;
+export default Octicon;

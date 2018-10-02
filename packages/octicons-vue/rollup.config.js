@@ -15,7 +15,7 @@ export default [
     input: path.resolve(__dirname, 'src/Octicon.js'),
     output: {
       file: path.resolve(__dirname, 'es/Octicon.js'),
-      format: 'cjs',
+      format: 'es',
       interop: false
     }
   },
