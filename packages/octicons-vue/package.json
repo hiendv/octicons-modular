@@ -22,6 +22,7 @@
   "author": "Hien Dao <hien.dv.neo@gmail.com>",
   "license": "MIT",
   "files": [
+    "es",
     "lib",
     "README.md",
     "LICENSE"
