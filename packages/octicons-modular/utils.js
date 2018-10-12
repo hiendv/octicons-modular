@@ -67,7 +67,7 @@ export function rollupMainConfig () {
         format: 'es',
         exports: 'default'
       },
-      plugins: [ ]
+      plugins: [ buble() ]
     },
     {
       input,
