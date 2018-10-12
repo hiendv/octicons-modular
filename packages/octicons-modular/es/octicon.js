@@ -1,24 +1,22 @@
-function octicon (name, data) {
-  const { width, height, path } = data;
-
-  const attributes = opts => {
-    let options = Object.assign({}, {
+function octicon (name, width, height, path, keywords) {
+  var attributes = function (opts) {
+    var options = Object.assign({}, {
       scale: 1,
       label: null,
       class: null
     }, opts);
 
-    let attrs = elementAttributes({
+    var attrs = elementAttributes({
       version: '1.1',
-      width,
-      height,
-      viewBox: `0 0 ${width} ${height}`
+      width: width,
+      height: height,
+      viewBox: ("0 0 " + width + " " + height)
     }, options);
 
     return elementAttributesString(attrs)
   };
 
-  const elementAttributes = (attrs, options) => {
+  var elementAttributes = function (attrs, options) {
     if (options.label) {
       attrs['aria-label'] = options.label;
     } else {
@@ -26,14 +24,14 @@ function octicon (name, data) {
     }
 
     if (options.class) {
-      attrs['class'] = `octicon octicon-${name} ${options.class}`;
+      attrs['class'] = "octicon octicon-" + name + " " + (options.class);
     } else {
-      attrs['class'] = `octicon octicon-${name}`;
+      attrs['class'] = "octicon octicon-" + name;
     }
 
-    let actualScale = options.scale === 0 ? 0 : parseFloat(options.scale) || 1;
-    let actualWidth = actualScale * parseInt(attrs['width']);
-    let actualHeight = actualScale * parseInt(attrs['height']);
+    var actualScale = options.scale === 0 ? 0 : parseFloat(options.scale) || 1;
+    var actualWidth = actualScale * parseInt(attrs['width']);
+    var actualHeight = actualScale * parseInt(attrs['height']);
 
     attrs['width'] = Number(actualWidth.toFixed(2));
     attrs['height'] = Number(actualHeight.toFixed(2));
@@ -41,18 +39,25 @@ function octicon (name, data) {
     return attrs
   };
 
-  const elementAttributesString = attrs => {
-    return Object.keys(attrs).map(name => {
-      return `${name}="${attrs[name]}"`
+  var elementAttributesString = function (attrs) {
+    return Object.keys(attrs).map(function (name) {
+      return (name + "=\"" + (attrs[name]) + "\"")
     }).join(' ').trim()
   };
 
   return {
-    name,
-    data,
-    svg (options, doc = document) {
-      let wrapper = doc.createElement('div');
-      wrapper.innerHTML = `<svg ${attributes(options)}>${path}</svg>`;
+    name: name,
+    data: {
+      width: width,
+      height: height,
+      path: path,
+      keywords: keywords
+    },
+    svg: function svg (options, doc) {
+      if ( doc === void 0 ) doc = document;
+
+      var wrapper = doc.createElement('div');
+      wrapper.innerHTML = "<svg " + (attributes(options)) + ">" + path + "</svg>";
       return wrapper.firstChild
     }
   }

@@ -3,6 +3,6 @@
 var factory = require('../octicon.js');
 
 // This is an auto-generated ES2015 icon from the modularize script. Please do not modify this file.
-var triangleRight = factory('triangle-right', {"keywords":["arrow","point","direction"],"path":"<path fill-rule=\"evenodd\" d=\"M0 14l6-6-6-6v12z\"></path>","width":6,"height":16});
+var triangleRight = factory('triangle-right', 6, 16, "<path fill-rule=\"evenodd\" d=\"M0 14l6-6-6-6v12z\"></path>", ["arrow","point","direction"]);
 
 module.exports = triangleRight;

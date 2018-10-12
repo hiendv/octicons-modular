@@ -2,4 +2,4 @@
 /* eslint-disable */
 
 import factory from '../octicon.js'
-export default factory('<%= name %>', <%- JSON.stringify(data) %>)
+export default factory('<%= name %>', <%= data.width %>, <%= data.height %>, <%- JSON.stringify(data.path) %>, <%- JSON.stringify(data.keywords) %>)

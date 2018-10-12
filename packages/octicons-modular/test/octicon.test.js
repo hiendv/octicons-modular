@@ -2,11 +2,7 @@ import factory from '../src/octicon.js'
 import { t } from './utils.js'
 
 describe('utils', () => {
-  t(factory('name', {
-    width: 16,
-    height: 16,
-    path: '<path/>'
-  }))
+  t(factory('name', 16, 16, '<path/>'))
 })
 
 describe('octicons', () => {

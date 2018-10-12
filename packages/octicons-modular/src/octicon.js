@@ -1,6 +1,4 @@
-export default function (name, data) {
-  const { width, height, path } = data
-
+export default function (name, width, height, path, keywords) {
   const attributes = opts => {
     let options = Object.assign({}, {
       scale: 1,
@@ -49,7 +47,12 @@ export default function (name, data) {
 
   return {
     name,
-    data,
+    data: {
+      width,
+      height,
+      path,
+      keywords
+    },
     svg (options, doc = document) {
       let wrapper = doc.createElement('div')
       wrapper.innerHTML = `<svg ${attributes(options)}>${path}</svg>`
