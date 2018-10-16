@@ -2518,20 +2518,25 @@ if (process.env.NODE_ENV === 'production') {
 }
 });
 
-const getAttrs = element => {
-  return Array.from(element.attributes).reduce((o, item) => {
+var getAttrs = function (element) {
+  return Array.from(element.attributes).reduce(function (o, item) {
     o[item.name] = item.value;
     return o
   }, {})
 };
 
-let Octicon = ({ icon, scale, className, label }) => {
-  let octicon = icon.svg({ scale, class: className, label });
+var Octicon = function (ref) {
+  var icon = ref.icon;
+  var scale = ref.scale;
+  var className = ref.className;
+  var label = ref.label;
+
+  var octicon = icon.svg({ scale: scale, class: className, label: label });
   if (!octicon) {
     return (null)
   }
 
-  let attrs = getAttrs(octicon);
+  var attrs = getAttrs(octicon);
   attrs.dangerouslySetInnerHTML = {__html: octicon.innerHTML};
   attrs.className = attrs.class;
   delete attrs.class;
@@ -2553,7 +2558,7 @@ Octicon.propTypes = {
 
 Octicon.defaultProps = {
   icon: {
-    svg () {}
+    svg: function svg () {}
   },
   scale: 1,
   className: null,
@@ -2629,7 +2634,7 @@ function octicon (name, width, height, path, keywords) {
 var alert = octicon('alert', 16, 16, \\"<path fill-rule=\\\\\\"evenodd\\\\\\" d=\\\\\\"M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z\\\\\\"></path>\\", [\\"warning\\",\\"triangle\\",\\"exclamation\\",\\"point\\"]);
 
 function styleInject(css, ref) {
-  if ( ref === void 0 ) ref = {};
+  if ( ref === void 0 ) { ref = {}; }
   var insertAt = ref.insertAt;
 
   if (!css || typeof document === 'undefined') { return; }
