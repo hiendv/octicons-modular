@@ -58,7 +58,7 @@ export function rollupMainConfig () {
         format: 'cjs',
         exports: 'default'
       },
-      plugins: [ buble(), uglify() ]
+      plugins: [ buble() ]
     },
     {
       input: config.paths.srcIconBase,
@@ -100,8 +100,7 @@ export function rollupMainConfig () {
           minimize: true,
           extract: true
         }),
-        buble(),
-        uglify()
+        buble()
       ],
       external: id => new RegExp(`${config.paths.iconsDir}/`).test(id)
     },
@@ -117,7 +116,8 @@ export function rollupMainConfig () {
           minimize: true,
           extract: false,
           inject: false
-        })
+        }),
+        buble()
       ],
       external: id => new RegExp(`${config.paths.iconsDir}/`).test(id)
     }

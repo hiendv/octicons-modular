@@ -357,7 +357,7 @@ export { default as archive } from './icons/archive.js';
 
 // This is auto-generated ES2015 icons from the modularize script. Please do not modify this file.
 
-let icons = {};
+var icons = {};
 icons.alert = alert$;
 icons.arrowDown = arrowDown$;
 icons.arrowLeft = arrowLeft$;
