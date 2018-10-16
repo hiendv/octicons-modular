@@ -4,7 +4,7 @@ export * from 'octicons-modular';
 export { default as Octicons } from 'octicons-modular';
 
 function styleInject(css, ref) {
-  if ( ref === void 0 ) ref = {};
+  if ( ref === void 0 ) { ref = {}; }
   var insertAt = ref.insertAt;
 
   if (!css || typeof document === 'undefined') { return; }

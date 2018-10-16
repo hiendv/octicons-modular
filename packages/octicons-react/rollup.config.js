@@ -1,6 +1,7 @@
 import path from 'path'
 import resolve from 'rollup-plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
+import buble from 'rollup-plugin-buble'
 
 export default [
   {
@@ -13,7 +14,8 @@ export default [
     external: [
       'react',
       'prop-types'
-    ]
+    ],
+    plugins: [ buble() ]
   },
   {
     input: path.resolve(__dirname, 'src/Octicon.jsx'),
@@ -25,7 +27,8 @@ export default [
     external: [
       'react',
       'prop-types'
-    ]
+    ],
+    plugins: [ buble() ]
   },
   {
     input: path.resolve(__dirname, 'src/main.js'),
@@ -39,7 +42,7 @@ export default [
       'octicons-modular',
       './Octicon'
     ],
-    plugins: [ resolve({ extensions: [ '.js', '.json', '.jsx' ] }), postcss() ]
+    plugins: [ resolve({ extensions: [ '.js', '.json', '.jsx' ] }), postcss(), buble() ]
   },
   {
     input: path.resolve(__dirname, 'src/main.js'),
@@ -52,6 +55,6 @@ export default [
       'octicons-modular',
       './Octicon'
     ],
-    plugins: [ resolve({ extensions: [ '.js', '.json', '.jsx' ] }), postcss() ]
+    plugins: [ resolve({ extensions: [ '.js', '.json', '.jsx' ] }), postcss(), buble() ]
   }
 ]

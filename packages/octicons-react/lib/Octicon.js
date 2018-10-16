@@ -3,20 +3,25 @@
 var PropTypes = require('prop-types');
 var React = require('react');
 
-const getAttrs = element => {
-  return Array.from(element.attributes).reduce((o, item) => {
+var getAttrs = function (element) {
+  return Array.from(element.attributes).reduce(function (o, item) {
     o[item.name] = item.value;
     return o
   }, {})
 };
 
-let Octicon = ({ icon, scale, className, label }) => {
-  let octicon = icon.svg({ scale, class: className, label });
+var Octicon = function (ref) {
+  var icon = ref.icon;
+  var scale = ref.scale;
+  var className = ref.className;
+  var label = ref.label;
+
+  var octicon = icon.svg({ scale: scale, class: className, label: label });
   if (!octicon) {
     return (null)
   }
 
-  let attrs = getAttrs(octicon);
+  var attrs = getAttrs(octicon);
   attrs.dangerouslySetInnerHTML = {__html: octicon.innerHTML};
   attrs.className = attrs.class;
   delete attrs.class;
@@ -38,7 +43,7 @@ Octicon.propTypes = {
 
 Octicon.defaultProps = {
   icon: {
-    svg () {}
+    svg: function svg () {}
   },
   scale: 1,
   className: null,
