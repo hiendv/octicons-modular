@@ -1,5 +1,5 @@
-const getAttrs = element => {
-  return Array.from(element.attributes).reduce((o, item) => {
+var getAttrs = function (element) {
+  return Array.from(element.attributes).reduce(function (o, item) {
     o[item.name] = item.value;
     return o
   }, {})
@@ -11,7 +11,7 @@ var Octicon = {
     icon: {
       type: Object,
       required: true,
-      validator (value) {
+      validator: function validator (value) {
         return value.svg instanceof Function
       }
     },
@@ -28,22 +28,27 @@ var Octicon = {
       default: null
     }
   },
-  render (createElement, { props }) {
-    let { icon, scale, className, label } = props;
-    let octicon = icon.svg({ scale, class: className, label });
+  render: function render (createElement, ref) {
+    var props = ref.props;
+
+    var icon = props.icon;
+    var scale = props.scale;
+    var className = props.className;
+    var label = props.label;
+    var octicon = icon.svg({ scale: scale, class: className, label: label });
     if (!octicon) {
       return
     }
 
-    let attrs = getAttrs(octicon);
-    let innerHTML = octicon.innerHTML;
+    var attrs = getAttrs(octicon);
+    var innerHTML = octicon.innerHTML;
 
     return createElement(
       octicon.tagName,
       {
-        attrs,
+        attrs: attrs,
         domProps: {
-          innerHTML
+          innerHTML: innerHTML
         }
       }
     )
