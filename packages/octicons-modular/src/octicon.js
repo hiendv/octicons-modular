@@ -1,10 +1,12 @@
+import merge from 'deepmerge'
+
 export default function (name, width, height, path, keywords) {
   const attributes = opts => {
-    let options = Object.assign({}, {
+    let options = merge({
       scale: 1,
       label: null,
       class: null
-    }, opts)
+    }, opts || {})
 
     let attrs = elementAttributes({
       version: '1.1',

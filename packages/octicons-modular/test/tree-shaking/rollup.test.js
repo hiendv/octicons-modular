@@ -4,6 +4,7 @@
 
 import path from 'path'
 import { rollup } from 'rollup'
+import resolve from 'rollup-plugin-node-resolve'
 
 describe('Rollup tree-shaking', () => {
   test('works', done => {
@@ -16,7 +17,8 @@ describe('Rollup tree-shaking', () => {
 
 const roll = async entry => {
   const bundle = await rollup({
-    input: entry
+    input: entry,
+    plugins: [ resolve() ]
   })
 
   const { code } = await bundle.generate({
