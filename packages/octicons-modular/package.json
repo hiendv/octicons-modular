@@ -27,5 +27,8 @@
     "prebuild": "rimraf lib",
     "build": "babel-node ./build/build.js"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "dependencies": {
+    "deepmerge": "^2.2.1"
+  }
 }

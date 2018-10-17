@@ -1,12 +1,16 @@
 'use strict';
 
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var merge = _interopDefault(require('deepmerge'));
+
 function octicon (name, width, height, path, keywords) {
   var attributes = function (opts) {
-    var options = Object.assign({}, {
+    var options = merge({
       scale: 1,
       label: null,
       class: null
-    }, opts);
+    }, opts || {});
 
     var attrs = elementAttributes({
       version: '1.1',
