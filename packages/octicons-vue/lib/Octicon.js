@@ -1,12 +1,5 @@
 'use strict';
 
-var getAttrs = function (element) {
-  return Array.from(element.attributes).reduce(function (o, item) {
-    o[item.name] = item.value;
-    return o
-  }, {})
-};
-
 var Octicon = {
   functional: true,
   props: {
@@ -37,12 +30,13 @@ var Octicon = {
     var scale = props.scale;
     var className = props.className;
     var label = props.label;
-    var octicon = icon.svg({ scale: scale, class: className, label: label });
+    var options = { scale: scale, class: className, label: label };
+    var octicon = icon.svg(options);
     if (!octicon) {
       return
     }
 
-    var attrs = getAttrs(octicon);
+    var attrs = icon.attrs(options);
     var innerHTML = octicon.innerHTML;
 
     return createElement(
