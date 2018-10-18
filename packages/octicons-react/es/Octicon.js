@@ -1,25 +1,23 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-var getAttrs = function (element) {
-  return Array.from(element.attributes).reduce(function (o, item) {
-    o[item.name] = item.value;
-    return o
-  }, {})
-};
-
 var Octicon = function (ref) {
   var icon = ref.icon;
   var scale = ref.scale;
   var className = ref.className;
   var label = ref.label;
 
-  var octicon = icon.svg({ scale: scale, class: className, label: label });
+  var options = { scale: scale, class: className, label: label };
+  var octicon = icon.svg(options);
   if (!octicon) {
     return (null)
   }
 
-  var attrs = getAttrs(octicon);
+  var attrs = icon.attrs(options);
+  Object.keys(attrs).forEach(function (idx) {
+    attrs[idx] = "" + (attrs[idx]);
+  });
+
   attrs.dangerouslySetInnerHTML = {__html: octicon.innerHTML};
   attrs.className = attrs.class;
   delete attrs.class;

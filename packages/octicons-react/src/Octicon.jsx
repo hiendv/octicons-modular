@@ -1,20 +1,18 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const getAttrs = element => {
-  return Array.from(element.attributes).reduce((o, item) => {
-    o[item.name] = item.value
-    return o
-  }, {})
-}
-
 let Octicon = ({ icon, scale, className, label }) => {
-  let octicon = icon.svg({ scale, class: className, label })
+  let options = { scale, class: className, label }
+  let octicon = icon.svg(options)
   if (!octicon) {
     return (null)
   }
 
-  let attrs = getAttrs(octicon)
+  let attrs = icon.attrs(options)
+  Object.keys(attrs).forEach(idx => {
+    attrs[idx] = `${attrs[idx]}`
+  })
+
   attrs.dangerouslySetInnerHTML = {__html: octicon.innerHTML}
   attrs.className = attrs.class
   delete attrs.class
