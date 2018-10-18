@@ -1,25 +1,30 @@
 'use strict';
 
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+var assign = function (t) {
+  var sources = [], len = arguments.length - 1;
+  while ( len-- > 0 ) sources[ len ] = arguments[ len + 1 ];
 
-var merge = _interopDefault(require('deepmerge'));
+  for (var s, i = 0, n = sources.length; i < n; i++) {
+    s = sources[i];
+    for (var p in s) { if (Object.prototype.hasOwnProperty.call(s, p)) { t[p] = s[p]; } }
+  }
+  return t
+};
 
 function octicon (name, width, height, path, keywords) {
   var attributes = function (opts) {
-    var options = merge({
+    var options = assign({
       scale: 1,
       label: null,
       class: null
     }, opts || {});
 
-    var attrs = elementAttributes({
+    return elementAttributes({
       version: '1.1',
       width: width,
       height: height,
       viewBox: ("0 0 " + width + " " + height)
-    }, options);
-
-    return elementAttributesString(attrs)
+    }, options)
   };
 
   var elementAttributes = function (attrs, options) {
@@ -59,11 +64,15 @@ function octicon (name, width, height, path, keywords) {
       path: path,
       keywords: keywords
     },
+    attrs: function attrs (options) {
+      return attributes(options)
+    },
     svg: function svg (options, doc) {
       if ( doc === void 0 ) doc = document;
 
       var wrapper = doc.createElement('div');
-      wrapper.innerHTML = "<svg " + (attributes(options)) + ">" + path + "</svg>";
+      var attrs = elementAttributesString(this.attrs(options));
+      wrapper.innerHTML = "<svg " + attrs + ">" + path + "</svg>";
       return wrapper.firstChild
     }
   }

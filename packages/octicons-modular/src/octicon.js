@@ -1,21 +1,25 @@
-import merge from 'deepmerge'
+const assign = (t, ...sources) => {
+  for (var s, i = 0, n = sources.length; i < n; i++) {
+    s = sources[i]
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p]
+  }
+  return t
+}
 
-export default function (name, width, height, path, keywords) {
+export default (name, width, height, path, keywords) => {
   const attributes = opts => {
-    let options = merge({
+    let options = assign({
       scale: 1,
       label: null,
       class: null
     }, opts || {})
 
-    let attrs = elementAttributes({
+    return elementAttributes({
       version: '1.1',
       width,
       height,
       viewBox: `0 0 ${width} ${height}`
     }, options)
-
-    return elementAttributesString(attrs)
   }
 
   const elementAttributes = (attrs, options) => {
@@ -55,9 +59,13 @@ export default function (name, width, height, path, keywords) {
       path,
       keywords
     },
+    attrs (options) {
+      return attributes(options)
+    },
     svg (options, doc = document) {
       let wrapper = doc.createElement('div')
-      wrapper.innerHTML = `<svg ${attributes(options)}>${path}</svg>`
+      let attrs = elementAttributesString(this.attrs(options))
+      wrapper.innerHTML = `<svg ${attrs}>${path}</svg>`
       return wrapper.firstChild
     }
   }
