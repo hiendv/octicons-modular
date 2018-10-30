@@ -3,29 +3,29 @@ import React from 'react'
 
 let Octicon = ({ icon, scale, className, label }) => {
   let options = { scale, class: className, label }
-  let octicon = icon.svg(options)
-  if (!octicon) {
+  let attrs = icon.attrs(options)
+  if (!attrs) {
     return (null)
   }
 
-  let attrs = icon.attrs(options)
   Object.keys(attrs).forEach(idx => {
     attrs[idx] = `${attrs[idx]}`
   })
 
-  attrs.dangerouslySetInnerHTML = {__html: octicon.innerHTML}
+  attrs.dangerouslySetInnerHTML = {__html: icon.path()}
   attrs.className = attrs.class
   delete attrs.class
 
   return React.createElement(
-    octicon.tagName,
+    'svg',
     attrs
   )
 }
 
 Octicon.propTypes = {
   icon: PropTypes.shape({
-    svg: PropTypes.func
+    attrs: PropTypes.func,
+    path: PropTypes.func
   }),
   scale: PropTypes.number,
   className: PropTypes.string,
@@ -34,7 +34,12 @@ Octicon.propTypes = {
 
 Octicon.defaultProps = {
   icon: {
-    svg () {}
+    attrs () {
+      return {}
+    },
+    path () {
+      return {}
+    }
   },
   scale: 1,
   className: null,

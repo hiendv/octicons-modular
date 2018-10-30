@@ -10,29 +10,29 @@ var Octicon = function (ref) {
   var label = ref.label;
 
   var options = { scale: scale, class: className, label: label };
-  var octicon = icon.svg(options);
-  if (!octicon) {
+  var attrs = icon.attrs(options);
+  if (!attrs) {
     return (null)
   }
 
-  var attrs = icon.attrs(options);
   Object.keys(attrs).forEach(function (idx) {
     attrs[idx] = "" + (attrs[idx]);
   });
 
-  attrs.dangerouslySetInnerHTML = {__html: octicon.innerHTML};
+  attrs.dangerouslySetInnerHTML = {__html: icon.path()};
   attrs.className = attrs.class;
   delete attrs.class;
 
   return React.createElement(
-    octicon.tagName,
+    'svg',
     attrs
   )
 };
 
 Octicon.propTypes = {
   icon: PropTypes.shape({
-    svg: PropTypes.func
+    attrs: PropTypes.func,
+    path: PropTypes.func
   }),
   scale: PropTypes.number,
   className: PropTypes.string,
@@ -41,7 +41,12 @@ Octicon.propTypes = {
 
 Octicon.defaultProps = {
   icon: {
-    svg: function svg () {}
+    attrs: function attrs () {
+      return {}
+    },
+    path: function path () {
+      return {}
+    }
   },
   scale: 1,
   className: null,

@@ -5,7 +5,7 @@ import Octicon, { zap } from '../es/main.js'
 describe('Octicon component', () => {
   test('invalid', () => {
     const component = Renderer.create(
-      <Octicon icon={{ svg () {} }} />
+      <Octicon icon={{ attrs () {}, path () {} }} />
     )
 
     let tree = component.toJSON()
