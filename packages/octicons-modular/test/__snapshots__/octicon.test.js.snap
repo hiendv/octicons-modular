@@ -1,105 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`utils Octicon: name .svg(options) returns an SVG which scales 1`] = `
-<svg
-  aria-hidden="true"
-  class="octicon octicon-name"
-  height="32"
-  version="1.1"
-  viewBox="0 0 16 16"
-  width="32"
->
-  <path />
-</svg>
-`;
+exports[`octicon Octicon: name .svg(options) returns an SVG which scales 1`] = `"<svg version=\\"1.1\\" width=\\"32\\" height=\\"32\\" viewBox=\\"0 0 16 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-name\\"><path/></svg>"`;
 
-exports[`utils Octicon: name .svg(options) returns an SVG which scales with 0 1`] = `
-<svg
-  aria-hidden="true"
-  class="octicon octicon-name"
-  height="0"
-  version="1.1"
-  viewBox="0 0 16 16"
-  width="0"
->
-  <path />
-</svg>
-`;
+exports[`octicon Octicon: name .svg(options) returns an SVG which scales with 0 1`] = `"<svg version=\\"1.1\\" width=\\"0\\" height=\\"0\\" viewBox=\\"0 0 16 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-name\\"><path/></svg>"`;
 
-exports[`utils Octicon: name .svg(options) returns an SVG which scales with a fractional value 1`] = `
-<svg
-  aria-hidden="true"
-  class="octicon octicon-name"
-  height="19.75"
-  version="1.1"
-  viewBox="0 0 16 16"
-  width="19.75"
->
-  <path />
-</svg>
-`;
+exports[`octicon Octicon: name .svg(options) returns an SVG which scales with a fractional value 1`] = `"<svg version=\\"1.1\\" width=\\"19.75\\" height=\\"19.75\\" viewBox=\\"0 0 16 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-name\\"><path/></svg>"`;
 
-exports[`utils Octicon: name .svg(options) returns an SVG which scales with invalid parameters 1`] = `
-<svg
-  aria-hidden="true"
-  class="octicon octicon-name"
-  height="16"
-  version="1.1"
-  viewBox="0 0 16 16"
-  width="16"
->
-  <path />
-</svg>
-`;
+exports[`octicon Octicon: name .svg(options) returns an SVG which scales with invalid parameters 1`] = `"<svg version=\\"1.1\\" width=\\"16\\" height=\\"16\\" viewBox=\\"0 0 16 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-name\\"><path/></svg>"`;
 
-exports[`utils Octicon: name .svg(options) returns an SVG with a label 1`] = `
-<svg
-  aria-label="a label"
-  class="octicon octicon-name"
-  height="16"
-  version="1.1"
-  viewBox="0 0 16 16"
-  width="16"
->
-  <path />
-</svg>
-`;
+exports[`octicon Octicon: name .svg(options) returns an SVG with a label 1`] = `"<svg version=\\"1.1\\" width=\\"16\\" height=\\"16\\" viewBox=\\"0 0 16 16\\" aria-label=\\"a label\\" class=\\"octicon octicon-name\\"><path/></svg>"`;
 
-exports[`utils Octicon: name .svg(options) returns an SVG with an additional class 1`] = `
-<svg
-  aria-hidden="true"
-  class="octicon octicon-name an-additional-class"
-  height="16"
-  version="1.1"
-  viewBox="0 0 16 16"
-  width="16"
->
-  <path />
-</svg>
-`;
+exports[`octicon Octicon: name .svg(options) returns an SVG with an additional class 1`] = `"<svg version=\\"1.1\\" width=\\"16\\" height=\\"16\\" viewBox=\\"0 0 16 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-name an-additional-class\\"><path/></svg>"`;
 
-exports[`utils Octicon: name .svg(options) returns an SVG with an invalid class 1`] = `
-<svg
-  aria-hidden="true"
-  class="octicon octicon-name"
-  height="16"
-  version="1.1"
-  viewBox="0 0 16 16"
-  width="16"
->
-  <path />
-</svg>
-`;
+exports[`octicon Octicon: name .svg(options) returns an SVG with an invalid class 1`] = `"<svg version=\\"1.1\\" width=\\"16\\" height=\\"16\\" viewBox=\\"0 0 16 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-name\\"><path/></svg>"`;
 
-exports[`utils Octicon: name .svg(options) returns an SVG without any options 1`] = `
-<svg
-  aria-hidden="true"
-  class="octicon octicon-name"
-  height="16"
-  version="1.1"
-  viewBox="0 0 16 16"
-  width="16"
->
-  <path />
-</svg>
-`;
+exports[`octicon Octicon: name .svg(options) returns an SVG without any options 1`] = `"<svg version=\\"1.1\\" width=\\"16\\" height=\\"16\\" viewBox=\\"0 0 16 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-name\\"><path/></svg>"`;

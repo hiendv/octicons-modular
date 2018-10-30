@@ -6,7 +6,13 @@ var assign = function (t) {
 
   for (var s, i = 0, n = sources.length; i < n; i++) {
     s = sources[i];
-    for (var p in s) { if (Object.prototype.hasOwnProperty.call(s, p)) { t[p] = s[p]; } }
+    for (var p in s) {
+      if (!Object.prototype.hasOwnProperty.call(s, p)) {
+        continue
+      }
+
+      t[p] = s[p];
+    }
   }
   return t
 };
@@ -58,22 +64,19 @@ function octicon (name, width, height, path, keywords) {
 
   return {
     name: name,
-    data: {
-      width: width,
-      height: height,
-      path: path,
-      keywords: keywords
+    path: function path$1 () {
+      return path
+    },
+    keywords: function keywords$1 () {
+      return keywords
     },
     attrs: function attrs (options) {
       return attributes(options)
     },
-    svg: function svg (options, doc) {
-      if ( doc === void 0 ) doc = document;
-
-      var wrapper = doc.createElement('div');
+    html: function html (options) {
       var attrs = elementAttributesString(this.attrs(options));
-      wrapper.innerHTML = "<svg " + attrs + ">" + path + "</svg>";
-      return wrapper.firstChild
+      var path = this.path();
+      return ("<svg " + attrs + ">" + path + "</svg>")
     }
   }
 }

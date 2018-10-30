@@ -1,10 +1,4 @@
-const assign = (t, ...sources) => {
-  for (var s, i = 0, n = sources.length; i < n; i++) {
-    s = sources[i]
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p]
-  }
-  return t
-}
+import { assign } from './utils'
 
 export default (name, width, height, path, keywords) => {
   const attributes = opts => {
@@ -53,20 +47,19 @@ export default (name, width, height, path, keywords) => {
 
   return {
     name,
-    data: {
-      width,
-      height,
-      path,
-      keywords
+    path () {
+      return path
+    },
+    keywords () {
+      return keywords
     },
     attrs (options) {
       return attributes(options)
     },
-    svg (options, doc = document) {
-      let wrapper = doc.createElement('div')
+    html (options) {
       let attrs = elementAttributesString(this.attrs(options))
-      wrapper.innerHTML = `<svg ${attrs}>${path}</svg>`
-      return wrapper.firstChild
+      let path = this.path()
+      return `<svg ${attrs}>${path}</svg>`
     }
   }
 }
