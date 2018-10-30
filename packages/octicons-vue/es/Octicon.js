@@ -5,7 +5,7 @@ var Octicon = {
       type: Object,
       required: true,
       validator: function validator (value) {
-        return value.svg instanceof Function
+        return value.attrs instanceof Function && value.path instanceof Function
       }
     },
     scale: {
@@ -29,20 +29,13 @@ var Octicon = {
     var className = props.className;
     var label = props.label;
     var options = { scale: scale, class: className, label: label };
-    var octicon = icon.svg(options);
-    if (!octicon) {
-      return
-    }
-
-    var attrs = icon.attrs(options);
-    var innerHTML = octicon.innerHTML;
 
     return createElement(
-      octicon.tagName,
+      'svg',
       {
-        attrs: attrs,
+        attrs: icon.attrs(options),
         domProps: {
-          innerHTML: innerHTML
+          innerHTML: icon.path()
         }
       }
     )

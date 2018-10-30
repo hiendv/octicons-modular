@@ -8,12 +8,13 @@ describe('Octicon component', () => {
     const wrapper = mount(Octicon, {
       context: {
         props: { icon: {
-          svg () {}
+          attrs () {},
+          path () {}
         } }
       }
     })
 
-    expect(wrapper.html()).toBeFalsy()
+    expect(wrapper.html()).toMatchSnapshot()
   })
 
   test('valid', () => {

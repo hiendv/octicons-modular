@@ -5,7 +5,7 @@ export default {
       type: Object,
       required: true,
       validator (value) {
-        return value.svg instanceof Function
+        return value.attrs instanceof Function && value.path instanceof Function
       }
     },
     scale: {
@@ -24,20 +24,13 @@ export default {
   render (createElement, { props }) {
     let { icon, scale, className, label } = props
     let options = { scale, class: className, label }
-    let octicon = icon.svg(options)
-    if (!octicon) {
-      return
-    }
-
-    let attrs = icon.attrs(options)
-    let innerHTML = octicon.innerHTML
 
     return createElement(
-      octicon.tagName,
+      'svg',
       {
-        attrs,
+        attrs: icon.attrs(options),
         domProps: {
-          innerHTML
+          innerHTML: icon.path()
         }
       }
     )
