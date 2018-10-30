@@ -4,14 +4,15 @@ var assign = function (t) {
 
   for (var s, i = 0, n = sources.length; i < n; i++) {
     s = sources[i];
-    for (var p in s) {
-      if (!Object.prototype.hasOwnProperty.call(s, p)) {
-        continue
+    Object.keys(s).forEach(function (p) {
+      if (p === '__proto__') {
+        return
       }
 
       t[p] = s[p];
-    }
+    });
   }
+
   return t
 };
 

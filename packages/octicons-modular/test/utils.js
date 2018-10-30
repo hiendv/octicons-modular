@@ -13,6 +13,10 @@ const t = octicon => {
         expect(octicon.html()).toMatchSnapshot()
       })
 
+      test(`return an SVG with invalid options`, () => {
+        expect(octicon.html(JSON.parse(`{"__proto__":{"oops":"It works !"}}`))).toMatchSnapshot()
+      })
+
       test(`returns an SVG which scales`, () => {
         expect(octicon.html({ scale: 2 })).toMatchSnapshot()
       })

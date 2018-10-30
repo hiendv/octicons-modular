@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`octicon Octicon: name .html(options) return an SVG with invalid options 1`] = `"<svg version=\\"1.1\\" width=\\"16\\" height=\\"16\\" viewBox=\\"0 0 16 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-name\\"><path/></svg>"`;
+
 exports[`octicon Octicon: name .html(options) returns an SVG which scales 1`] = `"<svg version=\\"1.1\\" width=\\"32\\" height=\\"32\\" viewBox=\\"0 0 16 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-name\\"><path/></svg>"`;
 
 exports[`octicon Octicon: name .html(options) returns an SVG which scales with 0 1`] = `"<svg version=\\"1.1\\" width=\\"0\\" height=\\"0\\" viewBox=\\"0 0 16 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-name\\"><path/></svg>"`;
