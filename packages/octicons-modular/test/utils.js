@@ -8,7 +8,7 @@ const t = octicon => {
       }))
     })
 
-    describe(`.svg(options)`, () => {
+    describe(`.html(options)`, () => {
       test(`returns an SVG without any options`, () => {
         expect(octicon.html()).toMatchSnapshot()
       })
@@ -39,6 +39,12 @@ const t = octicon => {
 
       test(`returns an SVG with a label`, () => {
         expect(octicon.html({ label: 'a label' })).toMatchSnapshot()
+      })
+    })
+
+    describe(`.keywords`, () => {
+      test(`returns keywords`, () => {
+        expect(octicon.keywords()).toMatchSnapshot()
       })
     })
   })
