@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Rollup tree-shaking works 1`] = `
-"/* eslint-disable */
-var Octicon = {
+"var Octicon = {
   functional: true,
   props: {
     icon: {
@@ -34,7 +33,7 @@ var Octicon = {
     var label = props.label;
     var options = { scale: scale, class: className, label: label };
 
-    return createElement('svg', { attrs: icon.attrs(options) }, [createElement('path', { attrs: icon.path() })])
+    return createElement('svg', { attrs: icon.attrs(options) }, [ createElement('path', { attrs: icon.path() }) ])
   }
 };
 
