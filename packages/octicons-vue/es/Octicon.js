@@ -1,3 +1,4 @@
+/* eslint-disable */
 var Octicon = {
   functional: true,
   props: {
@@ -30,15 +31,7 @@ var Octicon = {
     var label = props.label;
     var options = { scale: scale, class: className, label: label };
 
-    return createElement(
-      'svg',
-      {
-        attrs: icon.attrs(options),
-        domProps: {
-          innerHTML: icon.path()
-        }
-      }
-    )
+    return createElement('svg', { attrs: icon.attrs(options) }, [createElement('path', { attrs: icon.path() })])
   }
 };
 
