@@ -76,8 +76,8 @@ function octicon (name, width, height, path, keywords) {
     },
     html: function html (options) {
       var attrs = elementAttributesString(this.attrs(options));
-      var path = this.path();
-      return ("<svg " + attrs + ">" + path + "</svg>")
+      var pathAttrs = elementAttributesString(this.path());
+      return ("<svg " + attrs + "><path " + pathAttrs + "/></svg>")
     }
   }
 }

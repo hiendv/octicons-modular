@@ -3,6 +3,6 @@
 var factory = require('../octicon.js');
 
 // This is an auto-generated ES2015 icon from the modularize script. Please do not modify this file.
-var ellipsis = factory('ellipsis', 12, 16, "<path fill-rule=\"evenodd\" d=\"M11 5H1c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h10c.55 0 1-.45 1-1V6c0-.55-.45-1-1-1zM4 9H2V7h2v2zm3 0H5V7h2v2zm3 0H8V7h2v2z\"></path>", ["dot","read","more","hidden","expand"]);
+var ellipsis = factory('ellipsis', 12, 16, {"fill-rule":"evenodd","d":"M11 5H1c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h10c.55 0 1-.45 1-1V6c0-.55-.45-1-1-1zM4 9H2V7h2v2zm3 0H5V7h2v2zm3 0H8V7h2v2z"}, ["dot","read","more","hidden","expand"]);
 
 module.exports = ellipsis;

@@ -58,8 +58,8 @@ export default (name, width, height, path, keywords) => {
     },
     html (options) {
       let attrs = elementAttributesString(this.attrs(options))
-      let path = this.path()
-      return `<svg ${attrs}>${path}</svg>`
+      let pathAttrs = elementAttributesString(this.path())
+      return `<svg ${attrs}><path ${pathAttrs}/></svg>`
     }
   }
 }

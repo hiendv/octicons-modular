@@ -11,9 +11,22 @@ const icons = mapValues(octicons, o => {
 })
 
 const data = Object.keys(icons).map(name => {
+  const { keywords, path, width, height } = icons[name]
+  const pathElm = parseFragment(path)
+  // we assume that every octicon has one path only
+  const pathAttrs = pathElm.childNodes[0].attrs.reduce((result, item) => {
+    result[item.name] = item.value
+    return result
+  }, {})
+
   return {
     name,
-    data: icons[name],
+    data: {
+      keywords,
+      path: pathAttrs,
+      width,
+      height
+    },
     camelName: camelCase(name)
   }
 })
