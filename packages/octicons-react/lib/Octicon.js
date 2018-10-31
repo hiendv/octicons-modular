@@ -19,14 +19,13 @@ var Octicon = function (ref) {
     attrs[idx] = "" + (attrs[idx]);
   });
 
-  attrs.dangerouslySetInnerHTML = {__html: icon.path()};
   attrs.className = attrs.class;
   delete attrs.class;
 
-  return React.createElement(
-    'svg',
-    attrs
-  )
+  var pathAttrs = icon.path();
+  pathAttrs.key = 'p0';
+
+  return React.createElement('svg', attrs, [ React.createElement('path', pathAttrs) ])
 };
 
 Octicon.propTypes = {
