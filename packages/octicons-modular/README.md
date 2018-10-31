@@ -63,6 +63,12 @@ Returns an SVGSVGElement
 
 + options (object, optional) - Render options. Same as `attrs` options.
 
+#### `path()`
+Returns path attributes
+
+#### `keywords()`
+Return icon keywords
+
 ```js
 icon.html({
   scale: 1 // Scale the SVG
