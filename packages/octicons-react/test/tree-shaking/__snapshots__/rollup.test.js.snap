@@ -2545,8 +2545,8 @@ var Octicon = function (ref) {
 
 Octicon.propTypes = {
   icon: propTypes.shape({
-    attrs: propTypes.func,
-    path: propTypes.func
+    attrs: propTypes.func.isRequired,
+    path: propTypes.func.isRequired
   }),
   scale: propTypes.number,
   className: propTypes.string,
@@ -2554,14 +2554,6 @@ Octicon.propTypes = {
 };
 
 Octicon.defaultProps = {
-  icon: {
-    attrs: function attrs () {
-      return {}
-    },
-    path: function path () {
-      return {}
-    }
-  },
   scale: 1,
   className: null,
   label: null

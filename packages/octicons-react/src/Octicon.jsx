@@ -23,8 +23,8 @@ let Octicon = ({ icon, scale, className, label }) => {
 
 Octicon.propTypes = {
   icon: PropTypes.shape({
-    attrs: PropTypes.func,
-    path: PropTypes.func
+    attrs: PropTypes.func.isRequired,
+    path: PropTypes.func.isRequired
   }),
   scale: PropTypes.number,
   className: PropTypes.string,
@@ -32,14 +32,6 @@ Octicon.propTypes = {
 }
 
 Octicon.defaultProps = {
-  icon: {
-    attrs () {
-      return {}
-    },
-    path () {
-      return {}
-    }
-  },
   scale: 1,
   className: null,
   label: null
