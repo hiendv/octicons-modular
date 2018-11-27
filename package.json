@@ -12,7 +12,7 @@
     "test-ci": "npm test -- --coverage && codecov"
   },
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.25",
+    "@vue/test-utils": "^1.0.0-beta.26",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-jest": "^23.6.0",
@@ -24,7 +24,7 @@
     "eslint-config-import": "^0.13.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jest": "^22.0.0",
+    "eslint-plugin-jest": "^22.0.1",
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
@@ -42,11 +42,11 @@
     "rollup-plugin-buble": "^0.19.4",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^3.4.0",
-    "rollup-plugin-postcss": "^1.6.2",
+    "rollup-plugin-postcss": "^1.6.3",
     "rollup-plugin-uglify": "^6.0.0",
     "vue": "^2.5.17",
     "vue-template-compiler": "^2.5.17",
-    "webpack": "^4.25.1"
+    "webpack": "^4.26.1"
   },
   "homepage": "https://github.com/hiendv/octicons-modular",
   "bugs": {
