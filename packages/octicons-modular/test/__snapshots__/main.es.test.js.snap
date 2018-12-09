@@ -1722,6 +1722,60 @@ Array [
 ]
 `;
 
+exports[`ES library Octicon: fold-down .html(options) return an SVG with invalid options 1`] = `"<svg version=\\"1.1\\" width=\\"14\\" height=\\"16\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-fold-down\\"><path fill-rule=\\"evenodd\\" d=\\"M4 11l3 3 3-3H8V5H6v6H4zm-4 0c0 .55.45 1 1 1h2.5l-1-1h-1l2-2H5V8H3.5l-2-2H5V5H1c-.55 0-1 .45-1 1l2.5 2.5L0 11zm10.5-2H9V8h1.5l2-2H9V5h4c.55 0 1 .45 1 1l-2.5 2.5L14 11c0 .55-.45 1-1 1h-2.5l1-1h1l-2-2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-down .html(options) returns an SVG which scales 1`] = `"<svg version=\\"1.1\\" width=\\"28\\" height=\\"32\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-fold-down\\"><path fill-rule=\\"evenodd\\" d=\\"M4 11l3 3 3-3H8V5H6v6H4zm-4 0c0 .55.45 1 1 1h2.5l-1-1h-1l2-2H5V8H3.5l-2-2H5V5H1c-.55 0-1 .45-1 1l2.5 2.5L0 11zm10.5-2H9V8h1.5l2-2H9V5h4c.55 0 1 .45 1 1l-2.5 2.5L14 11c0 .55-.45 1-1 1h-2.5l1-1h1l-2-2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-down .html(options) returns an SVG which scales with 0 1`] = `"<svg version=\\"1.1\\" width=\\"0\\" height=\\"0\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-fold-down\\"><path fill-rule=\\"evenodd\\" d=\\"M4 11l3 3 3-3H8V5H6v6H4zm-4 0c0 .55.45 1 1 1h2.5l-1-1h-1l2-2H5V8H3.5l-2-2H5V5H1c-.55 0-1 .45-1 1l2.5 2.5L0 11zm10.5-2H9V8h1.5l2-2H9V5h4c.55 0 1 .45 1 1l-2.5 2.5L14 11c0 .55-.45 1-1 1h-2.5l1-1h1l-2-2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-down .html(options) returns an SVG which scales with a fractional value 1`] = `"<svg version=\\"1.1\\" width=\\"17.28\\" height=\\"19.75\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-fold-down\\"><path fill-rule=\\"evenodd\\" d=\\"M4 11l3 3 3-3H8V5H6v6H4zm-4 0c0 .55.45 1 1 1h2.5l-1-1h-1l2-2H5V8H3.5l-2-2H5V5H1c-.55 0-1 .45-1 1l2.5 2.5L0 11zm10.5-2H9V8h1.5l2-2H9V5h4c.55 0 1 .45 1 1l-2.5 2.5L14 11c0 .55-.45 1-1 1h-2.5l1-1h1l-2-2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-down .html(options) returns an SVG which scales with invalid parameters 1`] = `"<svg version=\\"1.1\\" width=\\"14\\" height=\\"16\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-fold-down\\"><path fill-rule=\\"evenodd\\" d=\\"M4 11l3 3 3-3H8V5H6v6H4zm-4 0c0 .55.45 1 1 1h2.5l-1-1h-1l2-2H5V8H3.5l-2-2H5V5H1c-.55 0-1 .45-1 1l2.5 2.5L0 11zm10.5-2H9V8h1.5l2-2H9V5h4c.55 0 1 .45 1 1l-2.5 2.5L14 11c0 .55-.45 1-1 1h-2.5l1-1h1l-2-2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-down .html(options) returns an SVG with a label 1`] = `"<svg version=\\"1.1\\" width=\\"14\\" height=\\"16\\" viewBox=\\"0 0 14 16\\" aria-label=\\"a label\\" class=\\"octicon octicon-fold-down\\"><path fill-rule=\\"evenodd\\" d=\\"M4 11l3 3 3-3H8V5H6v6H4zm-4 0c0 .55.45 1 1 1h2.5l-1-1h-1l2-2H5V8H3.5l-2-2H5V5H1c-.55 0-1 .45-1 1l2.5 2.5L0 11zm10.5-2H9V8h1.5l2-2H9V5h4c.55 0 1 .45 1 1l-2.5 2.5L14 11c0 .55-.45 1-1 1h-2.5l1-1h1l-2-2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-down .html(options) returns an SVG with an additional class 1`] = `"<svg version=\\"1.1\\" width=\\"14\\" height=\\"16\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-fold-down an-additional-class\\"><path fill-rule=\\"evenodd\\" d=\\"M4 11l3 3 3-3H8V5H6v6H4zm-4 0c0 .55.45 1 1 1h2.5l-1-1h-1l2-2H5V8H3.5l-2-2H5V5H1c-.55 0-1 .45-1 1l2.5 2.5L0 11zm10.5-2H9V8h1.5l2-2H9V5h4c.55 0 1 .45 1 1l-2.5 2.5L14 11c0 .55-.45 1-1 1h-2.5l1-1h1l-2-2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-down .html(options) returns an SVG with an invalid class 1`] = `"<svg version=\\"1.1\\" width=\\"14\\" height=\\"16\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-fold-down\\"><path fill-rule=\\"evenodd\\" d=\\"M4 11l3 3 3-3H8V5H6v6H4zm-4 0c0 .55.45 1 1 1h2.5l-1-1h-1l2-2H5V8H3.5l-2-2H5V5H1c-.55 0-1 .45-1 1l2.5 2.5L0 11zm10.5-2H9V8h1.5l2-2H9V5h4c.55 0 1 .45 1 1l-2.5 2.5L14 11c0 .55-.45 1-1 1h-2.5l1-1h1l-2-2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-down .html(options) returns an SVG without any options 1`] = `"<svg version=\\"1.1\\" width=\\"14\\" height=\\"16\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-fold-down\\"><path fill-rule=\\"evenodd\\" d=\\"M4 11l3 3 3-3H8V5H6v6H4zm-4 0c0 .55.45 1 1 1h2.5l-1-1h-1l2-2H5V8H3.5l-2-2H5V5H1c-.55 0-1 .45-1 1l2.5 2.5L0 11zm10.5-2H9V8h1.5l2-2H9V5h4c.55 0 1 .45 1 1l-2.5 2.5L14 11c0 .55-.45 1-1 1h-2.5l1-1h1l-2-2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-down .keywords returns keywords 1`] = `
+Array [
+  "unfold",
+  "hide",
+  "collapse",
+  "down",
+]
+`;
+
+exports[`ES library Octicon: fold-up .html(options) return an SVG with invalid options 1`] = `"<svg version=\\"1.1\\" width=\\"14\\" height=\\"16\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-fold-up\\"><path fill-rule=\\"evenodd\\" d=\\"M10 6L7 3 4 6h2v6h2V6h2zm4 0c0-.55-.45-1-1-1h-2.5l1 1h1l-2 2H9v1h1.5l2 2H9v1h4c.55 0 1-.45 1-1l-2.5-2.5L14 6zM3.5 8H5v1H3.5l-2 2H5v1H1c-.55 0-1-.45-1-1l2.5-2.5L0 6c0-.55.45-1 1-1h2.5l-1 1h-1l2 2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-up .html(options) returns an SVG which scales 1`] = `"<svg version=\\"1.1\\" width=\\"28\\" height=\\"32\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-fold-up\\"><path fill-rule=\\"evenodd\\" d=\\"M10 6L7 3 4 6h2v6h2V6h2zm4 0c0-.55-.45-1-1-1h-2.5l1 1h1l-2 2H9v1h1.5l2 2H9v1h4c.55 0 1-.45 1-1l-2.5-2.5L14 6zM3.5 8H5v1H3.5l-2 2H5v1H1c-.55 0-1-.45-1-1l2.5-2.5L0 6c0-.55.45-1 1-1h2.5l-1 1h-1l2 2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-up .html(options) returns an SVG which scales with 0 1`] = `"<svg version=\\"1.1\\" width=\\"0\\" height=\\"0\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-fold-up\\"><path fill-rule=\\"evenodd\\" d=\\"M10 6L7 3 4 6h2v6h2V6h2zm4 0c0-.55-.45-1-1-1h-2.5l1 1h1l-2 2H9v1h1.5l2 2H9v1h4c.55 0 1-.45 1-1l-2.5-2.5L14 6zM3.5 8H5v1H3.5l-2 2H5v1H1c-.55 0-1-.45-1-1l2.5-2.5L0 6c0-.55.45-1 1-1h2.5l-1 1h-1l2 2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-up .html(options) returns an SVG which scales with a fractional value 1`] = `"<svg version=\\"1.1\\" width=\\"17.28\\" height=\\"19.75\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-fold-up\\"><path fill-rule=\\"evenodd\\" d=\\"M10 6L7 3 4 6h2v6h2V6h2zm4 0c0-.55-.45-1-1-1h-2.5l1 1h1l-2 2H9v1h1.5l2 2H9v1h4c.55 0 1-.45 1-1l-2.5-2.5L14 6zM3.5 8H5v1H3.5l-2 2H5v1H1c-.55 0-1-.45-1-1l2.5-2.5L0 6c0-.55.45-1 1-1h2.5l-1 1h-1l2 2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-up .html(options) returns an SVG which scales with invalid parameters 1`] = `"<svg version=\\"1.1\\" width=\\"14\\" height=\\"16\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-fold-up\\"><path fill-rule=\\"evenodd\\" d=\\"M10 6L7 3 4 6h2v6h2V6h2zm4 0c0-.55-.45-1-1-1h-2.5l1 1h1l-2 2H9v1h1.5l2 2H9v1h4c.55 0 1-.45 1-1l-2.5-2.5L14 6zM3.5 8H5v1H3.5l-2 2H5v1H1c-.55 0-1-.45-1-1l2.5-2.5L0 6c0-.55.45-1 1-1h2.5l-1 1h-1l2 2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-up .html(options) returns an SVG with a label 1`] = `"<svg version=\\"1.1\\" width=\\"14\\" height=\\"16\\" viewBox=\\"0 0 14 16\\" aria-label=\\"a label\\" class=\\"octicon octicon-fold-up\\"><path fill-rule=\\"evenodd\\" d=\\"M10 6L7 3 4 6h2v6h2V6h2zm4 0c0-.55-.45-1-1-1h-2.5l1 1h1l-2 2H9v1h1.5l2 2H9v1h4c.55 0 1-.45 1-1l-2.5-2.5L14 6zM3.5 8H5v1H3.5l-2 2H5v1H1c-.55 0-1-.45-1-1l2.5-2.5L0 6c0-.55.45-1 1-1h2.5l-1 1h-1l2 2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-up .html(options) returns an SVG with an additional class 1`] = `"<svg version=\\"1.1\\" width=\\"14\\" height=\\"16\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-fold-up an-additional-class\\"><path fill-rule=\\"evenodd\\" d=\\"M10 6L7 3 4 6h2v6h2V6h2zm4 0c0-.55-.45-1-1-1h-2.5l1 1h1l-2 2H9v1h1.5l2 2H9v1h4c.55 0 1-.45 1-1l-2.5-2.5L14 6zM3.5 8H5v1H3.5l-2 2H5v1H1c-.55 0-1-.45-1-1l2.5-2.5L0 6c0-.55.45-1 1-1h2.5l-1 1h-1l2 2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-up .html(options) returns an SVG with an invalid class 1`] = `"<svg version=\\"1.1\\" width=\\"14\\" height=\\"16\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-fold-up\\"><path fill-rule=\\"evenodd\\" d=\\"M10 6L7 3 4 6h2v6h2V6h2zm4 0c0-.55-.45-1-1-1h-2.5l1 1h1l-2 2H9v1h1.5l2 2H9v1h4c.55 0 1-.45 1-1l-2.5-2.5L14 6zM3.5 8H5v1H3.5l-2 2H5v1H1c-.55 0-1-.45-1-1l2.5-2.5L0 6c0-.55.45-1 1-1h2.5l-1 1h-1l2 2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-up .html(options) returns an SVG without any options 1`] = `"<svg version=\\"1.1\\" width=\\"14\\" height=\\"16\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-fold-up\\"><path fill-rule=\\"evenodd\\" d=\\"M10 6L7 3 4 6h2v6h2V6h2zm4 0c0-.55-.45-1-1-1h-2.5l1 1h1l-2 2H9v1h1.5l2 2H9v1h4c.55 0 1-.45 1-1l-2.5-2.5L14 6zM3.5 8H5v1H3.5l-2 2H5v1H1c-.55 0-1-.45-1-1l2.5-2.5L0 6c0-.55.45-1 1-1h2.5l-1 1h-1l2 2z\\"/></svg>"`;
+
+exports[`ES library Octicon: fold-up .keywords returns keywords 1`] = `
+Array [
+  "unfold",
+  "hide",
+  "collapse",
+  "up",
+]
+`;
+
 exports[`ES library Octicon: gear .html(options) return an SVG with invalid options 1`] = `"<svg version=\\"1.1\\" width=\\"14\\" height=\\"16\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-gear\\"><path fill-rule=\\"evenodd\\" d=\\"M14 8.77v-1.6l-1.94-.64-.45-1.09.88-1.84-1.13-1.13-1.81.91-1.09-.45-.69-1.92h-1.6l-.63 1.94-1.11.45-1.84-.88-1.13 1.13.91 1.81-.45 1.09L0 7.23v1.59l1.94.64.45 1.09-.88 1.84 1.13 1.13 1.81-.91 1.09.45.69 1.92h1.59l.63-1.94 1.11-.45 1.84.88 1.13-1.13-.92-1.81.47-1.09L14 8.75v.02zM7 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z\\"/></svg>"`;
 
 exports[`ES library Octicon: gear .html(options) returns an SVG which scales 1`] = `"<svg version=\\"1.1\\" width=\\"28\\" height=\\"32\\" viewBox=\\"0 0 14 16\\" aria-hidden=\\"true\\" class=\\"octicon octicon-gear\\"><path fill-rule=\\"evenodd\\" d=\\"M14 8.77v-1.6l-1.94-.64-.45-1.09.88-1.84-1.13-1.13-1.81.91-1.09-.45-.69-1.92h-1.6l-.63 1.94-1.11.45-1.84-.88-1.13 1.13.91 1.81-.45 1.09L0 7.23v1.59l1.94.64.45 1.09-.88 1.84 1.13 1.13 1.81-.91 1.09.45.69 1.92h1.59l.63-1.94 1.11-.45 1.84.88 1.13-1.13-.92-1.81.47-1.09L14 8.75v.02zM7 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z\\"/></svg>"`;
