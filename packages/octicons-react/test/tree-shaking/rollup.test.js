@@ -17,15 +17,25 @@ describe('Rollup tree-shaking', () => {
 })
 
 const roll = async entry => {
+  let code = ''
   const bundle = await rollup({
     input: entry,
     plugins: [ resolve(), commonjs() ]
   })
 
-  const { code } = await bundle.generate({
+  const { output } = await bundle.generate({
     output: {
       format: 'es'
     }
   })
+
+  for (const chunkOrAsset of output) {
+    if (chunkOrAsset.isAsset) {
+      continue
+    }
+
+    code += chunkOrAsset.code
+  }
+
   return code
 }
