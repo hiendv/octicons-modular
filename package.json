@@ -43,9 +43,9 @@
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-postcss": "^1.6.3",
-    "rollup-plugin-uglify": "^6.0.0",
-    "vue": "^2.5.21",
-    "vue-template-compiler": "^2.5.21",
+    "rollup-plugin-uglify": "^6.0.1",
+    "vue": "^2.5.22",
+    "vue-template-compiler": "^2.5.22",
     "webpack": "^4.28.4"
   },
   "homepage": "https://github.com/hiendv/octicons-modular",
