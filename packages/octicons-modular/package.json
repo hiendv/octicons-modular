@@ -1,6 +1,6 @@
 {
   "name": "octicons-modular",
-  "version": "0.17.10",
+  "version": "0.17.12",
   "description": "Octicons with tree-shaking support and icon-per-file style",
   "keywords": [
     "icon",
