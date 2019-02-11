@@ -31,7 +31,7 @@
     "octicons-modular": "^0.17.10"
   },
   "peerDependencies": {
-    "vue": "^2.5.22"
+    "vue": "^2.6.4"
   },
   "sideEffects": false
 }

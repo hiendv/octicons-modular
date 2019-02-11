@@ -27,5 +27,10 @@
     "prebuild": "rimraf lib",
     "build": "babel-node ./build/build.js"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
 }

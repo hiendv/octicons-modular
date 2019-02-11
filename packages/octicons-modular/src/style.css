@@ -1,1 +1,5 @@
-@import 'octicons/build/build';
+.octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+}
