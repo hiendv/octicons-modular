@@ -2,6 +2,7 @@ import chalk from 'chalk'
 import path from 'path'
 import buble from 'rollup-plugin-buble'
 import { uglify } from 'rollup-plugin-uglify'
+import cleanup from 'rollup-plugin-cleanup'
 import postcss from 'rollup-plugin-postcss'
 import resolve from 'rollup-plugin-node-resolve'
 import postcssImport from 'postcss-import'
@@ -102,7 +103,8 @@ export function rollupMainConfig () {
           minimize: true,
           extract: true
         }),
-        buble()
+        buble(),
+        cleanup()
       ],
       external: id => new RegExp(`${config.paths.iconsDir}/`).test(id)
     },
@@ -119,7 +121,8 @@ export function rollupMainConfig () {
           extract: false,
           inject: false
         }),
-        buble()
+        buble(),
+        cleanup()
       ],
       external: id => new RegExp(`${config.paths.iconsDir}/`).test(id)
     }
