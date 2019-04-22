@@ -35,7 +35,14 @@ function styleInject(css, ref) {
 var css = ".octicon{display:inline-block;vertical-align:text-top;fill:currentColor}";
 styleInject(css);
 
-Object.keys(octiconsModular).forEach(function (key) { exports[key] = octiconsModular[key]; });
+Object.keys(octiconsModular).forEach(function (key) {
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return octiconsModular[key];
+    }
+  });
+});
 exports.Octicon = Octicon;
 exports.Octicons = octiconsModular;
 exports.default = Octicon;
