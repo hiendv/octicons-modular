@@ -31,8 +31,8 @@
     "octicons-modular": "^0.18.0"
   },
   "peerDependencies": {
-    "prop-types": "^15.7.1",
-    "react": "^16.8.1"
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6"
   },
   "sideEffects": false
 }

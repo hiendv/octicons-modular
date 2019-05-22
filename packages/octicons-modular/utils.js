@@ -4,8 +4,6 @@ import buble from 'rollup-plugin-buble'
 import { uglify } from 'rollup-plugin-uglify'
 import cleanup from 'rollup-plugin-cleanup'
 import postcss from 'rollup-plugin-postcss'
-import resolve from 'rollup-plugin-node-resolve'
-import postcssImport from 'postcss-import'
 
 import config from './config'
 
@@ -80,9 +78,7 @@ export function rollupMainConfig () {
         name: config.name
       },
       plugins: [
-        resolve(),
         postcss({
-          plugins: [ postcssImport() ],
           minimize: true
         }),
         buble(),
@@ -99,7 +95,6 @@ export function rollupMainConfig () {
       },
       plugins: [
         postcss({
-          plugins: [ postcssImport() ],
           minimize: true,
           extract: true
         }),
@@ -116,8 +111,6 @@ export function rollupMainConfig () {
       },
       plugins: [
         postcss({
-          plugins: [ postcssImport() ],
-          minimize: true,
           extract: false,
           inject: false
         }),
