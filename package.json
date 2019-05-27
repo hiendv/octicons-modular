@@ -23,9 +23,9 @@
     "eslint": "^5.16.0",
     "eslint-config-import": "^0.13.0",
     "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-jest": "^22.5.1",
-    "eslint-plugin-node": "^9.0.1",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jest": "^22.6.4",
+    "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^24.8.0",
@@ -47,7 +47,7 @@
     "rollup-plugin-uglify": "^6.0.2",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10",
-    "webpack": "^4.32.0"
+    "webpack": "^4.32.2"
   },
   "homepage": "https://github.com/hiendv/octicons-modular",
   "bugs": {
