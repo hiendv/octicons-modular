@@ -35,11 +35,11 @@ function styleInject(css, ref) {
 var css = ".octicon{display:inline-block;vertical-align:text-top;fill:currentColor}";
 styleInject(css);
 
-Object.keys(octiconsModular).forEach(function (key) {
-  Object.defineProperty(exports, key, {
+Object.keys(octiconsModular).forEach(function (k) {
+  if (k !== 'default') Object.defineProperty(exports, k, {
     enumerable: true,
     get: function () {
-      return octiconsModular[key];
+      return octiconsModular[k];
     }
   });
 });
