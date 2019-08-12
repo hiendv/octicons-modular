@@ -8,8 +8,8 @@ import MemoryFS from 'memory-fs'
 
 describe('Webpack tree-shaking', () => {
   test('works', done => {
-    let fs = new MemoryFS()
-    let compiler = webpack({
+    const fs = new MemoryFS()
+    const compiler = webpack({
       entry: path.resolve(__dirname, 'main.js'),
       output: {
         filename: 'main.js',
@@ -26,7 +26,7 @@ describe('Webpack tree-shaking', () => {
     compiler.run((err, stats) => {
       expect(err).toBeFalsy()
 
-      let code = fs.readFileSync('/main.js').toString('utf8')
+      const code = fs.readFileSync('/main.js').toString('utf8')
       expect(code).toMatchSnapshot()
       done()
     })

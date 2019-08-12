@@ -22,8 +22,8 @@ export default {
     }
   },
   render (createElement, { props }) {
-    let { icon, scale, className, label } = props
-    let options = { scale, class: className, label }
+    const { icon, scale, className, label } = props
+    const options = { scale, class: className, label }
 
     return createElement('svg', { attrs: icon.attrs(options) }, [ createElement('path', { attrs: icon.path() }) ])
   }

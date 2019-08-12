@@ -49,7 +49,7 @@ export function rollupIconConfig (icon) {
 }
 
 export function rollupMainConfig () {
-  let input = config.paths.srcMain
+  const input = config.paths.srcMain
   return [
     {
       input: config.paths.srcIconBase,

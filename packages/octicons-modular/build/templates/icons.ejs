@@ -5,7 +5,7 @@
 import { default as <%= icon.camelName %>$ } from './icons/<%= icon.file %>'
 <% }) -%>
 
-let icons = {}
+const icons = {}
 
 <% icons.forEach(icon => { -%>
 export { <%= icon.camelName %>$ as <%= icon.camelName %> }

@@ -2,7 +2,7 @@ import { assign } from './utils'
 
 export default (name, width, height, path, keywords) => {
   const attributes = opts => {
-    let options = assign({
+    const options = assign({
       scale: 1,
       label: null,
       class: null
@@ -29,9 +29,9 @@ export default (name, width, height, path, keywords) => {
       attrs['class'] = `octicon octicon-${name}`
     }
 
-    let actualScale = options.scale === 0 ? 0 : parseFloat(options.scale) || 1
-    let actualWidth = actualScale * parseInt(attrs['width'])
-    let actualHeight = actualScale * parseInt(attrs['height'])
+    const actualScale = options.scale === 0 ? 0 : parseFloat(options.scale) || 1
+    const actualWidth = actualScale * parseInt(attrs['width'])
+    const actualHeight = actualScale * parseInt(attrs['height'])
 
     attrs['width'] = Number(actualWidth.toFixed(2))
     attrs['height'] = Number(actualHeight.toFixed(2))
@@ -57,8 +57,8 @@ export default (name, width, height, path, keywords) => {
       return attributes(options)
     },
     html (options) {
-      let attrs = elementAttributesString(this.attrs(options))
-      let pathAttrs = elementAttributesString(this.path())
+      const attrs = elementAttributesString(this.attrs(options))
+      const pathAttrs = elementAttributesString(this.path())
       return `<svg ${attrs}><path ${pathAttrs}/></svg>`
     }
   }

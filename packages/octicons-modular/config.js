@@ -2,7 +2,7 @@ import path from 'path'
 
 const _base = __dirname
 export const paths = (base => {
-  let _ = {
+  const _ = {
     src: path.resolve(base, './src'),
     dest: path.resolve(base, './lib'),
     es: path.resolve(base, './es'),
