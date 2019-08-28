@@ -11,13 +11,13 @@ describe('octicons', () => {
   })
 
   test('works with a fake factory', () => {
-    jest.doMock(`../lib/octicon.js`, () => {
+    jest.doMock('../lib/octicon.js', () => {
       return (name, data) => {
         return name
       }
     })
     const Octicons = require('../lib/main.js')
-    jest.unmock(`../lib/octicon.js`)
+    jest.unmock('../lib/octicon.js')
 
     expect(Octicons.alert).toBe('alert')
     expect(Octicons.zap).toBe('zap')

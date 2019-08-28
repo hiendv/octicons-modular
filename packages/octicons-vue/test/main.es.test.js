@@ -7,10 +7,12 @@ describe('Octicon component', () => {
   test('invalid', () => {
     const wrapper = mount(Octicon, {
       context: {
-        props: { icon: {
-          attrs () {},
-          path () {}
-        } }
+        props: {
+          icon: {
+            attrs () {},
+            path () {}
+          }
+        }
       }
     })
 

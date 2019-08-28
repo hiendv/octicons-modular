@@ -8,6 +8,6 @@ describe('assign', () => {
   })
 
   test('survives the prototype pollution attack', () => {
-    expect(assign({}, JSON.parse(`{"__proto__":{"oops":"It works !"}}`)).oops).toBeFalsy()
+    expect(assign({}, JSON.parse('{"__proto__":{"oops":"It works !"}}')).oops).toBeFalsy()
   })
 })
