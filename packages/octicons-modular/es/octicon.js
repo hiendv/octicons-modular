@@ -40,17 +40,17 @@ function octicon (name, width, height, path, keywords) {
     }
 
     if (options.class) {
-      attrs['class'] = "octicon octicon-" + name + " " + (options.class);
+      attrs.class = "octicon octicon-" + name + " " + (options.class);
     } else {
-      attrs['class'] = "octicon octicon-" + name;
+      attrs.class = "octicon octicon-" + name;
     }
 
     var actualScale = options.scale === 0 ? 0 : parseFloat(options.scale) || 1;
-    var actualWidth = actualScale * parseInt(attrs['width']);
-    var actualHeight = actualScale * parseInt(attrs['height']);
+    var actualWidth = actualScale * parseInt(attrs.width);
+    var actualHeight = actualScale * parseInt(attrs.height);
 
-    attrs['width'] = Number(actualWidth.toFixed(2));
-    attrs['height'] = Number(actualHeight.toFixed(2));
+    attrs.width = Number(actualWidth.toFixed(2));
+    attrs.height = Number(actualHeight.toFixed(2));
 
     return attrs
   };

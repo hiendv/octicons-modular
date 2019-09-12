@@ -79,17 +79,17 @@ function octicon (name, width, height, path, keywords) {
     }
 
     if (options.class) {
-      attrs['class'] = \\"octicon octicon-\\" + name + \\" \\" + (options.class);
+      attrs.class = \\"octicon octicon-\\" + name + \\" \\" + (options.class);
     } else {
-      attrs['class'] = \\"octicon octicon-\\" + name;
+      attrs.class = \\"octicon octicon-\\" + name;
     }
 
     var actualScale = options.scale === 0 ? 0 : parseFloat(options.scale) || 1;
-    var actualWidth = actualScale * parseInt(attrs['width']);
-    var actualHeight = actualScale * parseInt(attrs['height']);
+    var actualWidth = actualScale * parseInt(attrs.width);
+    var actualHeight = actualScale * parseInt(attrs.height);
 
-    attrs['width'] = Number(actualWidth.toFixed(2));
-    attrs['height'] = Number(actualHeight.toFixed(2));
+    attrs.width = Number(actualWidth.toFixed(2));
+    attrs.height = Number(actualHeight.toFixed(2));
 
     return attrs
   };
@@ -121,36 +121,6 @@ function octicon (name, width, height, path, keywords) {
 
 // This is an auto-generated ES2015 icon from the modularize script. Please do not modify this file.
 var alert = octicon('alert', 16, 16, {\\"fill-rule\\":\\"evenodd\\",\\"d\\":\\"M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z\\"}, [\\"warning\\",\\"triangle\\",\\"exclamation\\",\\"point\\"]);
-
-function styleInject(css, ref) {
-  if ( ref === void 0 ) { ref = {}; }
-  var insertAt = ref.insertAt;
-
-  if (!css || typeof document === 'undefined') { return; }
-
-  var head = document.head || document.getElementsByTagName('head')[0];
-  var style = document.createElement('style');
-  style.type = 'text/css';
-
-  if (insertAt === 'top') {
-    if (head.firstChild) {
-      head.insertBefore(style, head.firstChild);
-    } else {
-      head.appendChild(style);
-    }
-  } else {
-    head.appendChild(style);
-  }
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = css;
-  } else {
-    style.appendChild(document.createTextNode(css));
-  }
-}
-
-var css = \\".octicon{display:inline-block;vertical-align:text-top;fill:currentColor}\\";
-styleInject(css);
 
 /* eslint-disable */
 console.log(Octicon, alert.svg());
