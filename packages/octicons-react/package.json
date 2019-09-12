@@ -1,6 +1,6 @@
 {
   "name": "octicons-react",
-  "version": "0.18.7",
+  "version": "0.18.8",
   "description": "React component for octicons-modular",
   "keywords": [
     "icon",
@@ -28,7 +28,7 @@
     "LICENSE"
   ],
   "dependencies": {
-    "octicons-modular": "^0.18.7"
+    "octicons-modular": "^0.18.8"
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
