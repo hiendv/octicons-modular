@@ -28,7 +28,7 @@
     "build": "babel-node ./build/build.js"
   },
   "sideEffects": [
-    "*.css"
+    "/**/*.css"
   ],
   "babel": {
     "presets": [
