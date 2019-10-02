@@ -22,7 +22,7 @@ var Octicon = function (ref) {
   attrs.className = attrs.class;
   delete attrs.class;
 
-  var pathAttrs = icon.path();
+  var pathAttrs = icon.path(true);
   pathAttrs.key = 'p0';
 
   return React.createElement('svg', attrs, [ React.createElement('path', pathAttrs) ])

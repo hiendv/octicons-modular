@@ -11,7 +11,7 @@ exports[`Octicon component accepts an additional class 1`] = `
 >
   <path
     d="M10 7H6l3-7-9 9h4l-3 7 9-9z"
-    fill-rule="evenodd"
+    fillRule="evenodd"
   />
 </svg>
 `;
@@ -27,7 +27,7 @@ exports[`Octicon component accepts an label 1`] = `
 >
   <path
     d="M10 7H6l3-7-9 9h4l-3 7 9-9z"
-    fill-rule="evenodd"
+    fillRule="evenodd"
   />
 </svg>
 `;
@@ -43,7 +43,7 @@ exports[`Octicon component ignores invalid additional classes 1`] = `
 >
   <path
     d="M10 7H6l3-7-9 9h4l-3 7 9-9z"
-    fill-rule="evenodd"
+    fillRule="evenodd"
   />
 </svg>
 `;
@@ -59,7 +59,7 @@ exports[`Octicon component scalable 1`] = `
 >
   <path
     d="M10 7H6l3-7-9 9h4l-3 7 9-9z"
-    fill-rule="evenodd"
+    fillRule="evenodd"
   />
 </svg>
 `;
@@ -75,7 +75,7 @@ exports[`Octicon component scalable with 0 1`] = `
 >
   <path
     d="M10 7H6l3-7-9 9h4l-3 7 9-9z"
-    fill-rule="evenodd"
+    fillRule="evenodd"
   />
 </svg>
 `;
@@ -91,7 +91,7 @@ exports[`Octicon component scalable with fractional values 1`] = `
 >
   <path
     d="M10 7H6l3-7-9 9h4l-3 7 9-9z"
-    fill-rule="evenodd"
+    fillRule="evenodd"
   />
 </svg>
 `;
@@ -107,7 +107,7 @@ exports[`Octicon component valid 1`] = `
 >
   <path
     d="M10 7H6l3-7-9 9h4l-3 7 9-9z"
-    fill-rule="evenodd"
+    fillRule="evenodd"
   />
 </svg>
 `;
