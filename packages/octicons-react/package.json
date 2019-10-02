@@ -14,7 +14,7 @@
     "svg"
   ],
   "main": "lib/main.js",
-  "module": "lib/main.es.js",
+  "module": "es/main.js",
   "scripts": {
     "prebuild": "rimraf lib",
     "build": "rollup -c rollup.config.js"
