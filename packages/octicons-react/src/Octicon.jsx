@@ -15,7 +15,7 @@ let Octicon = ({ icon, scale, className, label }) => {
   attrs.className = attrs.class
   delete attrs.class
 
-  let pathAttrs = icon.path()
+  let pathAttrs = icon.path(true)
   pathAttrs.key = 'p0'
 
   return React.createElement('svg', attrs, [ React.createElement('path', pathAttrs) ])
