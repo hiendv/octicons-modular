@@ -46,9 +46,19 @@ const t = octicon => {
       })
     })
 
-    describe('.keywords', () => {
+    describe('.keywords()', () => {
       test('returns keywords', () => {
         expect(octicon.keywords()).toMatchSnapshot()
+      })
+    })
+
+    describe('.path(camel)', () => {
+      test('returns path', () => {
+        expect(octicon.path()).toMatchSnapshot()
+      })
+
+      test('returns camel-case path', () => {
+        expect(octicon.path(true)).toMatchSnapshot()
       })
     })
   })
