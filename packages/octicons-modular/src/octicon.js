@@ -1,5 +1,9 @@
 import { assign } from './utils'
 
+const camelize = str => {
+  return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (_, c) => c.toUpperCase())
+}
+
 export default (name, width, height, path, keywords) => {
   const attributes = opts => {
     const options = assign({
@@ -47,8 +51,19 @@ export default (name, width, height, path, keywords) => {
 
   return {
     name,
-    path () {
-      return path
+    path (camel = false) {
+      const frozen = assign({}, path)
+
+      if (!camel) {
+        return frozen
+      }
+
+      const normalizedPath = {}
+      Object.keys(frozen).forEach(key => {
+        normalizedPath[camelize(key)] = frozen[key]
+      })
+
+      return normalizedPath
     },
     keywords () {
       return keywords
