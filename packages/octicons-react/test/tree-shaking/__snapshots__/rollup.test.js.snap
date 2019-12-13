@@ -12,7 +12,7 @@ function createCommonjsModule(fn, module) {
 var reactIs_production_min = createCommonjsModule(function (module, exports) {
 Object.defineProperty(exports,\\"__esModule\\",{value:!0});
 var b=\\"function\\"===typeof Symbol&&Symbol.for,c=b?Symbol.for(\\"react.element\\"):60103,d=b?Symbol.for(\\"react.portal\\"):60106,e=b?Symbol.for(\\"react.fragment\\"):60107,f=b?Symbol.for(\\"react.strict_mode\\"):60108,g=b?Symbol.for(\\"react.profiler\\"):60114,h=b?Symbol.for(\\"react.provider\\"):60109,k=b?Symbol.for(\\"react.context\\"):60110,l=b?Symbol.for(\\"react.async_mode\\"):60111,m=b?Symbol.for(\\"react.concurrent_mode\\"):60111,n=b?Symbol.for(\\"react.forward_ref\\"):60112,p=b?Symbol.for(\\"react.suspense\\"):60113,q=b?Symbol.for(\\"react.suspense_list\\"):
-60120,r=b?Symbol.for(\\"react.memo\\"):60115,t=b?Symbol.for(\\"react.lazy\\"):60116,v=b?Symbol.for(\\"react.fundamental\\"):60117,w=b?Symbol.for(\\"react.responder\\"):60118,x=b?Symbol.for(\\"react.scope\\"):60119;function y(a){if(\\"object\\"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case h:return a;default:return u}}case t:case r:case d:return u}}}function z(a){return y(a)===m}
+60120,r=b?Symbol.for(\\"react.memo\\"):60115,t=b?Symbol.for(\\"react.lazy\\"):60116,v=b?Symbol.for(\\"react.fundamental\\"):60117,w=b?Symbol.for(\\"react.responder\\"):60118,x=b?Symbol.for(\\"react.scope\\"):60119;function y(a){if(\\"object\\"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function z(a){return y(a)===m}
 exports.typeOf=y;exports.AsyncMode=l;exports.ConcurrentMode=m;exports.ContextConsumer=k;exports.ContextProvider=h;exports.Element=c;exports.ForwardRef=n;exports.Fragment=e;exports.Lazy=t;exports.Memo=r;exports.Portal=d;exports.Profiler=g;exports.StrictMode=f;exports.Suspense=p;
 exports.isValidElementType=function(a){return \\"string\\"===typeof a||\\"function\\"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||\\"object\\"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===v||a.$$typeof===w||a.$$typeof===x)};exports.isAsyncMode=function(a){return z(a)||y(a)===l};exports.isConcurrentMode=z;exports.isContextConsumer=function(a){return y(a)===k};exports.isContextProvider=function(a){return y(a)===h};
 exports.isElement=function(a){return \\"object\\"===typeof a&&null!==a&&a.$$typeof===c};exports.isForwardRef=function(a){return y(a)===n};exports.isFragment=function(a){return y(a)===e};exports.isLazy=function(a){return y(a)===t};exports.isMemo=function(a){return y(a)===r};exports.isPortal=function(a){return y(a)===d};exports.isProfiler=function(a){return y(a)===g};exports.isStrictMode=function(a){return y(a)===f};exports.isSuspense=function(a){return y(a)===p};
@@ -163,6 +163,8 @@ function typeOf(object) {
             switch ($$typeofType) {
               case REACT_CONTEXT_TYPE:
               case REACT_FORWARD_REF_TYPE:
+              case REACT_LAZY_TYPE:
+              case REACT_MEMO_TYPE:
               case REACT_PROVIDER_TYPE:
                 return $$typeofType;
 
@@ -172,8 +174,6 @@ function typeOf(object) {
 
         }
 
-      case REACT_LAZY_TYPE:
-      case REACT_MEMO_TYPE:
       case REACT_PORTAL_TYPE:
         return $$typeof;
     }
@@ -1160,22 +1160,21 @@ if (process.env.NODE_ENV !== 'production') {
 }
 });
 
-var n=\\"function\\"===typeof Symbol&&Symbol.for,p=n?Symbol.for(\\"react.element\\"):60103,q=n?Symbol.for(\\"react.portal\\"):60106,r=n?Symbol.for(\\"react.fragment\\"):60107,t=n?Symbol.for(\\"react.strict_mode\\"):60108,u=n?Symbol.for(\\"react.profiler\\"):60114,v=n?Symbol.for(\\"react.provider\\"):60109,w=n?Symbol.for(\\"react.context\\"):60110,x=n?Symbol.for(\\"react.forward_ref\\"):60112,y=n?Symbol.for(\\"react.suspense\\"):60113,aa=n?Symbol.for(\\"react.suspense_list\\"):60120,ba=n?Symbol.for(\\"react.memo\\"):
-60115,ca=n?Symbol.for(\\"react.lazy\\"):60116;var z=\\"function\\"===typeof Symbol&&Symbol.iterator;
-function A(a){for(var b=a.message,c=\\"https://reactjs.org/docs/error-decoder.html?invariant=\\"+b,d=1;d<arguments.length;d++)c+=\\"&args[]=\\"+encodeURIComponent(arguments[d]);a.message=\\"Minified React error #\\"+b+\\"; visit \\"+c+\\" for the full message or use the non-minified dev environment for full errors and additional helpful warnings. \\";return a}var B={isMounted:function(){return !1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},C={};
-function D(a,b,c){this.props=a;this.context=b;this.refs=C;this.updater=c||B;}D.prototype.isReactComponent={};D.prototype.setState=function(a,b){if(\\"object\\"!==typeof a&&\\"function\\"!==typeof a&&null!=a)throw A(Error(85));this.updater.enqueueSetState(this,a,b,\\"setState\\");};D.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,\\"forceUpdate\\");};function E(){}E.prototype=D.prototype;function F(a,b,c){this.props=a;this.context=b;this.refs=C;this.updater=c||B;}var G=F.prototype=new E;
-G.constructor=F;objectAssign(G,D.prototype);G.isPureReactComponent=!0;var H={current:null},I={suspense:null},J={current:null},K=Object.prototype.hasOwnProperty,L={key:!0,ref:!0,__self:!0,__source:!0};
-function M(a,b,c){var d,e={},g=null,l=null;if(null!=b)for(d in void 0!==b.ref&&(l=b.ref),void 0!==b.key&&(g=\\"\\"+b.key),b)K.call(b,d)&&!L.hasOwnProperty(d)&&(e[d]=b[d]);var f=arguments.length-2;if(1===f)e.children=c;else if(1<f){for(var k=Array(f),m=0;m<f;m++)k[m]=arguments[m+2];e.children=k;}if(a&&a.defaultProps)for(d in f=a.defaultProps,f)void 0===e[d]&&(e[d]=f[d]);return {$$typeof:p,type:a,key:g,ref:l,props:e,_owner:J.current}}
-function da(a,b){return {$$typeof:p,type:a.type,key:b,ref:a.ref,props:a.props,_owner:a._owner}}function N(a){return \\"object\\"===typeof a&&null!==a&&a.$$typeof===p}function escape(a){var b={\\"=\\":\\"=0\\",\\":\\":\\"=2\\"};return \\"$\\"+(\\"\\"+a).replace(/[=:]/g,function(a){return b[a]})}var O=/\\\\/+/g,P=[];function Q(a,b,c,d){if(P.length){var e=P.pop();e.result=a;e.keyPrefix=b;e.func=c;e.context=d;e.count=0;return e}return {result:a,keyPrefix:b,func:c,context:d,count:0}}
+var n=\\"function\\"===typeof Symbol&&Symbol.for,p=n?Symbol.for(\\"react.element\\"):60103,q=n?Symbol.for(\\"react.portal\\"):60106,r=n?Symbol.for(\\"react.fragment\\"):60107,t=n?Symbol.for(\\"react.strict_mode\\"):60108,u=n?Symbol.for(\\"react.profiler\\"):60114,v=n?Symbol.for(\\"react.provider\\"):60109,w=n?Symbol.for(\\"react.context\\"):60110,x=n?Symbol.for(\\"react.forward_ref\\"):60112,y=n?Symbol.for(\\"react.suspense\\"):60113;var z=n?Symbol.for(\\"react.memo\\"):60115,aa=n?Symbol.for(\\"react.lazy\\"):60116;var A=\\"function\\"===typeof Symbol&&Symbol.iterator;
+function B(a){for(var b=\\"https://reactjs.org/docs/error-decoder.html?invariant=\\"+a,c=1;c<arguments.length;c++)b+=\\"&args[]=\\"+encodeURIComponent(arguments[c]);return \\"Minified React error #\\"+a+\\"; visit \\"+b+\\" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\\"}var C={isMounted:function(){return !1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},D={};
+function E(a,b,c){this.props=a;this.context=b;this.refs=D;this.updater=c||C;}E.prototype.isReactComponent={};E.prototype.setState=function(a,b){if(\\"object\\"!==typeof a&&\\"function\\"!==typeof a&&null!=a)throw Error(B(85));this.updater.enqueueSetState(this,a,b,\\"setState\\");};E.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,\\"forceUpdate\\");};function F(){}F.prototype=E.prototype;function G(a,b,c){this.props=a;this.context=b;this.refs=D;this.updater=c||C;}var H=G.prototype=new F;
+H.constructor=G;objectAssign(H,E.prototype);H.isPureReactComponent=!0;var I={current:null},J={current:null},K=Object.prototype.hasOwnProperty,L={key:!0,ref:!0,__self:!0,__source:!0};
+function M(a,b,c){var e,d={},g=null,l=null;if(null!=b)for(e in void 0!==b.ref&&(l=b.ref),void 0!==b.key&&(g=\\"\\"+b.key),b)K.call(b,e)&&!L.hasOwnProperty(e)&&(d[e]=b[e]);var f=arguments.length-2;if(1===f)d.children=c;else if(1<f){for(var k=Array(f),m=0;m<f;m++)k[m]=arguments[m+2];d.children=k;}if(a&&a.defaultProps)for(e in f=a.defaultProps,f)void 0===d[e]&&(d[e]=f[e]);return {$$typeof:p,type:a,key:g,ref:l,props:d,_owner:J.current}}
+function ba(a,b){return {$$typeof:p,type:a.type,key:b,ref:a.ref,props:a.props,_owner:a._owner}}function N(a){return \\"object\\"===typeof a&&null!==a&&a.$$typeof===p}function escape(a){var b={\\"=\\":\\"=0\\",\\":\\":\\"=2\\"};return \\"$\\"+(\\"\\"+a).replace(/[=:]/g,function(a){return b[a]})}var O=/\\\\/+/g,P=[];function Q(a,b,c,e){if(P.length){var d=P.pop();d.result=a;d.keyPrefix=b;d.func=c;d.context=e;d.count=0;return d}return {result:a,keyPrefix:b,func:c,context:e,count:0}}
 function R(a){a.result=null;a.keyPrefix=null;a.func=null;a.context=null;a.count=0;10>P.length&&P.push(a);}
-function S(a,b,c,d){var e=typeof a;if(\\"undefined\\"===e||\\"boolean\\"===e)a=null;var g=!1;if(null===a)g=!0;else switch(e){case \\"string\\":case \\"number\\":g=!0;break;case \\"object\\":switch(a.$$typeof){case p:case q:g=!0;}}if(g)return c(d,a,\\"\\"===b?\\".\\"+T(a,0):b),1;g=0;b=\\"\\"===b?\\".\\":b+\\":\\";if(Array.isArray(a))for(var l=0;l<a.length;l++){e=a[l];var f=b+T(e,l);g+=S(e,f,c,d);}else if(null===a||\\"object\\"!==typeof a?f=null:(f=z&&a[z]||a[\\"@@iterator\\"],f=\\"function\\"===typeof f?f:null),\\"function\\"===typeof f)for(a=f.call(a),l=
-0;!(e=a.next()).done;)e=e.value,f=b+T(e,l++),g+=S(e,f,c,d);else if(\\"object\\"===e)throw c=\\"\\"+a,A(Error(31),\\"[object Object]\\"===c?\\"object with keys {\\"+Object.keys(a).join(\\", \\")+\\"}\\":c,\\"\\");return g}function U(a,b,c){return null==a?0:S(a,\\"\\",b,c)}function T(a,b){return \\"object\\"===typeof a&&null!==a&&null!=a.key?escape(a.key):b.toString(36)}function ea(a,b){a.func.call(a.context,b,a.count++);}
-function fa(a,b,c){var d=a.result,e=a.keyPrefix;a=a.func.call(a.context,b,a.count++);Array.isArray(a)?V(a,d,c,function(a){return a}):null!=a&&(N(a)&&(a=da(a,e+(!a.key||b&&b.key===a.key?\\"\\":(\\"\\"+a.key).replace(O,\\"$&/\\")+\\"/\\")+c)),d.push(a));}function V(a,b,c,d,e){var g=\\"\\";null!=c&&(g=(\\"\\"+c).replace(O,\\"$&/\\")+\\"/\\");b=Q(b,g,d,e);U(a,fa,b);R(b);}function W(){var a=H.current;if(null===a)throw A(Error(321));return a}
-var X={Children:{map:function(a,b,c){if(null==a)return a;var d=[];V(a,d,null,b,c);return d},forEach:function(a,b,c){if(null==a)return a;b=Q(null,null,b,c);U(a,ea,b);R(b);},count:function(a){return U(a,function(){return null},null)},toArray:function(a){var b=[];V(a,b,null,function(a){return a});return b},only:function(a){if(!N(a))throw A(Error(143));return a}},createRef:function(){return {current:null}},Component:D,PureComponent:F,createContext:function(a,b){void 0===b&&(b=null);a={$$typeof:w,_calculateChangedBits:b,
-_currentValue:a,_currentValue2:a,_threadCount:0,Provider:null,Consumer:null};a.Provider={$$typeof:v,_context:a};return a.Consumer=a},forwardRef:function(a){return {$$typeof:x,render:a}},lazy:function(a){return {$$typeof:ca,_ctor:a,_status:-1,_result:null}},memo:function(a,b){return {$$typeof:ba,type:a,compare:void 0===b?null:b}},useCallback:function(a,b){return W().useCallback(a,b)},useContext:function(a,b){return W().useContext(a,b)},useEffect:function(a,b){return W().useEffect(a,b)},useImperativeHandle:function(a,
-b,c){return W().useImperativeHandle(a,b,c)},useDebugValue:function(){},useLayoutEffect:function(a,b){return W().useLayoutEffect(a,b)},useMemo:function(a,b){return W().useMemo(a,b)},useReducer:function(a,b,c){return W().useReducer(a,b,c)},useRef:function(a){return W().useRef(a)},useState:function(a){return W().useState(a)},Fragment:r,Profiler:u,StrictMode:t,Suspense:y,unstable_SuspenseList:aa,createElement:M,cloneElement:function(a,b,c){if(null===a||void 0===a)throw A(Error(267),a);var d=objectAssign({},a.props),
-e=a.key,g=a.ref,l=a._owner;if(null!=b){void 0!==b.ref&&(g=b.ref,l=J.current);void 0!==b.key&&(e=\\"\\"+b.key);if(a.type&&a.type.defaultProps)var f=a.type.defaultProps;for(k in b)K.call(b,k)&&!L.hasOwnProperty(k)&&(d[k]=void 0===b[k]&&void 0!==f?f[k]:b[k]);}var k=arguments.length-2;if(1===k)d.children=c;else if(1<k){f=Array(k);for(var m=0;m<k;m++)f[m]=arguments[m+2];d.children=f;}return {$$typeof:p,type:a.type,key:e,ref:g,props:d,_owner:l}},createFactory:function(a){var b=M.bind(null,a);b.type=a;return b},
-isValidElement:N,version:\\"16.10.2\\",unstable_withSuspenseConfig:function(a,b){var c=I.suspense;I.suspense=void 0===b?null:b;try{a();}finally{I.suspense=c;}},__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentDispatcher:H,ReactCurrentBatchConfig:I,ReactCurrentOwner:J,IsSomeRendererActing:{current:!1},assign:objectAssign}},Y={default:X},Z=Y&&X||Y;var react_production_min=Z.default||Z;
+function S(a,b,c,e){var d=typeof a;if(\\"undefined\\"===d||\\"boolean\\"===d)a=null;var g=!1;if(null===a)g=!0;else switch(d){case \\"string\\":case \\"number\\":g=!0;break;case \\"object\\":switch(a.$$typeof){case p:case q:g=!0;}}if(g)return c(e,a,\\"\\"===b?\\".\\"+T(a,0):b),1;g=0;b=\\"\\"===b?\\".\\":b+\\":\\";if(Array.isArray(a))for(var l=0;l<a.length;l++){d=a[l];var f=b+T(d,l);g+=S(d,f,c,e);}else if(null===a||\\"object\\"!==typeof a?f=null:(f=A&&a[A]||a[\\"@@iterator\\"],f=\\"function\\"===typeof f?f:null),\\"function\\"===typeof f)for(a=f.call(a),l=
+0;!(d=a.next()).done;)d=d.value,f=b+T(d,l++),g+=S(d,f,c,e);else if(\\"object\\"===d)throw c=\\"\\"+a,Error(B(31,\\"[object Object]\\"===c?\\"object with keys {\\"+Object.keys(a).join(\\", \\")+\\"}\\":c,\\"\\"));return g}function U(a,b,c){return null==a?0:S(a,\\"\\",b,c)}function T(a,b){return \\"object\\"===typeof a&&null!==a&&null!=a.key?escape(a.key):b.toString(36)}function ca(a,b){a.func.call(a.context,b,a.count++);}
+function da(a,b,c){var e=a.result,d=a.keyPrefix;a=a.func.call(a.context,b,a.count++);Array.isArray(a)?V(a,e,c,function(a){return a}):null!=a&&(N(a)&&(a=ba(a,d+(!a.key||b&&b.key===a.key?\\"\\":(\\"\\"+a.key).replace(O,\\"$&/\\")+\\"/\\")+c)),e.push(a));}function V(a,b,c,e,d){var g=\\"\\";null!=c&&(g=(\\"\\"+c).replace(O,\\"$&/\\")+\\"/\\");b=Q(b,g,e,d);U(a,da,b);R(b);}function W(){var a=I.current;if(null===a)throw Error(B(321));return a}
+var X={Children:{map:function(a,b,c){if(null==a)return a;var e=[];V(a,e,null,b,c);return e},forEach:function(a,b,c){if(null==a)return a;b=Q(null,null,b,c);U(a,ca,b);R(b);},count:function(a){return U(a,function(){return null},null)},toArray:function(a){var b=[];V(a,b,null,function(a){return a});return b},only:function(a){if(!N(a))throw Error(B(143));return a}},createRef:function(){return {current:null}},Component:E,PureComponent:G,createContext:function(a,b){void 0===b&&(b=null);a={$$typeof:w,_calculateChangedBits:b,
+_currentValue:a,_currentValue2:a,_threadCount:0,Provider:null,Consumer:null};a.Provider={$$typeof:v,_context:a};return a.Consumer=a},forwardRef:function(a){return {$$typeof:x,render:a}},lazy:function(a){return {$$typeof:aa,_ctor:a,_status:-1,_result:null}},memo:function(a,b){return {$$typeof:z,type:a,compare:void 0===b?null:b}},useCallback:function(a,b){return W().useCallback(a,b)},useContext:function(a,b){return W().useContext(a,b)},useEffect:function(a,b){return W().useEffect(a,b)},useImperativeHandle:function(a,
+b,c){return W().useImperativeHandle(a,b,c)},useDebugValue:function(){},useLayoutEffect:function(a,b){return W().useLayoutEffect(a,b)},useMemo:function(a,b){return W().useMemo(a,b)},useReducer:function(a,b,c){return W().useReducer(a,b,c)},useRef:function(a){return W().useRef(a)},useState:function(a){return W().useState(a)},Fragment:r,Profiler:u,StrictMode:t,Suspense:y,createElement:M,cloneElement:function(a,b,c){if(null===a||void 0===a)throw Error(B(267,a));var e=objectAssign({},a.props),d=a.key,g=a.ref,l=a._owner;
+if(null!=b){void 0!==b.ref&&(g=b.ref,l=J.current);void 0!==b.key&&(d=\\"\\"+b.key);if(a.type&&a.type.defaultProps)var f=a.type.defaultProps;for(k in b)K.call(b,k)&&!L.hasOwnProperty(k)&&(e[k]=void 0===b[k]&&void 0!==f?f[k]:b[k]);}var k=arguments.length-2;if(1===k)e.children=c;else if(1<k){f=Array(k);for(var m=0;m<k;m++)f[m]=arguments[m+2];e.children=f;}return {$$typeof:p,type:a.type,key:d,ref:g,props:e,_owner:l}},createFactory:function(a){var b=M.bind(null,a);b.type=a;return b},isValidElement:N,version:\\"16.12.0\\",
+__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentDispatcher:I,ReactCurrentBatchConfig:{suspense:null},ReactCurrentOwner:J,IsSomeRendererActing:{current:!1},assign:objectAssign}},Y={default:X},Z=Y&&X||Y;var react_production_min=Z.default||Z;
 
 var react_development = createCommonjsModule(function (module) {
 
@@ -1189,7 +1188,7 @@ var checkPropTypes = checkPropTypes_1;
 
 // TODO: this is special because it gets imported during build.
 
-var ReactVersion = '16.10.2';
+var ReactVersion = '16.12.0';
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -1230,16 +1229,8 @@ function getIteratorFn(maybeIterable) {
 }
 
 // Do not require this module directly! Use normal \`invariant\` calls with
-// template literal strings. The messages will be converted to ReactError during
-// build, and in production they will be minified.
-
-// Do not require this module directly! Use normal \`invariant\` calls with
-// template literal strings. The messages will be converted to ReactError during
-// build, and in production they will be minified.
-function ReactError(error) {
-  error.name = 'Invariant Violation';
-  return error;
-}
+// template literal strings. The messages will be replaced with error codes
+// during build.
 
 /**
  * Use invariant() to assert state which your program assumes to be true.
@@ -1493,13 +1484,11 @@ Component.prototype.isReactComponent = {};
  */
 
 Component.prototype.setState = function (partialState, callback) {
-  (function () {
-    if (!(typeof partialState === 'object' || typeof partialState === 'function' || partialState == null)) {
-      {
-        throw ReactError(Error(\\"setState(...): takes an object of state variables to update or a function which returns an object of state variables.\\"));
-      }
+  if (!(typeof partialState === 'object' || typeof partialState === 'function' || partialState == null)) {
+    {
+      throw Error(\\"setState(...): takes an object of state variables to update or a function which returns an object of state variables.\\");
     }
-  })();
+  }
 
   this.updater.enqueueSetState(this, partialState, callback, 'setState');
 };
@@ -1889,8 +1878,8 @@ function defineRefPropWarningGetter(props, displayName) {
 }
 /**
  * Factory method to create a new React element. This no longer adheres to
- * the class pattern, so do not use new to call it. Also, no instanceof check
- * will work. Instead test $$typeof field against Symbol.for('react.element') to check
+ * the class pattern, so do not use new to call it. Also, instanceof check
+ * will not work. Instead test $$typeof field against Symbol.for('react.element') to check
  * if something is a React Element.
  *
  * @param {*} type
@@ -2060,13 +2049,11 @@ function cloneAndReplaceKey(oldElement, newKey) {
  */
 
 function cloneElement(element, config, children) {
-  (function () {
-    if (!!(element === null || element === undefined)) {
-      {
-        throw ReactError(Error(\\"React.cloneElement(...): The argument must be a React element, but you passed \\" + element + \\".\\"));
-      }
+  if (!!(element === null || element === undefined)) {
+    {
+      throw Error(\\"React.cloneElement(...): The argument must be a React element, but you passed \\" + element + \\".\\");
     }
-  })();
+  }
 
   var propName; // Original props are copied
 
@@ -2299,13 +2286,11 @@ function traverseAllChildrenImpl(children, nameSoFar, callback, traverseContext)
 
       var childrenString = '' + children;
 
-      (function () {
+      {
         {
-          {
-            throw ReactError(Error(\\"Objects are not valid as a React child (found: \\" + (childrenString === '[object Object]' ? 'object with keys {' + Object.keys(children).join(', ') + '}' : childrenString) + \\").\\" + addendum));
-          }
+          throw Error(\\"Objects are not valid as a React child (found: \\" + (childrenString === '[object Object]' ? 'object with keys {' + Object.keys(children).join(', ') + '}' : childrenString) + \\").\\" + addendum);
         }
-      })();
+      }
     }
   }
 
@@ -2491,13 +2476,11 @@ function toArray(children) {
 
 
 function onlyChild(children) {
-  (function () {
-    if (!isValidElement(children)) {
-      {
-        throw ReactError(Error(\\"React.Children.only expected to receive a single React element child.\\"));
-      }
+  if (!isValidElement(children)) {
+    {
+      throw Error(\\"React.Children.only expected to receive a single React element child.\\");
     }
-  })();
+  }
 
   return children;
 }
@@ -2698,13 +2681,11 @@ function memo(type, compare) {
 function resolveDispatcher() {
   var dispatcher = ReactCurrentDispatcher.current;
 
-  (function () {
-    if (!(dispatcher !== null)) {
-      {
-        throw ReactError(Error(\\"Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:\\\\n1. You might have mismatching versions of React and the renderer (such as React DOM)\\\\n2. You might be breaking the Rules of Hooks\\\\n3. You might have more than one copy of React in the same app\\\\nSee https://fb.me/react-invalid-hook-call for tips about how to debug and fix this problem.\\"));
-      }
+  if (!(dispatcher !== null)) {
+    {
+      throw Error(\\"Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:\\\\n1. You might have mismatching versions of React and the renderer (such as React DOM)\\\\n2. You might be breaking the Rules of Hooks\\\\n3. You might have more than one copy of React in the same app\\\\nSee https://fb.me/react-invalid-hook-call for tips about how to debug and fix this problem.\\");
     }
-  })();
+  }
 
   return dispatcher;
 }
@@ -2765,17 +2746,6 @@ function useDebugValue(value, formatterFn) {
   {
     var dispatcher = resolveDispatcher();
     return dispatcher.useDebugValue(value, formatterFn);
-  }
-}
-
-function withSuspenseConfig(scope, config) {
-  var previousConfig = ReactCurrentBatchConfig.suspense;
-  ReactCurrentBatchConfig.suspense = config === undefined ? null : config;
-
-  try {
-    scope();
-  } finally {
-    ReactCurrentBatchConfig.suspense = previousConfig;
   }
 }
 
@@ -3105,14 +3075,10 @@ function cloneElementWithValidation(element, props, children) {
   } catch (e) {
   }
 }
-// Till then, we warn about the missing mock, but still fallback to a sync mode compatible version
+// Till then, we warn about the missing mock, but still fallback to a legacy mode compatible version
 
  // For tests, we flush suspense fallbacks in an act scope;
 // *except* in some of our own tests, where we test incremental loading states.
-
- // Changes priority of some events like mousemove to user-blocking priority,
-// but without making them discrete. The flag exists in case it causes
-// starvation problems.
 
  // Add a callback property to suspense to notify which promises are currently
 // in the update queue. This allows reporting and tracing of what is causing
@@ -3123,6 +3089,12 @@ function cloneElementWithValidation(element, props, children) {
  // Part of the simplification of React.createElement so we can eventually move
 // from React.createElement to React.jsx
 // https://github.com/reactjs/rfcs/blob/createlement-rfc/text/0000-create-element-changes.md
+
+
+
+
+
+ // Flag to turn event.target and event.currentTarget in ReactNative from a reactTag to a component instance
 
 var React = {
   Children: {
@@ -3153,13 +3125,11 @@ var React = {
   Profiler: REACT_PROFILER_TYPE,
   StrictMode: REACT_STRICT_MODE_TYPE,
   Suspense: REACT_SUSPENSE_TYPE,
-  unstable_SuspenseList: REACT_SUSPENSE_LIST_TYPE,
   createElement: createElementWithValidation,
   cloneElement: cloneElementWithValidation,
   createFactory: createFactoryWithValidation,
   isValidElement: isValidElement,
   version: ReactVersion,
-  unstable_withSuspenseConfig: withSuspenseConfig,
   __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: ReactSharedInternals
 };
 

@@ -1,3 +1,4 @@
+/* eslint-disable jest/no-export */
 const t = octicon => {
   describe(`Octicon: ${octicon.name}`, () => {
     test('valid', () => {

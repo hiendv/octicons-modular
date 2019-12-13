@@ -8,11 +8,9 @@ import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 
 describe('Rollup tree-shaking', () => {
-  test('works', done => {
-    roll(path.resolve(__dirname, 'main.js')).then(code => {
-      expect(code).toMatchSnapshot()
-      done()
-    })
+  test('works', async () => {
+    const code = await roll(path.resolve(__dirname, 'main.js'))
+    expect(code).toMatchSnapshot()
   })
 })
 
