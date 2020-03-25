@@ -31,7 +31,7 @@ function styleInject(css, ref) {
   }
 }
 
-var css = ".octicon{display:inline-block;vertical-align:text-top;fill:currentColor}";
-styleInject(css);
+var css_248z = ".octicon{display:inline-block;vertical-align:text-top;fill:currentColor}";
+styleInject(css_248z);
 
 export default Octicon;
