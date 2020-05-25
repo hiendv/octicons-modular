@@ -44,5 +44,5 @@ Object.keys(octiconsModular).forEach(function (k) {
   });
 });
 exports.Octicon = Octicon;
-exports.Octicons = octiconsModular;
 exports.default = Octicon;
+exports.Octicons = octiconsModular;

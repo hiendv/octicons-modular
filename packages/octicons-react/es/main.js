@@ -1,5 +1,5 @@
 import Octicon from './Octicon';
-export { default as Octicon } from './Octicon';
+export { default as Octicon, default } from './Octicon';
 export * from 'octicons-modular';
 import * as octiconsModular from 'octicons-modular';
 export { octiconsModular as Octicons };
@@ -33,5 +33,3 @@ function styleInject(css, ref) {
 
 var css_248z = ".octicon{display:inline-block;vertical-align:text-top;fill:currentColor}";
 styleInject(css_248z);
-
-export default Octicon;
