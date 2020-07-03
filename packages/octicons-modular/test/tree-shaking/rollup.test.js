@@ -1,3 +1,7 @@
+/**
+ * @jest-environment node
+ */
+
 import path from 'path'
 import { rollup } from 'rollup'
 import resolve from 'rollup-plugin-node-resolve'
