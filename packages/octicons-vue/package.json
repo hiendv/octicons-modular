@@ -1,6 +1,6 @@
 {
   "name": "octicons-vue",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Vue component for octicons-modular",
   "keywords": [
     "icon",
@@ -28,7 +28,7 @@
     "LICENSE"
   ],
   "dependencies": {
-    "octicons-modular": "^1.0.5"
+    "octicons-modular": "^1.0.6"
   },
   "peerDependencies": {
     "vue": "^2.6.11"
