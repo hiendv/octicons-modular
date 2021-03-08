@@ -1,7 +1,7 @@
 import path from 'path'
-import resolve from 'rollup-plugin-node-resolve'
+import resolve from '@rollup/plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
-import buble from 'rollup-plugin-buble'
+import buble from '@rollup/plugin-buble'
 
 export default [
   {
@@ -9,7 +9,8 @@ export default [
     output: {
       file: path.resolve(__dirname, 'lib/Octicon.js'),
       format: 'cjs',
-      interop: false
+      interop: false,
+      exports: 'auto'
     },
     external: [
       'react',
@@ -22,7 +23,8 @@ export default [
     output: {
       file: path.resolve(__dirname, 'es/Octicon.js'),
       format: 'es',
-      interop: false
+      interop: false,
+      exports: 'auto'
     },
     external: [
       'react',
@@ -49,7 +51,8 @@ export default [
     output: {
       file: path.resolve(__dirname, 'es/main.js'),
       format: 'es',
-      interop: false
+      interop: false,
+      exports: 'auto'
     },
     external: [
       'octicons-modular',

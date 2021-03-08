@@ -170,7 +170,7 @@ var css_248z = \\".octicon{display:inline-block;vertical-align:text-top;fill:cur
 styleInject(css_248z);
 
 /* eslint-disable */
-console.log(Octicon, alert.svg());
+console.log(Octicon, alert.html());
 // the zap icon is removed since it's unused
 "
 `;

@@ -4,7 +4,7 @@
 
 import path from 'path'
 import { rollup } from 'rollup'
-import resolve from 'rollup-plugin-node-resolve'
+import resolve from '@rollup/plugin-node-resolve'
 
 describe('Rollup tree-shaking', () => {
   test('works', async () => {

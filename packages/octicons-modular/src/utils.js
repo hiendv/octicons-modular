@@ -1,5 +1,5 @@
 const assign = (t, ...sources) => {
-  for (var s, i = 0, n = sources.length; i < n; i++) {
+  for (let s, i = 0, n = sources.length; i < n; i++) {
     s = sources[i]
     Object.keys(s).forEach(p => {
       if (p === '__proto__') {

@@ -18,6 +18,7 @@ describe('Webpack tree-shaking', () => {
       optimization: {
         sideEffects: true
       },
+      target: [ 'web', 'es5' ],
       mode: 'production'
     })
 
