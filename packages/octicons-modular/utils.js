@@ -1,7 +1,7 @@
 import chalk from 'chalk'
 import path from 'path'
 import buble from '@rollup/plugin-buble'
-import { uglify } from 'rollup-plugin-uglify'
+import { terser } from 'rollup-plugin-terser'
 import cleanup from 'rollup-plugin-cleanup'
 import postcss from 'rollup-plugin-postcss'
 
@@ -84,7 +84,7 @@ export function rollupMainConfig () {
           minimize: true
         }),
         buble(),
-        uglify()
+        terser()
       ]
     },
     {

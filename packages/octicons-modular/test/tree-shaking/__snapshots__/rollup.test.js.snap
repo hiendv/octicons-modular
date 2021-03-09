@@ -5,16 +5,20 @@ exports[`Rollup tree-shaking works 1`] = `
   var sources = [], len = arguments.length - 1;
   while ( len-- > 0 ) sources[ len ] = arguments[ len + 1 ];
 
-  for (var s, i = 0, n = sources.length; i < n; i++) {
-    s = sources[i];
-    Object.keys(s).forEach(function (p) {
+  var loop = function ( s$1, i, n ) {
+    s$1 = sources[i];
+    Object.keys(s$1).forEach(function (p) {
       if (p === '__proto__') {
         return
       }
 
-      t[p] = s[p];
+      t[p] = s$1[p];
     });
-  }
+
+    s = s$1;
+  };
+
+  for (var s = (void 0), i = 0, n = sources.length; i < n; i++) loop( s, i);
 
   return t
 };
