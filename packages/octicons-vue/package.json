@@ -31,6 +31,6 @@
     "octicons-modular": "^1.0.7"
   },
   "peerDependencies": {
-    "vue": "^2.6.12"
+    "vue": "^2.6.13"
   }
 }
