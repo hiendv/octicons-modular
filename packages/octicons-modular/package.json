@@ -30,6 +30,11 @@
   "sideEffects": [
     "/**/*.css"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hiendv/octicons-modular.git",
+    "directory": "packages/octicons-modular"
+  },
   "babel": {
     "presets": [
       "@babel/preset-env"
